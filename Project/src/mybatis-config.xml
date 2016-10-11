@@ -6,7 +6,6 @@
 <configuration>
    <typeAliases>
      <typeAlias type="cosmos.multiple.model.Multiple" alias="Multiple"/>
-     <typeAlias type="cosmos.multiple.model.MultipleSearch" alias="MultipleSearch"/>
    </typeAliases>
    
    <environments default="development">
