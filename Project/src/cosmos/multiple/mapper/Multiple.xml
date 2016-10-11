@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="selectMultiple">
-  	<select id="selectMultiple" parameterType="String" resultType="Multiple">
-  		select * from MULTIPLETYPEQUESTION where MULQUESTCATEGORI = #{MULQUESTCATEGORI}
+  <mapper namespace="cosmos.multiple.mapper.MultipleMapper">
+  	<select id="selectMultiple" parameterType="Multiple" resultType="String">
+
+  		select MULQUESTCONTENT 
+  		from MULTIPLETYPEQUESTION 
+  		where MULQUESTCATEGORI = #{mulquestCategori} AND MULQUESTLEVEL = #{mulquestLevel}
   	</select>
   </mapper>
+  
+ 

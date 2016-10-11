@@ -5,7 +5,11 @@ public class MultipleService {
 	private static MultipleService service = new MultipleService();
 	
 	public static MultipleService getInstance(){
-		dao.getInstance();
+		dao = dao.getInstance();
 		return service;
+	}
+	
+	public String selectMultiple(Multiple multiple){
+		return dao.selectMultiple(multiple);
 	}
 }

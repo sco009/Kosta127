@@ -5,7 +5,8 @@
 
 <configuration>
    <typeAliases>
-     <typeAlias type="cosmos.model.Multiple"/>
+     <typeAlias type="cosmos.multiple.model.Multiple" alias="Multiple"/>
+     <typeAlias type="cosmos.multiple.model.MultipleSearch" alias="MultipleSearch"/>
    </typeAliases>
    
    <environments default="development">
@@ -18,8 +19,7 @@
    </environments>
    
    <mappers>
-   		   <mapper resource="cosmos/mapper/MultipleMapper.xml"/>
-    <!--   <mapper resource="kosta/mapper/Board.xml"/> -->
+   		   <mapper resource="cosmos/multiple/mapper/Multiple.xml"/>
    </mappers>
    
 </configuration>

@@ -3,55 +3,59 @@ package cosmos.multiple.model;
 import java.io.Serializable;
 
 public class Multiple implements Serializable {
-	String MULQUESTID;
-	String MULQUESTCATEGORI;
-	String MULQUESTLEVEL;
-	String MULQUESTCONTENT;
-	int MULQUESTPOINT;
-	String MULQUESTEXAMINER;
-	String MULQUESTCHOICEID;
-	public String getMULQUESTID() {
-		return MULQUESTID;
+	String mulquestId;
+	String mulquestCategori;
+	String mulquestLevel;
+	String mulquestContent;
+	int mulquestPoint;
+	String mulquestExaminer;
+	String mulquestChoiceId;
+	
+	public String getMulquestId() {
+		return mulquestId;
 	}
-	public void setMULQUESTID(String mULQUESTID) {
-		MULQUESTID = mULQUESTID;
+	public void setMulquestId(String mulquestId) {
+		this.mulquestId = mulquestId;
 	}
-	public String getMULQUESTCATEGORI() {
-		return MULQUESTCATEGORI;
+	public String getMulquestCategori() {
+		return mulquestCategori;
 	}
-	public void setMULQUESTCATEGORI(String mULQUESTCATEGORI) {
-		MULQUESTCATEGORI = mULQUESTCATEGORI;
+	public void setMulquestCategori(String mulquestCategori) {
+		this.mulquestCategori = mulquestCategori;
 	}
-	public String getMULQUESTLEVEL() {
-		return MULQUESTLEVEL;
+	public String getMulquestLevel() {
+		return mulquestLevel;
 	}
-	public void setMULQUESTLEVEL(String mULQUESTLEVEL) {
-		MULQUESTLEVEL = mULQUESTLEVEL;
+	public void setMulquestLevel(String mulquestLevel) {
+		this.mulquestLevel = mulquestLevel;
 	}
-	public String getMULQUESTCONTENT() {
-		return MULQUESTCONTENT;
+	public String getMulquestContent() {
+		return mulquestContent;
 	}
-	public void setMULQUESTCONTENT(String mULQUESTCONTENT) {
-		MULQUESTCONTENT = mULQUESTCONTENT;
+	public void setMulquestContent(String mulquestContent) {
+		this.mulquestContent = mulquestContent;
 	}
-	public int getMULQUESTPOINT() {
-		return MULQUESTPOINT;
+	public int getMulquestPoint() {
+		return mulquestPoint;
 	}
-	public void setMULQUESTPOINT(int mULQUESTPOINT) {
-		MULQUESTPOINT = mULQUESTPOINT;
+	public void setMulquestPoint(int mulquestPoint) {
+		this.mulquestPoint = mulquestPoint;
 	}
-	public String getMULQUESTEXAMINER() {
-		return MULQUESTEXAMINER;
+	public String getMulquestExaminer() {
+		return mulquestExaminer;
 	}
-	public void setMULQUESTEXAMINER(String mULQUESTEXAMINER) {
-		MULQUESTEXAMINER = mULQUESTEXAMINER;
+	public void setMulquestExaminer(String mulquestExaminer) {
+		this.mulquestExaminer = mulquestExaminer;
 	}
-	public String getMULQUESTCHOICEID() {
-		return MULQUESTCHOICEID;
+	public String getMulquestChoiceId() {
+		return mulquestChoiceId;
 	}
-	public void setMULQUESTCHOICEID(String mULQUESTCHOICEID) {
-		MULQUESTCHOICEID = mULQUESTCHOICEID;
+	public void setMulquestChoiceId(String mulquestChoiceId) {
+		this.mulquestChoiceId = mulquestChoiceId;
 	}
+	
+	
+	
 	
 	
 }
