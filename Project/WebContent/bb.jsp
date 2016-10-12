@@ -5,8 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<style type="text/css">
+	.s{
+		 background: black;
+		 text-shadow: red;
+	}
+</style>
 </head>
 <body>
-<h1>병진</h1>
+<input type="radio" name="s" class ="s"value="a">aaa</input>
 </body>
 </html>
