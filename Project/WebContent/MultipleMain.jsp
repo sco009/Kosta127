@@ -120,10 +120,11 @@
 				<form action="MultipleCheck.jsp" method="post">
 				<div class="row-fluid"> 
 					<div class="btn-group-vertical" role="group" aria-label="...">
- 						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</button>
-  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</button>
-  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</button>
-  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceFour }>${multipleChoiceSelect.multipleChoiceFour }</button>
+						<input type="hidden" name = "mulquestAnswer" value= ${multipleSelect.mulquestAnswer }></input>
+ 						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</input>
+  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</input>
+  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</input>
+  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour }>${multipleChoiceSelect.multipleChoiceFour }</input>
 					</div>
 				</div>
 				<div class="row-md-6">
