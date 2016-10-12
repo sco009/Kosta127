@@ -17,7 +17,7 @@
 	if(session.getAttribute("multipleSelect")!=null){
 		
 			List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
-			
+
 			if(request.getParameter("count")==null){
 				PageCount=0;
 			}
@@ -64,9 +64,6 @@
 <script type="text/javascript">
 	function Next() {
 		location.href= "MultipleMain.jsp?count=0"
-	}
-	function Check() {
-		if()
 	}
 </script>
 
