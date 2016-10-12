@@ -121,9 +121,9 @@
 				<div class="row-fluid"> 
 					<div class="btn-group-vertical" role="group" aria-label="...">
 						<input type="hidden" name = "mulquestAnswer" value= ${multipleSelect.mulquestAnswer }></input>
- 						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</input>
-  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</input>
-  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</input>
+ 						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</input><br>
+  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</input><br>
+  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</input><br>
   						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour }>${multipleChoiceSelect.multipleChoiceFour }</input>
 					</div>
 				</div>
