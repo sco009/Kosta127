@@ -7,33 +7,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%! static int PageCount; %>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
 <%	
-	ArrayList <String> checkList = new ArrayList<String>();
-	
 	MultipleService service = MultipleService.getInstance();
-	
-	if (session.getAttribute("content") != null) {
-		Multiple multipleSelect = (Multiple)session.getAttribute("multipleSelect");
-		MultipleChoice multipleChoiceSelect = (MultipleChoice)session.getAttribute("multipleChoiceSelect");
-		request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
-		request.setAttribute("multipleSelect", multipleSelect);
-	}
-	
-	if(request.getParameter("id")!=null){
-		String id = request.getParameter("id");
-		if(id.equals("O")){
-			String multipleCheckSuccess = "●";
-			request.setAttribute("check", multipleCheckSuccess);
-		}else if(id.equals("X")){
-			String multipleCheckFail = "○";
-			request.setAttribute("check", multipleCheckFail);
+
+	if(session.getAttribute("multipleSelect")!=null){
+		
+			List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
+			
+			if(request.getParameter("count")==null){
+				PageCount=0;
+			}
+			
+			if(PageCount==0){
+				Multiple multipleSelect = multipleCount.get(PageCount);
+				MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleSelect.getMultipleChoiceId());
+				
+				request.setAttribute("multipleSelect", multipleSelect);
+				request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
+				PageCount++;
+			}else{
+				Multiple multipleSelect = multipleCount.get(PageCount);
+				MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleSelect.getMultipleChoiceId());
+				
+				request.setAttribute("multipleSelect", multipleSelect);
+				request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
+				PageCount++;
+			}
 		}
 		
-	}
+		if(session.getAttribute("successCheck")!=null){
+			String check = (String)session.getAttribute("successCheck");
+			request.setAttribute("check", check);
+		}else if(session.getAttribute("failCheck")!=null){
+			String check = "정답은 : " + (String)session.getAttribute("failCheck");
+			request.setAttribute("check", check);
+		}
 	
 %>
 
@@ -47,9 +59,16 @@
 <title>Cosmos</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/kfonts2.css" rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function Next() {
+		location.href= "MultipleMain.jsp?count=0"
+	}
+	function Check() {
+		if()
+	}
+</script>
 
 
 </head>
@@ -73,18 +92,18 @@
 					<div class="modal fade bs-example-modal-sm-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm-1">
     						<div class="modal-content">
-    						<div class="btn-group" data-toggle="buttons">
+    							<div class="btn-group" data-toggle="buttons">
   								<label class="btn btn-primary active">
-  								  		<input type="radio" name="mulquestCategori" id="option1" value="for문" autocomplete="off">for문
+  								  		<input type="radio" name="mulquestCategori" id="option1" value="for문" >for문
  									 </label>
   								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option2" value="if문" autocomplete="off"> if문
+   									 <input type="radio" name="mulquestCategori" id="option2" value="if문" > if문
   								</label>
   								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option3" value="while문" autocomplete="off"> while문
+   									 <input type="radio" name="mulquestCategori" id="option3" value="while문" > while문
   								</label>
   								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option3" value="기초구문" autocomplete="off"> 기초구문
+   									 <input type="radio" name="mulquestCategori" id="option3" value="기초구문" > 기초구문
   								</label>
 						</div>
 					</div>
@@ -109,13 +128,13 @@
     						<div class="modal-content">
     						<div class="btn-group" data-toggle="buttons">
  								<label class="btn btn-primary active">
-   		 							<input type="radio" name="mulquestLevel" value="상" id="option1" autocomplete="off"> 상
+   		 							<input type="radio" name="mulquestLevel" value="상" id="option1" > 상
   								</label>
   								<label class="btn btn-primary">
-    								<input type="radio" name="mulquestLevel" value="중" id="option2" autocomplete="off"> 중
+    								<input type="radio" name="mulquestLevel" value="중" id="option2" > 중
   								</label>
   								<label class="btn btn-primary">
-    								<input type="radio" name="mulquestLevel" value="하" id="option3" autocomplete="off"> 하
+    								<input type="radio" name="mulquestLevel" value="하" id="option3" > 하
   								</label>
   						</div>
 					</div>	
@@ -180,6 +199,8 @@
 			 </c:if>
 		</div>
 			${check }
+			<br>
+			<input type="button" value="다음" onclick=Next()>
 	</div>
 	</div>
 </body>

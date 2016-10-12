@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
 <%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
@@ -10,13 +11,10 @@
 <%
 	MultipleService service = MultipleService.getInstance();
 	
-	Multiple multipleSelect = service.selectMultiple(multiple); //multiple 객체 
-	String multipleChoiceId = multipleSelect.getMultipleChoiceId();
-	MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleChoiceId);
+	List<Multiple> multipleSelect = service.selectMultiple(multiple); //multiple 객체리스트 생성 
 	
-	session.setAttribute("multipleSelect", multipleSelect);	//선택한 카테고리,난이도를 추출하기 위해.
-	session.setAttribute("multipleChoiceSelect", multipleChoiceSelect); //문제에 해당하는 보기를 추출하기 위해.
-	response.sendRedirect("MultipleMain.jsp");
+	session.setAttribute("multipleSelect", multipleSelect);	//multiple 객체리스트 넘겨주기
+ 	response.sendRedirect("MultipleMain.jsp?count=0");
 	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

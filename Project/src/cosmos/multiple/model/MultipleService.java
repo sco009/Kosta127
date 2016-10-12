@@ -1,5 +1,7 @@
 package cosmos.multiple.model;
 
+import java.util.List;
+
 public class MultipleService {
 	public static MultipleDao dao;
 	private static MultipleService service = new MultipleService();
@@ -9,7 +11,7 @@ public class MultipleService {
 		return service;
 	}
 	
-	public Multiple selectMultiple(Multiple multiple){
+	public List<Multiple> selectMultiple(Multiple multiple){
 		return dao.selectMultiple(multiple);
 	}
 	
