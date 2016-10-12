@@ -57,11 +57,19 @@
 					<div class="modal fade bs-example-modal-sm-1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm-1">
     						<div class="modal-content">
-								<input type="radio" name="mulquestCategori" value="for문">for문</input> 
-								<input type="radio" name="mulquestCategori" value="if문">if문</input> 
-								<input type="radio" name="mulquestCategori" value="while문">while문</input> 
-								<input type="radio" name="mulquestCategori" value="기초구문">기초구문</input>
-							</div>
+    						<div class="btn-group" data-toggle="buttons">
+  								<label class="btn btn-primary active">
+  								  		<input type="radio" name="mulquestCategori" id="option1" value="for문" autocomplete="off">for문
+ 									 </label>
+  								<label class="btn btn-primary">
+   									 <input type="radio" name="mulquestCategori" id="option2" value="if문" autocomplete="off"> if문
+  								</label>
+  								<label class="btn btn-primary">
+   									 <input type="radio" name="mulquestCategori" id="option3" value="while문" autocomplete="off"> while문
+  								</label>
+  								<label class="btn btn-primary">
+   									 <input type="radio" name="mulquestCategori" id="option3" value="기초구문" autocomplete="off"> 기초구문
+  								</label>
 						</div>
 					</div>
 
@@ -83,10 +91,16 @@
 					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm">
     						<div class="modal-content">
-      							<input type="radio" name="mulquestLevel" value="상">상</input> 
-      							<input type="radio" name="mulquestLevel" value="중">중 </input> 
-      							<input type="radio" name="mulquestLevel" value="하">하 </input>
-    						</div>
+    						<div class="btn-group" data-toggle="buttons">
+ 								<label class="btn btn-primary active">
+   		 							<input type="radio" name="mulquestLevel" value="상" id="option1" autocomplete="off"> 상
+  								</label>
+  								<label class="btn btn-primary">
+    								<input type="radio" name="mulquestLevel" value="중" id="option2" autocomplete="off"> 중
+  								</label>
+  								<label class="btn btn-primary">
+    								<input type="radio" name="mulquestLevel" value="하" id="option3" autocomplete="off"> 하
+  								</label>
   						</div>
 					</div>	
 				</td>
@@ -121,10 +135,24 @@
 				<div class="row-fluid"> 
 					<div class="btn-group-vertical" role="group" aria-label="...">
 						<input type="hidden" name = "mulquestAnswer" value= ${multipleSelect.mulquestAnswer }></input>
- 						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</input><br>
-  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</input><br>
-  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</input><br>
-  						<input type="radio" name ="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour }>${multipleChoiceSelect.multipleChoiceFour }</input>
+						<div class="btn-group" data-toggle="buttons">
+						  <label class="btn btn-primary">
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne } 
+						    id="option1"> ${multipleChoiceSelect.multipleChoiceOne }
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo } 
+						    id="option2"> ${multipleChoiceSelect.multipleChoiceTwo }
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }
+						     id="option3"> ${multipleChoiceSelect.multipleChoiceThree }
+						  </label>
+						  <label class="btn btn-primary">
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour } 
+						    id="option4"> ${multipleChoiceSelect.multipleChoiceFour }
+						  </label>
+						</div>
 					</div>
 				</div>
 				<div class="row-md-6">
