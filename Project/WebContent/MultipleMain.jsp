@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
@@ -10,6 +12,8 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <%	
+	ArrayList <String> checkList = new ArrayList<String>();
+	
 	MultipleService service = MultipleService.getInstance();
 	
 	if (session.getAttribute("content") != null) {
@@ -17,6 +21,18 @@
 		MultipleChoice multipleChoiceSelect = (MultipleChoice)session.getAttribute("multipleChoiceSelect");
 		request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
 		request.setAttribute("multipleSelect", multipleSelect);
+	}
+	
+	if(request.getParameter("id")!=null){
+		String id = request.getParameter("id");
+		if(id.equals("O")){
+			String multipleCheckSuccess = "●";
+			request.setAttribute("check", multipleCheckSuccess);
+		}else if(id.equals("X")){
+			String multipleCheckFail = "○";
+			request.setAttribute("check", multipleCheckFail);
+		}
+		
 	}
 	
 %>
@@ -163,6 +179,7 @@
 				</form>
 			 </c:if>
 		</div>
+			${check }
 	</div>
 	</div>
 </body>
