@@ -1,3 +1,5 @@
+<%@page import="cosmos.multiple.model.Multiple"%>
+<%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -8,9 +10,12 @@
 <%
 	MultipleService service = MultipleService.getInstance();
 	
-	String content = service.selectMultiple(multiple);
-	session.setAttribute("multipleSelect", multiple);	//선택한 카테고리,난이도를 추출하기 위해.
-	session.setAttribute("content", content);	// 카테고리,난이도에 해당하는 문제 추출
+	Multiple multipleSelect = service.selectMultiple(multiple); //multiple 객체 
+	String multipleChoiceId = multipleSelect.getMultipleChoiceId();
+	MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleChoiceId);
+	
+	session.setAttribute("multipleSelect", multipleSelect);	//선택한 카테고리,난이도를 추출하기 위해.
+	session.setAttribute("multipleChoiceSelect", multipleChoiceSelect); //문제에 해당하는 보기를 추출하기 위해.
 	response.sendRedirect("MultipleMain.jsp");
 	
 %>

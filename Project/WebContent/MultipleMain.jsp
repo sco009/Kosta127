@@ -1,3 +1,4 @@
+<%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
 
@@ -13,13 +14,11 @@
 	
 	if (session.getAttribute("content") != null) {
 		Multiple multipleSelect = (Multiple)session.getAttribute("multipleSelect");
-		request.setAttribute("mulquestCategori", multipleSelect.getMulquestCategori());
-		request.setAttribute("mulquestLevel", multipleSelect.getMulquestLevel());
-		request.setAttribute("mulquestExaminer", multipleSelect.getMulquestExaminer());
-		
-		String content = (String)request.getAttribute("content");
-		request.setAttribute("content", content);
+		MultipleChoice multipleChoiceSelect = (MultipleChoice)session.getAttribute("multipleChoiceSelect");
+		request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
+		request.setAttribute("multipleSelect", multipleSelect);
 	}
+	
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,10 +46,10 @@
 				<td>
 					<button type="button" class="btn btn-primary" data-toggle="modal" 
 					data-target=".bs-example-modal-sm-1">
-						<c:if test="${mulquestCategori!=null }">
-								${mulquestCategori }
+						<c:if test="${multipleSelect!=null }">
+								${multipleSelect.mulquestCategori }
 						</c:if>
-						<c:if test="${mulquestCategori==null }">
+						<c:if test="${multipleSelect==null }">
 							카테고리 선택
 						</c:if>
 						</button>
@@ -73,10 +72,10 @@
 				<td>
 				<button type="button" class="btn btn-primary" data-toggle="modal" 
 					data-target=".bs-example-modal-sm">
-						<c:if test="${mulquestLevel!=null }">
-							${mulquestLevel }
+						<c:if test="${multipleSelect!=null }">
+							${multipleSelect.mulquestLevel }
 						</c:if>
-						<c:if test="${mulquestLevel==null }">
+						<c:if test="${multipleSelect==null }">
 							난이도 선택
 						</c:if>
 				
@@ -94,24 +93,46 @@
 			</tr>
 			
 			<tr>
-				<td><input type="submit" value="선택"></td>
+				<td>
+				<button type="submit" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+ 					 선택
+				</button>
+				</td>
 			</tr>
 		</table>
 	</form>
 	</div>
 	<div class="col-md-1"></div>
 	<div class="col-md-5">
-		<div class="well well-large">
-			 ${content }
+		<div class="well well-large problem">
+			 ${multipleSelect.mulquestContent }
+			 	<br>
+				<c:if test="${multipleSelect!=null }">
+				 	<small><cite title="Examiner">출제자-</cite>킹왕짱+${multipleSelect.mulquestExaminer }</small>
+				</c:if>
 		</div>
-		<c:if test="${muquestExaminer!=null }">
-			 	<small><cite title="Examiner">출제자-</cite>${mulquestExaminer }</small>
-		</c:if>
+	
 	</div>
 	
 	<div class="col-md-5">
 		<div class="well well-large">
-			 ${content}
+			<c:if test="${multipleSelect != null }">
+				<form action="MultipleCheck.jsp" method="post">
+				<div class="row-fluid"> 
+					<div class="btn-group-vertical" role="group" aria-label="...">
+ 						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceOne }>${multipleChoiceSelect.multipleChoiceOne }</button>
+  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceTwo }>${multipleChoiceSelect.multipleChoiceTwo }</button>
+  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceThree }>${multipleChoiceSelect.multipleChoiceThree }</button>
+  						<button type="button" name ="multipleChoiceSelect" class="btn btn-default" value=${multipleChoiceSelect.multipleChoiceFour }>${multipleChoiceSelect.multipleChoiceFour }</button>
+					</div>
+				</div>
+				<div class="row-md-6">
+					<button type="submit" id="myButton" class="btn btn-primary">
+ 						 [답 Check]
+					</button>
+				</div>
+				</form>
+			 </c:if>
 		</div>
 	</div>
 	</div>

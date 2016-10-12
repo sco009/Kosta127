@@ -6,6 +6,7 @@
 <configuration>
    <typeAliases>
      <typeAlias type="cosmos.multiple.model.Multiple" alias="Multiple"/>
+     <typeAlias type="cosmos.multiple.model.MultipleChoice" alias="MultipleChoice"/>
    </typeAliases>
    
    <environments default="development">

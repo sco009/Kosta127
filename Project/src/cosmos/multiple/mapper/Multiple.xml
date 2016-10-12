@@ -3,12 +3,20 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="cosmos.multiple.mapper.MultipleMapper">
-  	<select id="selectMultiple" parameterType="Multiple" resultType="String">
+  	<select id="selectMultiple" parameterType="Multiple" resultType="Multiple">
 
-  		select MULQUESTCONTENT 
+  		select * 
   		from MULTIPLETYPEQUESTION 
   		where MULQUESTCATEGORI = #{mulquestCategori} AND MULQUESTLEVEL = #{mulquestLevel}
   	</select>
+  	
+  	<select id ="selectMultipleChoice" parameterType="String"	resultType="MultipleChoice">
+  		
+  		select *
+  		from multipleChoice
+  		where multipleChoiceId = #{multipleChoiceId}
+  	</select>
+  	
   </mapper>
   
  

@@ -29,10 +29,22 @@ public class MultipleDao {
 	   }
 	
 	
-	public String selectMultiple(Multiple multiple){
+	public Multiple selectMultiple(Multiple multiple){
 		SqlSession session = getSqlSessionFactory().openSession();
 		try {
 			return session.getMapper(MultipleMapper.class).selectMultiple(multiple);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			session.close();
+		}
+	}
+	
+	public MultipleChoice selectMultipleChoice(String multipleChoiceId){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(MultipleMapper.class).selectMultipleChoice(multipleChoiceId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

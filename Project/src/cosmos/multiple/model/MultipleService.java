@@ -9,7 +9,11 @@ public class MultipleService {
 		return service;
 	}
 	
-	public String selectMultiple(Multiple multiple){
+	public Multiple selectMultiple(Multiple multiple){
 		return dao.selectMultiple(multiple);
+	}
+	
+	public MultipleChoice selectMultipleChoice(String multipleChoiceId){
+		return dao.selectMultipleChoice(multipleChoiceId);
 	}
 }

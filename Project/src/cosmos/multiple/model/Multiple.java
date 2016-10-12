@@ -9,8 +9,15 @@ public class Multiple implements Serializable {
 	String mulquestContent;
 	int mulquestPoint;
 	String mulquestExaminer;
-	String mulquestChoiceId;
+	String multipleChoiceId;
+	String mulquestAnswer;
 	
+	public String getMulquestAnswer() {
+		return mulquestAnswer;
+	}
+	public void setMulquestAnswer(String mulquestAnswer) {
+		this.mulquestAnswer = mulquestAnswer;
+	}
 	public String getMulquestId() {
 		return mulquestId;
 	}
@@ -47,11 +54,11 @@ public class Multiple implements Serializable {
 	public void setMulquestExaminer(String mulquestExaminer) {
 		this.mulquestExaminer = mulquestExaminer;
 	}
-	public String getMulquestChoiceId() {
-		return mulquestChoiceId;
+	public String getMultipleChoiceId() {
+		return multipleChoiceId;
 	}
-	public void setMulquestChoiceId(String mulquestChoiceId) {
-		this.mulquestChoiceId = mulquestChoiceId;
+	public void setMultipleChoiceId(String multipleChoiceId) {
+		this.multipleChoiceId = multipleChoiceId;
 	}
 	
 	
