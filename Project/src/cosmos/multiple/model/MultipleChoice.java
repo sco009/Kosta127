@@ -2,6 +2,7 @@ package cosmos.multiple.model;
 
 import java.io.Serializable;
 
+
 public class MultipleChoice implements Serializable {
 	String multipleChoiceId;
 	String multipleChoiceOne;
