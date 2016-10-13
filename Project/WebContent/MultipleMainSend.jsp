@@ -11,12 +11,9 @@
 <%
 	String mulquestCategori = request.getParameter("mulquestCategori");
 	String mulquestLevel = request.getParameter("mulquestLevel");
-	
-	if(mulquestCategori==null){
-		System.out.println("<script type='text/javascript'>alert('카테고리를 선택하지 않았습니다.');</script>");
-		response.sendRedirect("MultipleMain.jsp");
-	}else if(mulquestLevel==null){
-		System.out.println("<script type='text/javascript'>alert('난이도를 선택하지 않았습니다.');</script>");
+
+	if(mulquestCategori==null || mulquestLevel==null){
+
 		response.sendRedirect("MultipleMain.jsp");
 	}else{
 	MultipleService service = MultipleService.getInstance();

@@ -53,11 +53,19 @@
 		location.href= "MultipleMain.jsp"
 	}
 	function selectMutlpleCheck() {
-		var Answer = "정답은 : "+$(":input:hidden[name=multipleChoiceSelectAnswer]").val();	//선택된 문제에 해당하는 값 가져오기
-		document.getElementById("checkAnswer").innerHTML = Answer;	//선택된 문제에 해당하는 답 출력하기	
+		var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val();
+		var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();	//선택된 문제에 해당하는 값 가져오기
+		var check = "";
+		
+		if(selectAnswer===Answer){
+			check = "O";
+		}else if(selectAnswer!==Answer){
+			check = "X";
+		}
+		document.getElementById("checkAnswer").innerHTML = check;	//선택된 문제에 해당하는 답 출력하기	
 	}
 	function resultMultiple() {
-		
+		location.href="resultMultiple.jsp";
 	}
 	
 </script>
