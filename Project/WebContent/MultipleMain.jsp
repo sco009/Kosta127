@@ -18,10 +18,9 @@
 				int multipleSelectCount = (int)session.getAttribute("multipleSelectCount")-1;
 				List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
 				ArrayList<String>failList = new ArrayList<String>();
+				
 				failList.add(request.getParameter("solveSelectId"));	//틀린 문제 번호를 리스트에 담기.
-				if(checkCount==multipleSelectCount){
-					response.sendRedirect("resultMultiple.jsp?failList=" + failList);
-				}
+				request.setAttribute("failList", failList);				
 				
 				request.setAttribute("checkCount", checkCount);
 				request.setAttribute("multipleSelectCount", multipleSelectCount);
@@ -74,6 +73,9 @@
 			check = "X";
 		}
 		document.getElementById("checkAnswer").innerHTML = check;	//선택된 문제에 해당하는 답 출력하기	
+	}
+	function resultMultiple() {
+		respon
 	}
 	
 </script>
@@ -213,7 +215,10 @@
 				<input type="button" name="nextButton" value="다음" onclick=Next()>
 			</c:if>
 			<c:if test="${checkCount==multipleSelectCount && checkCount!=null }">
-				<input type="button" name="resultButton" value="결과보기" onclick=resultMultiple()>
+				<form action="resultMultiple.jsp" method="post">
+				<input type="hidden" name="failList" value=${failList } ></input>
+				<input type="submit" value="결과보기"></input>
+				</form>
 				<% checkCount=0; %>
 			</c:if>
 		</div>
