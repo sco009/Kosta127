@@ -18,4 +18,8 @@ public class MultipleService {
 	public MultipleChoice selectMultipleChoice(String multipleChoiceId){
 		return dao.selectMultipleChoice(multipleChoiceId);
 	}
+	
+	public int selectMultipleCount(Multiple multiple){
+		return dao.selectMultipleCount(multiple);
+	}
 }

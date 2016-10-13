@@ -3,50 +3,36 @@
 <%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
-
+<%! static int checkCount=0; %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%! static int PageCount; %>
+<%-- <%! static int PageCount=0; %> --%>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
 <%	
-	MultipleService service = MultipleService.getInstance();
-
-	if(session.getAttribute("multipleSelect")!=null){
-		
-			List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
-
-			if(request.getParameter("count")==null){
-				PageCount=0;
-			}
-			
-			if(PageCount==0){
-				Multiple multipleSelect = multipleCount.get(PageCount);
-				MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleSelect.getMultipleChoiceId());
-				
-				request.setAttribute("multipleSelect", multipleSelect);
-				request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
-				PageCount++;
-			}else{
-				Multiple multipleSelect = multipleCount.get(PageCount);
-				MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleSelect.getMultipleChoiceId());
-				
-				request.setAttribute("multipleSelect", multipleSelect);
-				request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
-				PageCount++;
-			}
-		}
-		
-		if(session.getAttribute("successCheck")!=null){
-			String check = (String)session.getAttribute("successCheck");
-			request.setAttribute("check", check);
-		}else if(session.getAttribute("failCheck")!=null){
-			String check = "정답은 : " + (String)session.getAttribute("failCheck");
-			request.setAttribute("check", check);
-		}
+	MultipleService service = MultipleService.getInstance();	//답에대한 화면만 바꾸기 위한 체크
 	
+	if(session.getAttribute("multipleSelect")!=null){
+				
+				int multipleSelectCount = (int)session.getAttribute("multipleSelectCount")-1;
+				List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
+				request.setAttribute("checkCount", checkCount);
+				request.setAttribute("multipleSelectCount", multipleSelectCount);
+				
+				
+					Multiple multipleSelect = multipleCount.get(checkCount);
+					MultipleChoice multipleChoiceSelect = service.selectMultipleChoice(multipleSelect.getMultipleChoiceId());
+					
+					request.setAttribute("multipleSelect", multipleSelect);
+					request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
+					if(checkCount<multipleSelectCount){
+						checkCount++;
+					
+				}
+			}
+		
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -63,8 +49,17 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function Next() {
-		location.href= "MultipleMain.jsp?count=0"
+
+		location.href= "MultipleMain.jsp"
 	}
+	function selectMutlpleCheck() {
+		var Answer = "정답은 : "+$(":input:hidden[name=multipleChoiceSelectAnswer]").val();	//선택된 문제에 해당하는 값 가져오기
+		document.getElementById("checkAnswer").innerHTML = Answer;	//선택된 문제에 해당하는 답 출력하기	
+	}
+	function resultMultiple() {
+		
+	}
+	
 </script>
 
 
@@ -90,18 +85,20 @@
   						<div class="modal-dialog modal-sm-1">
     						<div class="modal-content">
     							<div class="btn-group" data-toggle="buttons">
-  								<label class="btn btn-primary active">
+  									<label class="btn btn-primary active">
   								  		<input type="radio" name="mulquestCategori" id="option1" value="for문" >for문
  									 </label>
-  								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option2" value="if문" > if문
-  								</label>
-  								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option3" value="while문" > while문
-  								</label>
-  								<label class="btn btn-primary">
-   									 <input type="radio" name="mulquestCategori" id="option3" value="기초구문" > 기초구문
-  								</label>
+  									<label class="btn btn-primary">
+   										 <input type="radio" name="mulquestCategori" id="option2" value="if문" > if문
+  									</label>
+  									<label class="btn btn-primary">
+   										 <input type="radio" name="mulquestCategori" id="option3" value="while문" > while문
+  									</label>
+  									<label class="btn btn-primary">
+   										 <input type="radio" name="mulquestCategori" id="option3" value="기초구문" > 기초구문
+  									</label>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -123,18 +120,20 @@
 					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   						<div class="modal-dialog modal-sm">
     						<div class="modal-content">
-    						<div class="btn-group" data-toggle="buttons">
- 								<label class="btn btn-primary active">
-   		 							<input type="radio" name="mulquestLevel" value="상" id="option1" > 상
-  								</label>
-  								<label class="btn btn-primary">
-    								<input type="radio" name="mulquestLevel" value="중" id="option2" > 중
-  								</label>
-  								<label class="btn btn-primary">
-    								<input type="radio" name="mulquestLevel" value="하" id="option3" > 하
-  								</label>
-  						</div>
-					</div>	
+    							<div class="btn-group" data-toggle="buttons">
+ 									<label class="btn btn-primary active">
+   		 								<input type="radio" name="mulquestLevel" value="상" id="option1" > 상
+  									</label>
+  									<label class="btn btn-primary">
+    									<input type="radio" name="mulquestLevel" value="중" id="option2" > 중
+  									</label>
+  									<label class="btn btn-primary">
+    									<input type="radio" name="mulquestLevel" value="하" id="option3" > 하
+  									</label>
+  								</div>
+							</div>	
+						</div>
+					</div>
 				</td>
 			</tr>
 			
@@ -154,6 +153,7 @@
 			 ${multipleSelect.mulquestContent }
 			 	<br>
 				<c:if test="${multipleSelect!=null }">
+					<br>
 				 	<small><cite title="Examiner">출제자-</cite>킹왕짱+${multipleSelect.mulquestExaminer }</small>
 				</c:if>
 		</div>
@@ -163,42 +163,43 @@
 	<div class="col-md-5">
 		<div class="well well-large">
 			<c:if test="${multipleSelect != null }">
-				<form action="MultipleCheck.jsp" method="post">
 				<div class="row-fluid"> 
 					<div class="btn-group-vertical" role="group" aria-label="...">
-						<input type="hidden" name = "mulquestAnswer" value= ${multipleSelect.mulquestAnswer }></input>
 						<div class="btn-group" data-toggle="buttons">
 						  <label class="btn btn-primary">
-						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne } 
-						    id="option1"> ${multipleChoiceSelect.multipleChoiceOne }
+						  	<input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.mulquestAnswer }></input>
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceOne } > ${multipleChoiceSelect.multipleChoiceOne }
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo } 
-						    id="option2"> ${multipleChoiceSelect.multipleChoiceTwo }
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceTwo } > ${multipleChoiceSelect.multipleChoiceTwo }
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }
-						     id="option3"> ${multipleChoiceSelect.multipleChoiceThree }
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceThree }> ${multipleChoiceSelect.multipleChoiceThree }
 						  </label>
 						  <label class="btn btn-primary">
-						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour } 
-						    id="option4"> ${multipleChoiceSelect.multipleChoiceFour }
+						    <input type="radio" name="multipleChoiceSelect" value=${multipleChoiceSelect.multipleChoiceFour }> ${multipleChoiceSelect.multipleChoiceFour }
 						  </label>
 						</div>
 					</div>
 				</div>
-				<div class="row-md-6">
-					<button type="submit" id="myButton" class="btn btn-primary">
+				<div class="row-fluid">
+					<button type="button" id="myButton" class="btn btn-primary" onclick=selectMutlpleCheck()>
  						 [답 Check]
 					</button>
 				</div>
-				</form>
 			 </c:if>
 		</div>
-			${check }
+			<div id="checkAnswer"></div>
+			
 			<br>
-			<input type="button" value="다음" onclick=Next()>
-	</div>
+			<c:if test="${checkCount<multipleSelectCount}">
+				<input type="button" name="nextButton" value="다음" onclick=Next()>
+			</c:if>
+			<c:if test="${checkCount==multipleSelectCount && checkCount!=null }">
+				<input type="button" name="resultButton" value="결과보기" onclick=resultMultiple()>
+				<% checkCount=0; %>
+			</c:if>
+		</div>
 	</div>
 </body>
 </html>

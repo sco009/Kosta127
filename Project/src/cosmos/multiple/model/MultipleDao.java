@@ -54,5 +54,17 @@ public class MultipleDao {
 		}
 	}
 	
+	public int selectMultipleCount(Multiple multiple){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(MultipleMapper.class).selectMultipleCount(multiple);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}finally{
+			session.close();
+		}
+	}
+	
 	
 }

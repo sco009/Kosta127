@@ -17,6 +17,13 @@
   		where multipleChoiceId = #{multipleChoiceId}
   	</select>
   	
+  	<select id = "selectMultipleCount" parameterType="Multiple" resultType="Integer">
+  		select count(*)
+		from MULTIPLETYPEQUESTION
+		where MULQUESTCATEGORI = #{mulquestCategori}
+		AND MULQUESTLEVEL = #{mulquestLevel}
+  	</select>
+  	
   </mapper>
   
  
