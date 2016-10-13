@@ -15,9 +15,14 @@
 	MultipleService service = MultipleService.getInstance();	//답에대한 화면만 바꾸기 위한 체크
 	
 	if(session.getAttribute("multipleSelect")!=null){
-				
 				int multipleSelectCount = (int)session.getAttribute("multipleSelectCount")-1;
 				List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
+				ArrayList<String>failList = new ArrayList<String>();
+				failList.add(request.getParameter("solveSelectId"));	//틀린 문제 번호를 리스트에 담기.
+				if(checkCount==multipleSelectCount){
+					response.sendRedirect("resultMultiple.jsp?failList=" + failList);
+				}
+				
 				request.setAttribute("checkCount", checkCount);
 				request.setAttribute("multipleSelectCount", multipleSelectCount);
 				
@@ -28,9 +33,8 @@
 					request.setAttribute("multipleSelect", multipleSelect);
 					request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
 					if(checkCount<multipleSelectCount){
-						checkCount++;
-					
-				}
+						checkCount++;	//마지막 번호와 번호가 같아지면 순서 증가를 멈춘다.
+					}
 			}
 		
 %>
@@ -49,12 +53,19 @@
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function Next() {
-
-		location.href= "MultipleMain.jsp"
+		var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val();	//다음페이지로 넘어갈때 틀린 문제 아이디를 받기 위해.
+		var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();
+		var solveSelectId =$(":input:hidden[name=solveSelectId]").val();
+		if(selectAnswer!==Answer){
+			location.href= "MultipleMain.jsp?solveSelectId=" + solveSelectId;
+		}else{
+			location.href="MultipleMain.jsp";
+		}
 	}
 	function selectMutlpleCheck() {
+		
 		var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val();
-		var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();	//선택된 문제에 해당하는 값 가져오기
+		var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();		//선택된 문제에 해당하는 값 가져오기
 		var check = "";
 		
 		if(selectAnswer===Answer){
@@ -63,9 +74,6 @@
 			check = "X";
 		}
 		document.getElementById("checkAnswer").innerHTML = check;	//선택된 문제에 해당하는 답 출력하기	
-	}
-	function resultMultiple() {
-		location.href="resultMultiple.jsp";
 	}
 	
 </script>
@@ -201,6 +209,7 @@
 			
 			<br>
 			<c:if test="${checkCount<multipleSelectCount}">
+				<input type="hidden" name= "solveSelectId" value=${multipleSelect.mulquestId } ></input>
 				<input type="button" name="nextButton" value="다음" onclick=Next()>
 			</c:if>
 			<c:if test="${checkCount==multipleSelectCount && checkCount!=null }">
