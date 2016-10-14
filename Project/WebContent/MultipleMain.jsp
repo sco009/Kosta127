@@ -3,8 +3,8 @@
 <%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
-<%! static int checkCount=0; %>
-<%! static ArrayList<String>failList = new ArrayList<String>(); 
+<%! static int checkCount=0;
+    static ArrayList<String>failList = new ArrayList<String>(); 
 	static ArrayList<String>successList = new ArrayList<String>();%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -14,6 +14,11 @@
 %>
 <%	
 	MultipleService service = MultipleService.getInstance();	//답에대한 화면만 바꾸기 위한 체크
+	if(request.getParameter("reCheckCount")!=null){
+		failList = new ArrayList<String>();				//static failList 초기화
+		successList = new ArrayList<String>();
+		checkCount=0;
+	}
 	
 	if(session.getAttribute("multipleSelect")!=null){
 			int multipleSelectCount = (int)session.getAttribute("multipleSelectCount")-1;
@@ -65,7 +70,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/MultipleJs/MultipleJavaScript.js"></script>
-<link href="js/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
+<link href="css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="row-fluid">

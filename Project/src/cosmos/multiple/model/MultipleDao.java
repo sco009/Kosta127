@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -61,6 +62,18 @@ public class MultipleDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;
+		}finally{
+			session.close();
+		}
+	}
+	
+	public Multiple reMultiple(String mulquestId){
+		SqlSession session = getSqlSessionFactory().openSession();
+		try {
+			return session.getMapper(MultipleMapper.class).reMultiple(mulquestId);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}finally{
 			session.close();
 		}

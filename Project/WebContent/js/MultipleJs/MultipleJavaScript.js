@@ -44,6 +44,10 @@ function returnMultipleMain() {
 	location.href = "MultipleMain.jsp";
 }
 
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover({container: "body"});
+});
+
 $(function() {
 	$('.dropdown-el').click(function(e) {
 		e.preventDefault();

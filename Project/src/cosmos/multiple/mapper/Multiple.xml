@@ -24,6 +24,12 @@
 		AND MULQUESTLEVEL = #{mulquestLevel}
   	</select>
   	
+  	<select id="reMultiple" parameterType="String" resultType="Multiple">
+  		select *
+  		from MULTIPLETYPEQUESTION
+  		where mulquestId = #{mulquestId}
+  	</select>
+  	
   </mapper>
   
  

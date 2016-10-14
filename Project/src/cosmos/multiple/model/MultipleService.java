@@ -22,4 +22,8 @@ public class MultipleService {
 	public int selectMultipleCount(Multiple multiple){
 		return dao.selectMultipleCount(multiple);
 	}
+	
+	public Multiple reMultiple(String mulquestId){
+		return dao.reMultiple(mulquestId);
+	}
 }

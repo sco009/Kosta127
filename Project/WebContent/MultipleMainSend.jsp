@@ -23,7 +23,8 @@
 		
 	
 	MultipleService service = MultipleService.getInstance();
-	session.removeAttribute("multipleSelectCount");	
+	session.removeAttribute("multipleSelectCount");
+	session.removeAttribute("multipleSelect");
 
 	List<Multiple> multipleSelect = service.selectMultiple(multiple); //multiple 객체리스트 생성 
 	session.setAttribute("multipleSelect", multipleSelect);	//multiple 객체리스트 넘겨주기
@@ -31,7 +32,7 @@
 	int multipleSelectCount = service.selectMultipleCount(multiple);	//multiple객체에 대한 갯수 카운팅
 	session.setAttribute("multipleSelectCount", multipleSelectCount);
 	
-	response.sendRedirect("MultipleMain.jsp");
+	response.sendRedirect("MultipleMain.jsp?reCheckCount=0");
 	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
