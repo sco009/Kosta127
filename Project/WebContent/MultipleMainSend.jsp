@@ -9,20 +9,19 @@
 <jsp:useBean id="multiple" class="cosmos.multiple.model.Multiple"></jsp:useBean>
 <jsp:setProperty property="*" name="multiple"/>
 
-<%
-	String mulquestCategori = request.getParameter("mulquestCategori");
-	String mulquestLevel = request.getParameter("mulquestLevel");
+<%	
+		String mulquestCategori = request.getParameter("mulquestCategori");
+		String mulquestLevel = request.getParameter("mulquestLevel");	
 		
-		if(mulquestCategori==null){
+		if(mulquestCategori.equals("sort-list")){
 			JOptionPane.showMessageDialog(null, "카테고리 선택해라");
 			response.sendRedirect("MultipleMain.jsp");
-		}else if(mulquestLevel==null){
+		}else if(mulquestLevel.equals("sort-list")){
 			JOptionPane.showMessageDialog(null, "난이도 선택해라");
 			response.sendRedirect("MultipleMain.jsp");
-		}/* else if(mulquestCategori==null & mulquestLevel==null){
-			JOptionPane.showMessageDialog(null, "카테고리, 난이도 선택해라");			<<왜안되는지
-			response.sendRedirect("MultipleMain.jsp");
-		} */else{
+		}else{
+		
+	
 	MultipleService service = MultipleService.getInstance();
 	session.removeAttribute("multipleSelectCount");	
 
