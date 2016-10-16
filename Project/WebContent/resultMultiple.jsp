@@ -3,13 +3,13 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%! ArrayList<Multiple>reMultiple = new ArrayList<Multiple>();
 	int successCount; 
  	int failCount; %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-    <%    
+<%    
     MultipleService service = MultipleService.getInstance();
     ArrayList<String> failList = (ArrayList<String>)session.getAttribute("failList");
     ArrayList<String> successList = (ArrayList<String>)session.getAttribute("successList");
@@ -45,45 +45,54 @@
 <script src="js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/kfonts2.css" rel="stylesheet">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+       $(document).ready(function() {
+            $('[data-toggle="popover"]').popover({container: "body"});
+       });
+</script>
 <title>cosmos</title>
 </head>
 <body>
 	<div class="progress">
-  		<div class="progress-bar" role="progressbar" aria-valuenow=${successProgress } aria-valuemin="0" aria-valuemax="100" style="width:${successProgress }%;">
-    		Success : ${successProgress }%
-  		</div>
+		<div class="progress-bar" role="progressbar"
+			aria-valuenow=${successProgress } aria-valuemin="0"
+			aria-valuemax="100" style="width:${successProgress }%;">
+			Success : ${successProgress }%</div>
 	</div>
 
-	<c:forEach var="reMultiple" items="${reMultiple }" begin="0" end="${reMultiple.size() }">
-			<c:if test="${reMultiple !=null }">
-				<label>틀린문제 : ${reMultiple.mulquestId }</label>
+	<c:forEach var="reMultiple" items="${reMultiple }" begin="0"
+		end="${reMultiple.size() }">
+		<c:if test="${reMultiple !=null }">
+			<label>틀린문제 : ${reMultiple.mulquestId }</label>
+
+			<div class="container">
 
 				<div class="container">
 
-	<button type="button" class="btn btn-default" title="Popover title" data-container="body" 
-	data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-		Popover on right
-	</button>
+					<button type="button" class="btn btn-default" title= "문제내용 : ${reMultiple.mulquestContent }"
+						data-container="body" data-toggle="popover" data-placement="right"
+						data-content= "답 : ${reMultiple.mulquestAnswer }">
+						문제번호 : ${reMultiple.mulquestId }</button>								<!-- 틀린문제 정보 보여주기 -->
 
-	</div>
-			
-				<!-- <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" 
-				title="asd" data-content="asd" >
-				다시한번 보기</button> -->
-				
-				<br>
-			</c:if>
+				</div>
+
+			</div>
+		</c:if>
+		<br>
 	</c:forEach>
-	
-	<c:forEach var="success" items="${successList }" begin="0" end="${successList.size() }">
+
+	<c:forEach var="success" items="${successList }" begin="0"
+		end="${successList.size() }">
 		<c:if test="${success !=null }">
-			<p>맞춘문제 : ${success }</p><br>
+			<p>맞춘문제 : ${success }</p>
+			<br>
 		</c:if>
 	</c:forEach>
-	
+
 	<input type=button value="돌아가기" onclick=returnMultipleMain()></input>
-	
+
 </body>
 </html>
