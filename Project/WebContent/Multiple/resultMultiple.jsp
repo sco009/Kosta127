@@ -21,7 +21,6 @@
     }else if(request.getParameter("solveSuccessId")!=null){
         successList.add(request.getParameter("solveSuccessId"));	//마지막 문제 맞았는지 틀렸는지 체크해서 리스트에 추가
     }
-    System.out.print(successList);
     
     if(failList.size()>0){
     	for(int i=0; i<failList.size(); i++){
@@ -70,7 +69,7 @@
 <script src="../js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 
-<title>cosmos</title>
+<title>Cosmos</title>
 </head>
 <body>
 	<div class="col-md-12">
