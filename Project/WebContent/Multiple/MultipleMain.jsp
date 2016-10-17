@@ -13,19 +13,19 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <%	
-	MultipleService service = MultipleService.getInstance();	//답에대한 화면만 바꾸기 위한 체크
-	if(request.getParameter("reCheckCount")!=null){
-		failList = new ArrayList<String>();				//static failList 초기화
-		successList = new ArrayList<String>();
+	MultipleService service = MultipleService.getInstance();	
+	if(request.getParameter("reCheckCount")!=null){		//문제풀이중 카테고리, 난이도를 재설정했을 때를 위해
+		failList = new ArrayList<String>();				//static변수들을 초기화 해준다.
+		successList = new ArrayList<String>();			
 		checkCount=0;
 	}
 	
-	if(session.getAttribute("multipleSelect")!=null){
+	if(session.getAttribute("multipleSelect")!=null){		//카테고리와 난이도를 선택했을 시
 			int multipleSelectCount = (int)session.getAttribute("multipleSelectCount")-1;
 				List<Multiple> multipleCount = (List<Multiple>)session.getAttribute("multipleSelect");
 				
 				request.setAttribute("checkCount", checkCount);
-			if(request.getParameter("solveFailId")!=null){
+			if(request.getParameter("solveFailId")!=null){				  
 				failList.add(request.getParameter("solveFailId"));		  //틀린 문제 번호를 리스트에 담기.
 			}else if(request.getParameter("solveSuccessId")!=null){
 				successList.add(request.getParameter("solveSuccessId"));  //맞은 문제 번호를 리스트에 담기.
@@ -34,8 +34,8 @@
 			if(checkCount==multipleSelectCount){					
 				session.setAttribute("failList", failList);			//틀린문제 세션에 담기
 				session.setAttribute("successList", successList);	//맞은문제 세션에 담기
-				failList = new ArrayList<String>();				//static failList 초기화
-				successList = new ArrayList<String>();				//static successList 초기화
+			 	failList = new ArrayList<String>();				//마지막 문제 까지 재설정없이 다 풀면 static list 변수들을 초기화 해준다.
+				successList = new ArrayList<String>();			 
 				}
 				
 				
@@ -49,9 +49,9 @@
 					request.setAttribute("multipleSelect", multipleSelect);
 					request.setAttribute("multipleChoiceSelect", multipleChoiceSelect);
 					if(checkCount<multipleSelectCount){
-						checkCount++;	//마지막 번호와 번호가 같아지면 순서 증가를 멈춘다.
+						checkCount++;	//문제를 불러오기 위해 카운트값을 증가 시킨다..
 					}else if(checkCount==multipleSelectCount){
-						checkCount=0;
+						checkCount=0;	//마지막번호와 번호가 같아지면 순서 증가를 멈춘다.
 					}
 			}
 		

@@ -1,6 +1,5 @@
 function Next() {
-	var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked")
-			.val(); // 다음페이지로 넘어갈때 틀린 문제 아이디를 받기 위해.
+	var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val(); // 다음페이지로 넘어갈때 틀린 문제 아이디를 받기 위해.
 	var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();
 	var solveSelectId = $(":input:hidden[name=solveSelectId]").val();
 	if (selectAnswer !== Answer) {

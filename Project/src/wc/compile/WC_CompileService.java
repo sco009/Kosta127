@@ -34,12 +34,14 @@ public class WC_CompileService {
 		String wc_result = "";
 		String wc_errResult = "";
 		
+		
 		// class파일 삭제
 		String wc_className = wc_javaName + ".class";
 		wc_fileDelete(wc_className);
 		// java파일 생성
 		File wc_java = new File(wc_javaName + ".java");
 		wc_java.createNewFile();
+		System.out.println(wc_java.getAbsolutePath());
 
 		FileWriter wc_writer = new FileWriter(wc_java);
 		wc_writer.write(wc_code);

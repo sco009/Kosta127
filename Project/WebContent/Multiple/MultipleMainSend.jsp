@@ -20,7 +20,6 @@
 			JOptionPane.showMessageDialog(null, "난이도 선택해라");
 			response.sendRedirect("MultipleMain.jsp");
 		}else{
-		
 	
 	MultipleService service = MultipleService.getInstance();
 	session.removeAttribute("multipleSelectCount");

@@ -1,5 +1,5 @@
 body {
-   text-align: center;
+   text-align: left;
    background: #ebf4fb;
    background-color: #eee; 
    min-height: 95vh;
@@ -80,7 +80,7 @@ body {
    border-radius: .25em;
    padding: 0;
    box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
-   max-height: 15em;
+   max-height: 20em;
 }
 
 #drop.expanded label {
