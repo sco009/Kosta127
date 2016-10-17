@@ -42,12 +42,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="js/MultipleJs/MultipleJavaScript.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/kfonts2.css" rel="stylesheet">
+<script src="../js/MultipleJs/MultipleJavaScript.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/kfonts2.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
        $(document).ready(function() {
             $('[data-toggle="popover"]').popover({container: "body"});
@@ -56,13 +55,17 @@
 <title>cosmos</title>
 </head>
 <body>
-	<div class="progress">
-		<div class="progress-bar" role="progressbar"
-			aria-valuenow=${successProgress } aria-valuemin="0"
-			aria-valuemax="100" style="width:${successProgress }%;">
-			Success : ${successProgress }%</div>
+	<div class="col-md-12">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar"
+				aria-valuenow=${successProgress } aria-valuemin="0"
+				aria-valuemax="100" style="width:${successProgress }%;">
+				Success : ${successProgress }%
+			</div>
+		</div>
 	</div>
-
+	
+	<div class="col-md-12">
 	<c:forEach var="reMultiple" items="${reMultiple }" begin="0"
 		end="${reMultiple.size() }">
 		<c:if test="${reMultiple !=null }">
@@ -83,15 +86,7 @@
 		</c:if>
 		<br>
 	</c:forEach>
-
-	<c:forEach var="success" items="${successList }" begin="0"
-		end="${successList.size() }">
-		<c:if test="${success !=null }">
-			<p>맞춘문제 : ${success }</p>
-			<br>
-		</c:if>
-	</c:forEach>
-
+	</div>
 	<input type=button value="돌아가기" onclick=returnMultipleMain()></input>
 
 </body>

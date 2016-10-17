@@ -1,111 +1,145 @@
 body {
-  text-align: center;
-  background: #ebf4fb;
-  min-height: 95vh;
-  margin: 0;
-  padding: 0;
-  border-bottom: 5vh solid #3694d7;
-  font-family: "malgun gothic";
-  font-size: 14px;
-  letter-spacing:-1px
+   text-align: center;
+   background: #ebf4fb;
+   background-color: #eee; 
+   min-height: 95vh;
+   margin: 0;
+   padding: 0;
+   border-bottom: 5vh solid #3694d7;
+   font-family: "malgun gothic";
+   
+   font-size: 14px;
+   letter-spacing: -1px
 }
 
 #drop {
-  margin-top: 2vh;//vh높이 배율
- 
-  min-width: 12em;
-  position: relative;
-  display: inline-block;
-  margin-right: 20 em;
-  min-height: 2em;
-  max-height: 2em;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: left;
-  white-space: nowrap;
-  color: #444;
-  outline: none;
-  border: .06em solid transparent;
-  border-radius: 1em;
-  background-color: #cde4f5;
-  transition: 0.3s all ease-in-out;
+   margin-top: 2vh; 
+   position: relative;
+   display: inline-block;
+   margin-right: 20 em;
+   min-height: 2em;
+   max-height: 2em;
+   overflow: hidden;
+   cursor: pointer;
+   text-align: left;
+   white-space: nowrap;
+   color: #444;
+   outline: none;
+   border: .06em solid transparent;
+   border-radius: 1em;
+   background-color: #cde4f5;
+   transition: 0.3s all ease-in-out;
 }
+
 #drop input {
-  display: none;
+   display: none;
 }
+
 #drop label {
-  border-top: .06em solid #d9d9d9;
-  display: block;
-  height: 2em;
-  line-height: 2em;
-  padding-left: 1em;
-  padding-right: 3em;
-  cursor: pointer;
-  position: relative;
-  transition: 0.3s color ease-in-out;
+   border-top: .06em solid #d9d9d9;
+   display: block;
+   height: 2em;
+   line-height: 2em;
+   padding-left: 1em;
+   padding-right: 3em;
+   cursor: pointer;
+   position: relative;
+   transition: 0.3s color ease-in-out;
 }
+
 #drop label:nth-child(2) {
-  margin-top: 2em;
-  border-top: .06em solid #d9d9d9;
+   margin-top: 2em;
+   border-top: .06em solid #d9d9d9;
 }
-#drop input:checked + label {
-  display: block;
-  border-top: none;
-  position: absolute;
-  top: 0;
+
+#drop input:checked+label {
+   display: block;
+   border-top: none;
+   position: absolute;
+   top: 0;
 }
-#drop input:checked + label:nth-child(2) {
-  margin-top: 0;
-  position: relative;
+
+#drop input:checked+label:nth-child(2) {
+   margin-top: 0;
+   position: relative;
 }
+
 #drop::after {
-  content: "";
-  position: absolute;
-  right: 0.8em;
-  top: 0.9em;
-  border: 0.3em solid #3694d7;
-  border-color: #3694d7 transparent transparent transparent;
-  transition: .4s all ease-in-out;
+   content: "";
+   position: absolute;
+   right: 0.8em;
+   top: 0.9em;
+   border: 0.3em solid #3694d7;
+   border-color: #3694d7 transparent transparent transparent;
+   transition: .4s all ease-in-out;
 }
+
 #drop.expanded {
-  border: 0.06em solid #3694d7;
-  background: #fff;
-  border-radius: .25em;
-  padding: 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
-  max-height: 15em;
+   border: 0.06em solid #3694d7;
+   background: #fff;
+   border-radius: .25em;
+   padding: 0;
+   box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+   max-height: 15em;
 }
+
 #drop.expanded label {
-  border-top: .06em solid #d9d9d9;
+   border-top: .06em solid #d9d9d9;
 }
+
 #drop.expanded label:hover {
-  color: #3694d7;
+   color: #3694d7;
 }
-#drop.expanded input:checked + label {
-  color: #3694d7;
+
+#drop.expanded input:checked+label {
+   color: #3694d7;
 }
-.#drop.expanded::after {
-  transform: rotate(-180deg);
-  top: .55em;
+
+.
+#drop.expanded::after {
+   transform: rotate(-180deg);
+   top: .55em;
 }
+
 .label, .label:visited {
-background: #222 url(/data/201012/IJ12931325586279/overlay.png) repeat-x; 
-display: inline-block; 
-padding: 5px 10px 6px; 
-color: #fff; 
-text-decoration: none;
--moz-border-radius: 6px; 
--webkit-border-radius: 6px;
--moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
--webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-border-bottom: 1px solid rgba(0,0,0,0.25);
-position: relative;
-cursor: pointer
+   background: #222 url(/data/201012/IJ12931325586279/overlay.png) repeat-x;
+   display: inline-block;
+   padding: 5px 10px 6px;
+   color: #fff;
+   text-decoration: none;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+   position: relative;
+   cursor: pointer
 }
-.green.label, .green.button:visited      { background-color: #3694d7; }
-.green.label:hover                      { background-color: #3694d7; }
-.row-fluid{
+
+.green.label, .green.button:visited {
+   background-color: #3694d7;
+}
+
+.green.label:hover {
+   background-color: #3694d7;
+}
+
+.row-fluid {
    margin-bottom: 2vh;
 }
-/* 정답 css */
+
+/* 버튼 css */
+.multipleSelect_css {
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border: 2px solid #B0DAFF;
+   background: #D6EFFF;
+}
+
+/* 이미지 사이즈 */
+img{
+   width: 10%;
+   height: 10%;
+}

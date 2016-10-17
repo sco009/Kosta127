@@ -19,12 +19,18 @@ function selectMutlpleCheck() {
 	var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val();
 	var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val(); // 선택된 문제에 해당하는 값 가져오기
 	var check = "";
-
+	
 	if (selectAnswer === Answer) {
-		check = "O";
+		check = "<img src='../MultipleImage/ok.gif'>";
 	} else if (selectAnswer !== Answer) {
-		check = "X";
+		check = "<img src='../MultipleImage/x.gif'>";
 	}
+	
+	$("#radio-option-1").attr( "disabled",true );
+	$("#radio-option-2").attr( "disabled",true );
+	$("#radio-option-3").attr( "disabled",true );
+	$("#radio-option-4").attr( "disabled",true );
+	
 	document.getElementById("solveButton").style.display = "block";
 	document.getElementById("checkAnswer").innerHTML = check; // 선택된 문제에 해당하는
 																// 답 출력하기
@@ -44,9 +50,7 @@ function returnMultipleMain() {
 	location.href = "MultipleMain.jsp";
 }
 
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover({container: "body"});
-});
+
 
 $(function() {
 	$('.dropdown-el').click(function(e) {

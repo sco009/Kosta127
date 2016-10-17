@@ -8,7 +8,7 @@ public class Multiple implements Serializable {
 	String mulquestLevel;
 	String mulquestContent;
 	int mulquestPoint;
-	String mulquestExaminer;
+	String mulquestExaminer; 
 	String multipleChoiceId;
 	String mulquestAnswer;
 	
