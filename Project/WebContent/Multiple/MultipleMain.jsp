@@ -131,7 +131,7 @@
          <c:if test="${multipleSelect != null }">
          <!-- 보기 시작 -->
             <div>
-               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.mulquestAnswer }>
+               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.multipleAnswer }>
                 <input type="radio" name="multipleChoiceSelect" id="radio-option-1" value=${multipleChoiceSelect.multipleChoiceOne} onclick = choiceButton() />
                  <label for="radio-option-1">  ${multipleChoiceSelect.multipleChoiceOne } </label>
             </div>
