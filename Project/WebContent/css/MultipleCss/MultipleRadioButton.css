@@ -1,0 +1,19 @@
+
+input[type="radio"] {
+    display: none;
+}
+.checkd label {
+  cursor:pointer;
+  color: #555;
+}
+
+.checkd input[type="radio"]:checked + label {
+  color: #3694d7;
+}
+
+.checkd input[type="radio"] + label span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+}
