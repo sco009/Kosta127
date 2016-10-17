@@ -62,9 +62,5 @@ public class Multiple implements Serializable {
 		this.multipleChoiceId = multipleChoiceId;
 	}
 	
-	
-	
-	
-	
 }
 
