@@ -1,5 +1,5 @@
-<%@page import="Education.model.EducationContents"%>
-<%@page import="Education.service.EducationService"%>
+<%@page import="cosmos.education.model.EducationService"%>
+<%@page import="cosmos.education.model.EducationContents"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -61,10 +61,10 @@
 		}
 		$('p').mouseup(function() {    // 드레그한 값을 가져오기 위한 function
 			var txt = '';
-			if (window.getSelection) {
-				txt = window.getSelection();
-			} else if (document.getSelection) {
-				txt = document.getSelection();
+			if (window.POSTSelection) {
+				txt = window.POSTSelection();
+			} else if (document.POSTSelection) {
+				txt = document.POSTSelection();
 			} else if (document.selection) {
 				txt = document.selection.createRange().text;
 			} else {
@@ -180,7 +180,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>1. Java의 소개</h2>
-							<form id="submit_form" action="educationinsert.jsp" method="post">
+							<form id="submit_form" action="educationinsert.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts" value="null">
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -188,7 +188,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
-							<form action="education_delete.jsp" method="post">
+							<form action="education_delete.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -287,7 +287,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>2. 개발환경의 구축</h2>
-							 <form id="submit_form2" action="educationinsert.jsp" method="post">
+							 <form id="submit_form2" action="educationinsert.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -295,7 +295,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
-							<form action="education_delete.jsp" method="post">
+							<form action="education_delete.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -345,7 +345,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>3. 자바 프로그래밍 과정</h2>
-								<form id="submit_form3" action="educationinsert.jsp" method="post">
+								<form id="submit_form3" action="educationinsert.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -353,7 +353,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
-							<form action="education_delete.jsp" method="post">
+							<form action="education_delete.jsp" method="POST">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">

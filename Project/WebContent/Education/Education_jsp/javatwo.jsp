@@ -1,5 +1,5 @@
-<%@page import="Education.model.EducationContents"%>
-<%@page import="Education.service.EducationService"%>
+<%@page import="cosmos.education.model.EducationService"%>
+<%@page import="cosmos.education.model.EducationContents"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

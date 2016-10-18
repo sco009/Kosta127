@@ -1,4 +1,4 @@
-package Education.model;
+package cosmos.education.model;
 
 import java.io.Serializable;
 

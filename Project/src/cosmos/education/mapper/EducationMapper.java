@@ -1,9 +1,9 @@
-package Education.mapper;
+package cosmos.education.mapper;
 
 import java.util.ArrayList;
 
-import Education.model.EducationContents;
-import Education.model.EducationManager;
+import cosmos.education.model.EducationContents;
+import cosmos.education.model.EducationManager;
 
 
 public interface EducationMapper {
