@@ -1,4 +1,3 @@
-
 <%@page import="cosmos.education.model.EducationService"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

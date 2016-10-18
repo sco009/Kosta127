@@ -1,4 +1,3 @@
-
 <%@page import="cosmos.education.model.EducationService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
