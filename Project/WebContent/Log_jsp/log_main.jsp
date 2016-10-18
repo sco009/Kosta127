@@ -80,7 +80,7 @@
 							</div>
 						</label>
 						<div class="ma">
-							<a class="plate" href="../Education/education_main.jsp"> <i class="fa fa-book"
+							<a class="plate" href="../EducationJSP/education_main.jsp"> <i class="fa fa-book"
 								aria-hidden="true"></i>
 							</a> <a class="plate" href="../Multiple/MultipleMain.jsp"> <i
 								class="fa fa-pencil" aria-hidden="true"></i>

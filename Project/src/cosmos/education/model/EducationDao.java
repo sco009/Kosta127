@@ -3,21 +3,15 @@ package cosmos.education.model;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-
-
-
-
-
-
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+
 import cosmos.education.mapper.EducationMapper;
-import cosmos.education.model.EducationContents;
-import cosmos.education.model.EducationManager;
+
 
 public class EducationDao {
 	private static EducationDao dao = new EducationDao();
