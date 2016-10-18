@@ -65,8 +65,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Cosmos</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/kfonts2.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/MultipleJs/MultipleJavaScript.js"></script>
@@ -75,6 +73,9 @@
 
 </head>
 <body>
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
+
 	<div class="row-fluid">
 		<div class="col-md-12">
     		<div class="row-fluid">
