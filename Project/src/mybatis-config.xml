@@ -7,6 +7,8 @@
    <typeAliases>
      <typeAlias type="cosmos.multiple.model.Multiple" alias="Multiple"/>
      <typeAlias type="cosmos.multiple.model.MultipleChoice" alias="MultipleChoice"/>
+     <typeAlias type="cosmos.login.model.Member" alias="Member"/>
+	 <typeAlias type="cosmos.login.model.Login" alias="Login"/>
    </typeAliases>
    
    <environments default="development">
@@ -20,6 +22,7 @@
    
    <mappers>
    		   <mapper resource="cosmos/multiple/mapper/Multiple.xml"/>
+   		   <mapper resource="cosmos/login/mapper/Member.xml"/>
    </mappers>
    
 </configuration>
