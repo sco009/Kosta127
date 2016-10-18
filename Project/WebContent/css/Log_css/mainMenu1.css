@@ -1,0 +1,122 @@
+@CHARSET "EUC-KR";
+
+#check2{
+  display: none;
+}
+
+.main2, .ma2 {
+   margin: auto;
+   position: absolute;
+   top: 40vh;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+}
+
+.main2 {
+	background-color: #993800;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	z-index: 50;
+}
+
+.main2:hover {
+   background-color: #BB4513;
+}
+
+.main2:active {
+   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35), inset 1px 2px 2px
+      rgba(0, 0, 0, 0.35);
+   background-color: #993800;
+}
+
+.main2 .title2 {
+   margin: auto;
+   position: absolute;
+   top: 35px;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 80px;
+   font-size: 3em;
+   line-height: 80px;
+   text-align: center;
+   color: #fafafa;
+}
+
+.ma2 {
+   z-index: 10;
+}
+
+.plate2 {
+   margin: auto;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 60px;
+   height: 60px;
+   opacity: 0;
+   border-radius: 50%;
+   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35);
+   -webkit-transition: all 0.4s ease-in;
+   -moz-transition: all 0.4s ease-in;
+   transition: all 0.4s ease-in;
+}
+
+.plate2 i {
+   width: 100%;
+   font-size: 2em;
+   line-height: 53px;
+   text-align: center;
+   color: #333;
+   margin-top: 5px;
+}
+
+.plate2:hover i {
+   color: #111;
+}
+
+.plate2:nth-of-type(1) {
+   background-color: #F4A460;
+   -webkit-transition-delay: 0s;
+   -moz-transition-delay: 0s;
+   transition-delay: 0s;
+}
+
+.plate2:nth-of-type(2) {
+   background-color: #D2691E;
+   -webkit-transition-delay: 0.1s;
+   -moz-transition-delay: 0.1s;
+   transition-delay: 0.1s;
+}
+
+.plate2:nth-of-type(3) {
+   background-color: #CD853F;
+   -webkit-transition-delay: 0.2s;
+   -moz-transition-delay: 0.2s;
+   transition-delay: 0.2s;
+}
+
+#check2:checked ~ .main2+.ma2 .plate2 {
+   opacity: 1;
+}
+
+#check2:checked ~ .main2+.ma2 .plate2:nth-of-type(1) {
+   top: -180%;
+}
+
+#check2:checked ~ .main2+.ma2 .plate2:nth-of-type(2) {
+   right: -130%;
+   bottom: -130%;
+}
+
+#check2:checked ~ .main2+.ma2 .plate2:nth-of-type(3) {
+   bottom: -130%;
+   left: -130%;
+}

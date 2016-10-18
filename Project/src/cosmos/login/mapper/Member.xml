@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 네임스페이스 필수 -->
+<!-- crud메소드 사용, mapper-interface방식(추천) 총 두가지 -->
+<mapper namespace="cosmos.login.mapper.MemberMapper">
+	<cache />
+	
+	<insert id="insertMember" parameterType="Member">
+		insert into member(
+			memberID , memberPw , memberEmail, memberName , isLeader, memberPhoneNum
+		)values(
+			#{memberID,jdbcType=VARCHAR},#{memberPw,jdbcType=VARCHAR}, #{memberEmail,jdbcType=VARCHAR}, 
+			#{memberName ,jdbcType=VARCHAR}, 0, #{memberPhoneNum ,jdbcType=VARCHAR}
+		) 
+		
+		<!-- INSERT INTO MEMBER VALUES('HSB','1962','hsb1962@hanmail.net','홍수빈','N','01030011962'); -->
+		
+		<!-- insert into guest(
+			id, password, name, phone_n, address, email, birth
+		)values(
+			#{id},#{password}, #{name}, 
+			#{phone_n}, #{address}, #{email}, #{birth}
+		) -->
+	</insert>
+	
+	<select id="selectMember" parameterType="String" resultType="Member">
+		select * from member
+			where memberID = #{memberID,jdbcType=VARCHAR} 
+	</select>
+	
+	<select id="listMember" resultType="Member">
+		select * from member
+	</select>
+	
+	<insert id="currentLoginMember" parameterType="Login">
+		insert into CurrentLoginMemberList(
+			memberID, memberName 
+		)values(
+			#{memberID, jdbcType=VARCHAR}, #{memberName, jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<insert id="currentLogoutMember" parameterType="Login">
+		delete from CurrentLoginMemberList where memberID = #{memberID,jdbcType=VARCHAR}
+	</insert>
+	
+	<update id="updateInfo" parameterType="Member">
+		update member set memberPw = #{memberPw, jdbcType=VARCHAR}, memberEmail=#{memberEmail,jdbcType=VARCHAR}, memberName = #{memberName,jdbcType=VARCHAR}, memberPhoneNum=#{memberPhoneNum,jdbcType=VARCHAR}
+			where memberID = #{memberID,jdbcType=VARCHAR}
+	</update>
+</mapper>
