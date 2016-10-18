@@ -5,7 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-
+import cosmos.education.model.EducationContents;
+import cosmos.education.model.EducationManager;
 
 public class EducationService {
 	private static EducationDao dao;
