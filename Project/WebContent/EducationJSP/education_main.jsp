@@ -21,14 +21,14 @@
 
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css"
-	href="Education_jsp/css/default.css" />
+	href="../css/education/default.css" />
 <link rel="stylesheet" type="text/css"
-	href="Education_jsp/css/style2.css" />
+	href="../css/education/style2.css" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<script src="Education_jsp/js/modernizr.custom.js"></script>
+<script src="../js/educationJS/Education_jsp/js/modernizr.custom.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -42,21 +42,21 @@
 		<div class="main clearfix">
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javaone.jsp?dataClassify=javaone&memberID=<%=memberID%>"><div
+					href="javaone.jsp?dataClassify=javaone&memberID=<%=memberID%>"><div
 						class="circle">
 						<h1>자바의 소개</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javatwo.jsp?dataClassify=javatwo"><div
+					href="javatwo.jsp?dataClassify=javatwo&memberID=<%=memberID%>"><div
 						class="circle">
 						<h1>데이터형과 연산자</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javathree.jsp?dataClassify=javathree"><div
+					href="javathree.jsp?dataClassify=javathree&memberID=<%=memberID%>"><div
 						class="circle">
 						<h1>제어문과 배열</h1>
 					</div></a>
