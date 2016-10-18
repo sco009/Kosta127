@@ -62,8 +62,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/kfonts2.css" rel="stylesheet">
+
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="../js/MultipleJs/MultipleJavaScript.js"></script>
@@ -72,7 +71,11 @@
 <title>Cosmos</title>
 </head>
 <body>
+<jsp:include page="../Log_module/header.jsp" />
+<br><br><br>
+		
 	<div class="col-md-12">
+		<c:if test="${successProgress !=100 }">
 		<div class="progress">
 			<c:if test="${successProgress!=0 }">
 			<div class="progress-bar" role="progressbar"
@@ -86,9 +89,12 @@
 				aria-valuenow=100 aria-valuemin="0"
 				aria-valuemax="100" style="width:100%;">
 				Success : 0
-				
 			</c:if>
 		</div>
+		</c:if>
+		<c:if test="${successProgress==100 }">
+				<img src='../MultipleImage/total100.jpg'>
+		</c:if>
 	</div>
 	
 	<div class="col-md-12">

@@ -1,4 +1,4 @@
-<%@page import="wc.compile.WC_CompileService"%>
+<%@page import="cosmos.compile.model.WC_CompileService"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
@@ -48,11 +48,6 @@
 		src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 </head>
 <style type='text/css'>
-      
-      body{
-         padding:50px;
-      }
-      
       textarea{
          font-family: monospace;
          font-size:13px;
@@ -175,7 +170,8 @@
 	    });
 </script>
 <body>
-
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
 <div id="main">
 	<div class="row" id="demo1">
       <div class="col-md-4">

@@ -1,5 +1,5 @@
-<%@page import="Education.model.EducationContents"%>
-<%@page import="Education.service.EducationService"%>
+<%@page import="cosmos.education.model.EducationService"%>
+<%@page import="cosmos.education.model.EducationContents"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -138,7 +138,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>1. 기본구조</h2>
-							<form id="submit_form" action="educationinsert.jsp">
+							<form id="submit_form" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -146,7 +146,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -178,7 +178,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>2. 식별자(Identifier)</h2>
-							<form id="submit_form2" action="educationinsert.jsp">
+							<form id="submit_form2" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -186,7 +186,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -215,7 +215,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>3. 예약어(Keyword)</h2>
-							<form id="submit_form3" action="educationinsert.jsp">
+							<form id="submit_form3" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -223,7 +223,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -234,7 +234,7 @@
 								자바에서는 정해져 있는 식별자가 있다. 그래서 이 예약어를 변수이름으로 사용하게 되면 에러가 생기 므로 주의하자.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_two_image1.png">
+								<img src="edu_image/java_two_image1.png">
 							</div>
 						</div>
 					</div>
@@ -243,7 +243,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>4. 데이터 형</h2>
-							<form id="submit_form4" action="educationinsert.jsp">
+							<form id="submit_form4" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="4">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -251,7 +251,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="4">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -271,7 +271,7 @@
 							</p>
 							<br>
 							<div align="center">
-								<img src="image/java_image1.png">
+								<img src="edu_image/java_image1.png">
 							</div>
 
 							<p>
@@ -287,7 +287,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>5. 상수(Constant)</h2>
-							<form id="submit_form5" action="educationinsert.jsp">
+							<form id="submit_form5" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="5">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -295,7 +295,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="5">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -308,7 +308,7 @@
 								문자형 상수 : 문자형 변수에 할당되는 값은 ‘ ’ 사이에 들어 있는 문자이다. ‘a' 와 같음.
 							</p>
 							<div align="center">
-								<img src="image/java_image2.png">
+								<img src="edu_image/java_image2.png">
 							</div>
 							<p>
 								․ 정수형 상수는 우리가 흔히 쓰는 일반적인 정수를 말하며 8, 10, 16진수 형태로 나타낸다.<br>10진수는
@@ -326,7 +326,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>6. 변수(Variable)</h2>
-							<form id="submit_form6" action="educationinsert.jsp">
+							<form id="submit_form6" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="6">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -334,7 +334,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form6')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="6">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -353,7 +353,7 @@
 								설명했듯이 공간을 할당받으면 그 공간에 값을 일반적인 데이터가 아니라 ‘주소’가 들어간다고 설명하였다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image3.png">
+								<img src="edu_image/java_image3.png">
 							</div>
 						</div>
 					</div>
@@ -362,7 +362,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>7. 데이터 변환과 캐스팅</h2>
-							<form id="submit_form7" action="educationinsert.jsp">
+							<form id="submit_form7" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="7">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -370,7 +370,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form7')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="7">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -384,7 +384,7 @@
 								발생.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image4.png">
+								<img src="edu_image/java_image4.png">
 							</div>
 							<p>
 								․ byte aaa = 5000;<br>이렇게 하게 되면 값이 다르게 할당된다. byte의 범위의 수를
@@ -402,7 +402,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>8. 연산자</h2>
-							<form id="submit_form8" action="educationinsert.jsp">
+							<form id="submit_form8" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="8">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -410,7 +410,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form8')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="8">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -426,7 +426,7 @@
 								연산식이며, 단항 연산자는 한 연산항에 대해서 계산을 하는것이다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image5.png">
+								<img src="edu_image/java_image5.png">
 							</div>
 							<p>
 								int a = 10, b = 20; // 변수를 초기화 시킨다.<br>
@@ -442,7 +442,7 @@
 								․ 관계연산자 : 연산항 간의 관계를 통해서 서로 크기(값)을 비교하여 결과값이 논리형으로 나온다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image6.png">
+								<img src="edu_image/java_image6.png">
 							</div>
 							<p>
 								int a = 10, b = 20, c = 15;<br> System.out.println(a + ">"
@@ -454,7 +454,7 @@
 
 							</p>
 							<div align="center">
-								<img src="image/java_image7.png">
+								<img src="edu_image/java_image7.png">
 							</div>
 							<p>
 								int a = 10, b = 20;<br> if(a==10 && b==20)<br>
@@ -470,7 +470,7 @@
 								연산을 하는 것이라고 보면 된다.<Br>
 							</p>
 							<div align="center">
-								<img src="image/java_image8.png">
+								<img src="edu_image/java_image8.png">
 							</div>
 							<p>
 								무슨말인지.. 잘 모를것이다.. 나 또한 맨 처음 이게 무슨 말인지 잘 몰랐으며<Br> 지금 이것을 어떻게
@@ -479,7 +479,7 @@
 								8비트이므로.)이다.<Br>
 							</p>
 							<div align="center">
-								<img src="image/java_image9.png">
+								<img src="edu_image/java_image9.png">
 							</div>
 							<p>
 								엇 그렇다면 << 연산자 같은 경우 남은 공백을 0으로 채웠는데 맨 위에 >> 연산자에서 남은 공백은 어 떻게
@@ -490,7 +490,7 @@
 								<br>비트 논리 연산<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image10.png">
+								<img src="edu_image/java_image10.png">
 							</div>
 							<p>
 								nt a = 3; &nbsp; // 0000 0011<br> int b = 4;&nbsp; // 0000
@@ -502,7 +502,7 @@
 								<br>
 							</p>
 							<div align="center">
-								<img src="image/java_image11.png">
+								<img src="edu_image/java_image11.png">
 							</div>
 							<p>
 								short a = 5;<br> int b = 10;<Br> long e = 0;<Br>
@@ -518,11 +518,11 @@
 
 							</p>
 							<div align="center">
-								<img src="image/java_image12.png">
+								<img src="edu_image/java_image12.png">
 							</div>
 							<p>연산자 우선 순위</p>
 							<div align="center">
-								<img src="image/java_image13.png">
+								<img src="edu_image/java_image13.png">
 							</div>
 						</div>
 					</div>

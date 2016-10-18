@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	String memberID = request.getParameter("memberID");
-	request.setAttribute("memberID", memberID);
+	String memberID = (String)session.getAttribute("memberID");
+
+	request.setAttribute("memberID",memberID);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,25 +35,28 @@
 <title>자바 ! 교육 자료</title>
 </head>
 <body>
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
+		
 	<div class="container">
 		<div class="main clearfix">
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javaone.jsp?dataClassify=javaone&memberID=ohwoosung"><div
+					href="Education_jsp/javaone.jsp?dataClassify=javaone&memberID=<%=memberID%>"><div
 						class="circle">
 						<h1>자바의 소개</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javatwo.jsp?dataClassify=javatwo&memberID=<%=memberID%>"><div
+					href="Education_jsp/javatwo.jsp?dataClassify=javatwo"><div
 						class="circle">
 						<h1>데이터형과 연산자</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="Education_jsp/javathree.jsp?dataClassify=javathree&memberID=<%=memberID%>"><div
+					href="Education_jsp/javathree.jsp?dataClassify=javathree"><div
 						class="circle">
 						<h1>제어문과 배열</h1>
 					</div></a>

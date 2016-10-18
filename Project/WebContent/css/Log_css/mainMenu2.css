@@ -1,0 +1,85 @@
+@CHARSET "EUC-KR";
+
+#check3 {
+	display: none;
+}
+
+.main3, .container3 {
+	margin: auto;
+	position: absolute;
+	top: 40vh;
+	right: 0;
+	bottom: 0;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.main3 {
+	background-color: #993800;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	z-index: 50;
+}
+
+.main3:hover {
+	background-color: #BB4513;
+}
+
+.main3:active {
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35), inset 1px 2px 2px
+		rgba(0, 0, 0, 0.35);
+	background-color: #993800;
+}
+
+.main3 .title3 {
+	margin: auto;
+	position: absolute;
+	top: 35px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	font-size: 3em;
+	line-height: 80px;
+	text-align: center;
+	color: #fafafa;
+}
+
+.container3 {
+	z-index: 10;
+}
+
+.plate3 {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+	border-radius: 50%;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.35);
+	-webkit-transition: all 0.4s ease-in;
+	-moz-transition: all 0.4s ease-in;
+	transition: all 0.4s ease-in;
+}
+
+.plate3 i {
+	width: 100%;
+	font-size: 2em;
+	line-height: 53px;
+	text-align: center;
+	color: #333;
+}
+
+.plate3:hover i {
+	color: #111;
+}
+
+#check3:checked ~ .main3+.container3 .plate3 {
+	opacity: 1;
+}

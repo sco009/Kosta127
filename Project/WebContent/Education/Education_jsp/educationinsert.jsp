@@ -1,4 +1,4 @@
-<%@page import="Education.service.EducationService"%>
+<%@page import="cosmos.education.model.EducationService"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -7,7 +7,7 @@
 	String dataClassify = request.getParameter("dataClassify");
 
 	String hl_contents = request.getParameter("hl_contents");
-	String memberID = request.getParameter("memberID");
+	String memberID = (String)session.getAttribute("memberID");
 	String pages = request.getParameter("pages");
 	int re = 0;
 	int rt = 0;

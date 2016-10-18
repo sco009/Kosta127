@@ -1,5 +1,5 @@
-<%@page import="Education.model.EducationContents"%>
-<%@page import="Education.service.EducationService"%>
+<%@page import="cosmos.education.model.EducationService"%>
+<%@page import="cosmos.education.model.EducationContents"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -144,7 +144,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>1. 제어문</h2>
-							<form id="submit_form" action="educationinsert.jsp">
+							<form id="submit_form" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -152,7 +152,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -190,7 +190,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>2. 조건문(if문, switch case문)</h2>
-							<form id="submit_form2" action="educationinsert.jsp">
+							<form id="submit_form2" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -198,7 +198,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -209,7 +209,7 @@
 								․ if문<br> if문은 참, 거짓으로 인한 결과를 통해서 문장을 선택적으로 실행할 수 있게 해준다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three1.png">
+								<img src="edu_image/java_three1.png">
 							</div>
 							<p>
 								실습<br> 01 public class java3-1{<br> 02public static
@@ -221,7 +221,7 @@
 								다중if문은 조건이 여러 가지가 있을경우에 많이 쓰이며 다중이므로 {} 중괄호를 사용한다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three2.png">
+								<img src="edu_image/java_three2.png">
 							</div>
 							<p>
 								실습<br> 01 public class java3-2{<br> 02 public static
@@ -240,7 +240,7 @@
 							</p>
 							<br>
 							<div align="center">
-								<img src="image/java_three3.png">
+								<img src="edu_image/java_three3.png">
 							</div>
 							<p>
 								해석<br> 01 : int형 a변수 선언 및 초기화<br> 02 : switch(a) 즉
@@ -259,7 +259,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>3. 반복문(for문, while문)</h2>
-							<form id="submit_form3" action="educationinsert.jsp">
+							<form id="submit_form3" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -267,7 +267,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -280,7 +280,7 @@
 								for문<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three4.png">
+								<img src="edu_image/java_three4.png">
 							</div>
 							<p>
 								for문을 만나게 되면.<br> ① 초기화 문장 실행<br> ② 반복 조건 문장 실행 (조건
@@ -288,7 +288,7 @@
 								④증감문장 실행, 다시 ②->③->④번 반복<br> <br>
 							</p>
 							<div align="center">
-								<img src="image/java_three5.png">
+								<img src="edu_image/java_three5.png">
 							</div>
 							<p>
 								해석<br> 03 : int형 i변수를 1값으로 초기화 하였고, i가 10보다 작거나 같을때까지 04행을
@@ -296,14 +296,14 @@
 								실행되면서 반복<br> ․ while문<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three6.png">
+								<img src="edu_image/java_three6.png">
 							</div>
 							<p>
 								while문은 동일한 명령문을 여러 번 반복 실행할 때 사용한다. for문과 달리 초기화 문장과 증감 문장 이
 								없다. 그래서 먼저 반복 조건 문장이 참일 경우 반복으로 명령문을 수행하고 거짓일 경우는 한번도 실행되지 않는다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three7.png">
+								<img src="edu_image/java_three7.png">
 							</div>
 							<p>
 								해석<br> 01 : while문안에서 초기값을 줄수 없으므로 미리 a변수에 초기값을 할당한다.<br>
@@ -313,7 +313,7 @@
 								검사한다.<br> 밑에 코드를 보면 이해가 빨라질것이다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three8.png">
+								<img src="edu_image/java_three8.png">
 							</div>
 							<p>
 								해석<br> 01 : for문과 다르게 초기값을 먼저 설정해준다.<br> 02 : ‘ do { ‘
@@ -328,7 +328,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>4. 분기문(break문, continue문)</h2>
-							<form id="submit_form4" action="educationinsert.jsp">
+							<form id="submit_form4" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="4">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -336,7 +336,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="4">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -351,7 +351,7 @@
 								실행문은 실행되지 않는다. 밑 의 코드를 살펴보자.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three9.png">
+								<img src="edu_image/java_three9.png">
 							</div>
 							<p>
 								02 : 02행부터 04행까지는 반복문을 그대로 실행한다.<br> 05 : if문을 만나서 조건이 거짓일
@@ -365,7 +365,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>5. 배열</h2>
-							<form id="submit_form5" action="educationinsert.jsp">
+							<form id="submit_form5" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="5">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -373,7 +373,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="5">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -387,7 +387,7 @@
 								<br> a -> 배열명<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three10.png">
+								<img src="edu_image/java_three10.png">
 							</div>
 							<p>
 								위 a[0]이 배열의 첫 번째 주소(배열의 index)이다.<br> <br> ․ 배열의 선언<br>
@@ -396,7 +396,7 @@
 								없고 초기화나 생성하기 전까지는 배열 요소를 이용할 수 없다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three11.png">
+								<img src="edu_image/java_three11.png">
 							</div>
 							<p>
 								․ 배열의 초기화<br> 배열의 초기값을 지정하는 것인데 생성되지 않는 배열을 초기화시키고자 할 경우에는
@@ -404,14 +404,14 @@
 								할당받기 때문에 바로 사용이 가능하다.<Br>
 							</p>
 							<div align="center">
-								<img src="image/java_three12.png">
+								<img src="edu_image/java_three12.png">
 							</div>
 							<p>
 								․ 배열의 생성(메모리 할당)<br> 배열은 데이터의 묶음이므로 일반적으로 변수로 나타내듯 이용하면
 								안된다.<br> 초기화 없이 단지 메모리를 할당해 주는것이다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three13.png">
+								<img src="edu_image/java_three13.png">
 							</div>
 							<p>
 								생성된 배열은 초기화를 시켜주지 않아도 정수형의 경우 0으로 초기화 되며 그 외에는 null로 초기화됨.<br>
@@ -419,7 +419,7 @@
 								대입시키는것은 일반변수에 값을 넣는것 과 같다.<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three14.png">
+								<img src="edu_image/java_three14.png">
 							</div>
 							<p>
 								메모리에 할당받은 각 배열의 요소에 값을 주었다.<br> <br> 엇..근데 위에 배열의 초기화를
@@ -432,7 +432,7 @@
 								level[] = new int[5]<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three15.png">
+								<img src="edu_image/java_three15.png">
 							</div>
 							<br>
 							<p>
@@ -440,7 +440,7 @@
 								int[3][5]<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three16.png">
+								<img src="edu_image/java_three16.png">
 							</div>
 							<br>
 							<p>
@@ -450,18 +450,18 @@
 								배열 초기화<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three17.png">
+								<img src="edu_image/java_three17.png">
 							</div>
 							<br>
 							<p>좀 더 이해를 쉽게 하기 위해서 메모리 할당할 때 “ level [①] [②] ” 차이를 그림으로 보여주겠다.<br>
 							<br>int level[][];<br>①level = new int[2][];<br></p>
 							<div align="center">
-								<img src="image/java_three18.png">
+								<img src="edu_image/java_three18.png">
 							</div>
 							<p>②level = new int[2][3];<br>
 							</p>
 							<div align="center">
-								<img src="image/java_three19.png">
+								<img src="edu_image/java_three19.png">
 							</div>
 						</div>
 					</div>
