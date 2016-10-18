@@ -1,4 +1,4 @@
-<%@page import="wc.compile.WC_CompileService"%>
+<%@page import="cosmos.wc.compile.WC_CompileService"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
