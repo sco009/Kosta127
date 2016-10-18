@@ -29,6 +29,7 @@
   		from MULTIPLETYPEQUESTION
   		where mulquestId = #{mulquestId}
   	</select>
+
   	
   </mapper>
   
