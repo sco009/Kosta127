@@ -64,7 +64,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Kosmos</title>
+<title>Cosmos</title>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/kfonts2.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -131,7 +131,7 @@
          <c:if test="${multipleSelect != null }">
          <!-- 보기 시작 -->
             <div>
-               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.mulquestAnswer }>
+               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.multipleAnswer }>
                 <input type="radio" name="multipleChoiceSelect" id="radio-option-1" value=${multipleChoiceSelect.multipleChoiceOne} onclick = choiceButton() />
                  <label for="radio-option-1">  ${multipleChoiceSelect.multipleChoiceOne } </label>
             </div>

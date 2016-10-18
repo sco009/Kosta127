@@ -10,13 +10,14 @@ public class Multiple implements Serializable {
 	int mulquestPoint;
 	String mulquestExaminer; 
 	String multipleChoiceId;
-	String mulquestAnswer;
+	String multipleAnswer;
 	
-	public String getMulquestAnswer() {
-		return mulquestAnswer;
+
+	public String getMultipleAnswer() {
+		return multipleAnswer;
 	}
-	public void setMulquestAnswer(String mulquestAnswer) {
-		this.mulquestAnswer = mulquestAnswer;
+	public void setMultipleAnswer(String multipleAnswer) {
+		this.multipleAnswer = multipleAnswer;
 	}
 	public String getMulquestId() {
 		return mulquestId;
@@ -60,10 +61,6 @@ public class Multiple implements Serializable {
 	public void setMultipleChoiceId(String multipleChoiceId) {
 		this.multipleChoiceId = multipleChoiceId;
 	}
-	
-	
-	
-	
 	
 }
 

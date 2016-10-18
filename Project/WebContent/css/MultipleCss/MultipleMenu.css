@@ -138,6 +138,10 @@ body {
    background: #D6EFFF;
 }
 
+.returnButton{
+	margin-top: 5em;
+}
+
 /* 이미지 사이즈 */
 img{
    width: 10%;
