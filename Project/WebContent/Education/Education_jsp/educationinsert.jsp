@@ -12,7 +12,7 @@
 	int re = 0;
 	int rt = 0;
 	try {
-		re = service.inserteducation(request);
+		re = service.inserteducation(request);  // education_contents에 입력하기 위한 service 
 
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -20,7 +20,7 @@
 	System.out.println(re);
 	if (re > 0) {
 		try {
-			rt = service.insertedumanager(request);
+			rt = service.insertedumanager(request);  //edumanager에 입력하기 위한 service 
 			System.out.println(rt);
 		} catch (Exception e) {
 			e.printStackTrace();

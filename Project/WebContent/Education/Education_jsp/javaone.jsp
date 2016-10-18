@@ -16,10 +16,10 @@
 	}
 	
 			EducationService service = EducationService.getInstance();
-			List<EducationContents> list = service.selectmemberID(memberID);
+			List<EducationContents> list = service.selectmemberID(memberID);  //해당 아이디에 입력되어있는 hl_contents값 가져옴,
 			for(int i = 0 ; i < list.size() ; i ++){
 				if(i>0){
-		 			data+="/";
+		 			data+="/";   // 각각의 hl_contents사이에  "/" 추가 
 		 		}
 				data+= list.get(i).gethl_contents();
 			}
@@ -50,16 +50,16 @@
 
 	$(document).ready(function() {
 
-			start();
-		var page ='<%=pages%>';
+		start();  //hl_contents사이에  "/"있는것을 기준으로 데이터 분리 하기 위한 function
+		var page ='<%=pages%>'; 
 		if(page >  1){
 			for(var i = 1 ; i < page ; i ++){
 				setTimeout(function(page){
-					click(page)
+					click(page)    // 해당 페이지를 찾아가기 위해 클릭하는 function
 				}, i*1000);
 			}
 		}
-		$('p').mouseup(function() {
+		$('p').mouseup(function() {    // 드레그한 값을 가져오기 위한 function
 			var txt = '';
 			if (window.getSelection) {
 				txt = window.getSelection();
@@ -71,8 +71,7 @@
 				return;
 			}
 
-			txt = String(txt); // Type Casting	
-			// txt = "" + txt; // 같음. 역시 자바스크립트		    
+			txt = String(txt); 
 			$('.texts').val(txt);
 		});
 	});
@@ -85,12 +84,12 @@
 	function start(){
 		var datas = '<%=data%>'
 			var list = datas.split("/");
-			for (var i = 0; i < list.length; i++) {
-				wordSearch(list[i]);
+			for (var i = 0; i < list.length; i++) { 
+				wordSearch(list[i]);   // 잘라진 hl_contents를 앞뒤에 span을 추가 하기 위한 function
 			}
 		
 	} 
-	function wordSearch(word,form_id) {
+	function wordSearch(word,form_id) {   //입력 받은 값을 앞뒤에 span 을 줘서 배경 색을 노란새으로 변경 
 		console.log(word);
 		$ptags = $('div.scroller p');
 
@@ -106,20 +105,41 @@
 		if(typeof form_id != 'undefined'){
 			$("#"+form_id).submit();
 		}
-// 		$.ajax({
-// 			type:'post',
-// 			url:'educationinsert.jsp',
-// 			data:$("#"+form_id).serialize(),
-// 			error:function(xhr,status,error){
-// 				console.log(error);
-// 			},
-// 			success : function(data){
-// 				console.log(data);
-// 			}
-// 		});
+
 		
 	}
 </script>
+<style>
+.button-3d {
+  position:relative;
+  width: auto;
+  display:inline-block;
+  color:#ecf0f1;
+  text-decoration:none;
+  border-radius:5px;
+  border:solid 1px #f39c12;
+  background:#e67e22;
+  text-align:center;
+  padding:16px 18px 14px;
+  margin: 12px;
+  
+  -webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 6px 0px #d35400;
+}
+
+.button-3d:active{
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
+}
+</style>
 </head>
 
 <body>
@@ -132,7 +152,7 @@
 				<li><a href="#item2">2. 개발환경의 구축</a></li>
 				<li><a href="#item3">3. 자바 프로그래밍 과정</a></li>
 			</ul>
-
+			<a href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h4>다음장으로</h4> </a>
 		</div>
 
 		<div class="bb-custom-wrapper">
@@ -146,7 +166,7 @@
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -154,7 +174,7 @@
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 						
 						
@@ -253,7 +273,7 @@
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -261,7 +281,7 @@
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form> 
 							<p>JDK의 설치</p>
 							<br>
@@ -311,7 +331,7 @@
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -319,7 +339,7 @@
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							
 							<p>
@@ -402,5 +422,6 @@
 			Page.init();
 		});
 	</script>
+	
 </body>
 </html>

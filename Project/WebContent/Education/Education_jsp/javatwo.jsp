@@ -108,17 +108,6 @@
 		if(typeof form_id != 'undefined'){
 			$("#"+form_id).submit();
 		}
-// 		$.ajax({
-// 			type:'post',
-// 			url:'educationinsert.jsp',
-// 			data:$("#"+form_id).serialize(),
-// 			error:function(xhr,status,error){
-// 				console.log(error);
-// 			},
-// 			success : function(data){
-// 				console.log(data);
-// 			}
-// 		});
 		
 	}
 </script>
@@ -139,7 +128,8 @@
 				<li><a href="#item7">7. 데이터 변환과 캐스팅</a></li>
 				<li><a href="#item8">8. 연산자</a></li>
 			</ul>
-
+<a href="javaone.jsp?dataClassify=javatone&memberID=ohwoosung"><h4>이전장으로</h4> </a>
+<a href="javathree.jsp?dataClassify=javathree&memberID=ohwoosung"><h4>다음장으로</h4> </a>
 		</div>
 
 		<div class="bb-custom-wrapper">
@@ -153,7 +143,7 @@
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -161,7 +151,7 @@
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>1. 기본구조</p>
 							<br>
@@ -193,7 +183,7 @@
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -201,7 +191,7 @@
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								식별자는 자바로 프로그래밍을 할때 변수의 이름이나, 클래스, 메서드의 이름등을 지정할 때 사용한다.<br>①
@@ -230,7 +220,7 @@
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -238,7 +228,7 @@
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								자바에서는 정해져 있는 식별자가 있다. 그래서 이 예약어를 변수이름으로 사용하게 되면 에러가 생기 므로 주의하자.<br>
@@ -258,7 +248,7 @@
 								<input type="hidden" name="pages" value="4">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -266,7 +256,7 @@
 								<input type="hidden" name="pages" value="4">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								컴퓨터는 여러 종류의 값들을 계산할 때 처리되는 방식이 달라서 결과도 달라져 보일수가 있다. 이 때 문에 여러
@@ -302,7 +292,7 @@
 								<input type="hidden" name="pages" value="5">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -310,7 +300,7 @@
 								<input type="hidden" name="pages" value="5">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								상수는 숫자, 텍스트 등 값을 직접 나타내는 단순 식별자로서 값이 변하지 않는다는 것이 특징이다.<br>
@@ -341,7 +331,7 @@
 								<input type="hidden" name="pages" value="6">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form6')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form6')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -349,7 +339,7 @@
 								<input type="hidden" name="pages" value="6">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								변수는 프로그램이 실행되는 동안 변화되는 값을 저장할 수 있는 공간에 대한 이름이라고 말할 수 잇 다. 다르게
@@ -377,7 +367,7 @@
 								<input type="hidden" name="pages" value="7">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form7')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form7')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -385,7 +375,7 @@
 								<input type="hidden" name="pages" value="7">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								데이터 변환이란 서로 종류가 다른 데이터간의 연산시 대입을 하는 경우에 한 종류의 데이터형이 다른 종류의
@@ -417,7 +407,7 @@
 								<input type="hidden" name="pages" value="8">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form8')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form8')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -425,7 +415,7 @@
 								<input type="hidden" name="pages" value="8">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								수학에서의 연산과 비슷하다. 자바에서 연산자는 변수의 값을 대입하거나, 내용을 변경하는데 사용된 다. 또한 자바

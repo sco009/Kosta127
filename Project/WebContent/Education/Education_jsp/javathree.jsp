@@ -135,7 +135,7 @@
 				<li><a href="#item4">4. 분기문(break문, continue문)</a></li>
 				<li><a href="#item5">5. 배열</a></li>
 			</ul>
-
+		<a href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h4>이전장으로</h4> </a>
 		</div>
 
 		<div class="bb-custom-wrapper">
@@ -149,7 +149,7 @@
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -157,7 +157,7 @@
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								제어문은 프로그램의 순서를 바꾸는 기술을 가진 명령어로써 조건문(if문, switch case문)과 반복문
@@ -195,7 +195,7 @@
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -203,7 +203,7 @@
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								․ if문<br> if문은 참, 거짓으로 인한 결과를 통해서 문장을 선택적으로 실행할 수 있게 해준다.<br>
@@ -264,7 +264,7 @@
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -272,7 +272,7 @@
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								주어진 조건이 true일 경우 블록으로 묶인 명령어들을 반복해서 실행시켜준다.<Br> 반복문에는 for,
@@ -333,7 +333,7 @@
 								<input type="hidden" name="pages" value="4">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form4')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -341,7 +341,7 @@
 								<input type="hidden" name="pages" value="4">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								․ break문<br> switch case문, for문, while문, do~while문의 반복문 수행을
@@ -370,7 +370,7 @@
 								<input type="hidden" name="pages" value="5">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button"  value="형광펜 추가하기" style="display: scroll; position: fixed; top: 150px; left: 30px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form5')">
 							</form>
 							
 							<form action="education_delete.jsp">
@@ -378,7 +378,7 @@
 								<input type="hidden" name="pages" value="5">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 170px; left: 30px;" >
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
 							<p>
 								같은 종류의 데이터가 하나의 이름으로 표시되는 데이터의 묶음을 말한다. 배열을 이용하면 여러 데이 터를 한
