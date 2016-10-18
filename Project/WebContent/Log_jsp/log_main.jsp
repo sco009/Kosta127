@@ -102,7 +102,7 @@
 								class="fa fa-user-plus" aria-hidden="true"></i>
 							</a> <a class="plate2" href="enterGroup.jsp"> <i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
-							</a> <a class="plate2" href="webCompile.jsp"> <i
+							</a> <a class="plate2" href="../wc_form_jsp/wc_compileForm.jsp"> <i
 								class="fa fa-file-code-o" aria-hidden="true"></i>
 							</a>
 						</div>

@@ -1,4 +1,4 @@
-package cosmos.wc.compile;
+package cosmos.wc.compile.model;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -15,8 +15,8 @@
  <li id="selected"><a href="../Log_jsp/log_main.jsp">Home<span></span></a></li>
  <li><a href="#">STUDY<span></span></a>
     <ul>
-      <li><a href="../Log_jsp/studyData.jsp">Educational Resource</a></li>
-      <li><a href="../Log_jsp/solveExam.jsp">solve Exam</a></li>
+      <li><a href="../Education/education_main.jsp">Educational Resource</a></li>
+      <li><a href="../Multiple/MultipleMain.jsp">solve Exam</a></li>
       <li><a href="../Log_jsp/codeFight.jsp">Code Fight</a></li>
       <li><a href="../Log_jsp/codeTrace.jsp">Code Trace</a></li>
     </ul>
@@ -25,7 +25,7 @@
     <ul>
       <li><a href="../Log_jsp/createGroup.jsp">Creat Group</a></li>
       <li><a href="../Log_jsp/enterGroup.jsp">enter Group</a></li>
-      <li><a href="../Log_jsp/webCompile.jsp">Web Compile</a></li>
+      <li><a href="../wc_form_jsp/wc_compileForm.jsp">Web Compile</a></li>
     </ul>
  </li>
 

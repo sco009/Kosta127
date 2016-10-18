@@ -1,4 +1,4 @@
-<%@page import="cosmos.wc.compile.WC_CompileService"%>
+<%@page import="cosmos.wc.compile.model.WC_CompileService"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
@@ -175,7 +175,8 @@
 	    });
 </script>
 <body>
-
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
 <div id="main">
 	<div class="row" id="demo1">
       <div class="col-md-4">

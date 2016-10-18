@@ -54,7 +54,7 @@ body {
     border: 0.6em solid transparent;
     border-bottom-color: rgba(124,193,65,1);
  }
-#navbar #selected span, 
+ 
 #navbar li:hover span {
     display: block; 
  }

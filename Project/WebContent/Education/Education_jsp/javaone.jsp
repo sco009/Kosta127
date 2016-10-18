@@ -70,9 +70,21 @@
 			} else {
 				return;
 			}
-
-			txt = String(txt); 
-			$('.texts').val(txt);
+			
+			
+			
+			if(txt == '' || txt == ' '){
+				$('.texts').val('null');
+			}else{
+				txt = String(txt); 
+				if(txt.length > 50){
+					$('.texts').val('null');
+				}else{
+					$('.texts').val(txt);
+				}
+			}
+			
+			
 		});
 	});
 	function click(page){
@@ -90,23 +102,24 @@
 		
 	} 
 	function wordSearch(word,form_id) {   //입력 받은 값을 앞뒤에 span 을 줘서 배경 색을 노란새으로 변경 
-		console.log(word);
-		$ptags = $('div.scroller p');
+	
+		if(!(word == 'null')){
+			$ptags = $('div.scroller p');
 
-		var reg = new RegExp(word, "gi");
+			var reg = new RegExp(word, "gi");
 
-		$ptags.each(function(index) {
-			var p = $(this);
-			var text = p.html();
-			var newText = text.replace(reg, "<span style='background:yellow'>"
-					+ word + "</span>");
-			p.html(newText);
-		});
-		if(typeof form_id != 'undefined'){
-			$("#"+form_id).submit();
+			$ptags.each(function(index) {
+				var p = $(this);
+				var text = p.html();
+				var newText = text.replace(reg, "<span style='background:yellow'>"
+						+ word + "</span>");
+				p.html(newText);
+			});
+			if(typeof form_id != 'undefined'){
+				$("#"+form_id).submit();
+			}
 		}
 
-		
 	}
 </script>
 <style>
@@ -143,6 +156,12 @@
 </head>
 
 <body>
+<div>
+	<jsp:include page="../../Log_module/header.jsp" />
+		<br><br><br>
+</div>
+
+
 	<div id="container" class="container">
 
 		<div class="menu-panel">
@@ -161,15 +180,15 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>1. Java의 소개</h2>
-							<form id="submit_form" action="educationinsert.jsp">
-								<input type="hidden" name="hl_contents" class="texts">
+							<form id="submit_form" action="educationinsert.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts" value="null">
 								<input type="hidden" name="pages" value="1">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -268,7 +287,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>2. 개발환경의 구축</h2>
-							 <form id="submit_form2" action="educationinsert.jsp">
+							 <form id="submit_form2" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -276,7 +295,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -326,7 +345,7 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>3. 자바 프로그래밍 과정</h2>
-								<form id="submit_form3" action="educationinsert.jsp">
+								<form id="submit_form3" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
@@ -334,7 +353,7 @@
 								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
 							
-							<form action="education_delete.jsp">
+							<form action="education_delete.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
 								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
