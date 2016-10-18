@@ -21,6 +21,7 @@
 				if(i>0){
 		 			data+="/";   // 각각의 hl_contents사이에  "/" 추가 
 		 		}
+				String str = list.get(i).gethl_contents();
 				data+= list.get(i).gethl_contents();
 			}
 
@@ -90,7 +91,7 @@
 		
 	} 
 	function wordSearch(word,form_id) {   //입력 받은 값을 앞뒤에 span 을 줘서 배경 색을 노란새으로 변경 
-		console.log(word);
+		
 		$ptags = $('div.scroller p');
 
 		var reg = new RegExp(word, "gi");

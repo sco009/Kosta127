@@ -7,12 +7,15 @@
 	String dataClassify = request.getParameter("dataClassify");
 
 	String hl_contents = request.getParameter("hl_contents");
+	
 	String memberID = request.getParameter("memberID");
 	String pages = request.getParameter("pages");
 	int re = 0;
 	int rt = 0;
 	try {
-		re = service.inserteducation(request);  // education_contents에 입력하기 위한 service 
+			re = service.inserteducation(request);  // education_contents에 입력하기 위한 service 
+		
+		 
 
 	} catch (Exception e) {
 		e.printStackTrace();
