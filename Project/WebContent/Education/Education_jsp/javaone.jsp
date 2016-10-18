@@ -71,7 +71,7 @@
 				return;
 			}
 
-			txt = String(txt); 
+			txt = String(txt);
 			$('.texts').val(txt);
 		});
 	});
@@ -90,7 +90,6 @@
 		
 	} 
 	function wordSearch(word,form_id) {   //입력 받은 값을 앞뒤에 span 을 줘서 배경 색을 노란새으로 변경 
-		console.log(word);
 		$ptags = $('div.scroller p');
 
 		var reg = new RegExp(word, "gi");

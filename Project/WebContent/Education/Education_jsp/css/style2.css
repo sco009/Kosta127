@@ -44,10 +44,10 @@ DEMO 2
 	position: absolute;
 	top: 0; left: 0;
 	width: inherit; height: inherit;
-	box-shadow: inset 10.6em 0 0 rgba(30, 140, 209, 0.2),
-				inset 0 10.6em 0 rgba(30, 140, 209, 0.2),
-				inset -10.6em 0 0 rgba(30, 140, 209, 0.2),
-				inset 0 -10.6em 0 rgba(30, 140, 209, 0.2);
+	box-shadow: inset 10.6em 0 0 rgba(224, 132, 79, 0.2),
+				inset 0 10.6em 0 rgba(224, 132, 79, 0.2),
+				inset -10.6em 0 0 rgba(224, 132, 79, 0.2),
+				inset 0 -10.6em 0 rgba(224, 132, 79, 0.2);
 	-webkit-transition: box-shadow 0.75s;
 	   -moz-transition: box-shadow 0.75s;
 		-ms-transition: box-shadow 0.75s;
