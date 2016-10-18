@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    	String memberID = request.getParameter("memberID");
+    	request.setAttribute("memberID", memberID);
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,9 +18,9 @@
 <body>
 <div class="container" >
 <div class ="row"  >
-	<div class="col-md-4"><a href="Education_jsp/javaone.jsp?dataClassify=javaone&memberID=ohwoosung" >JAVA 자바의 소개</a></div>
-	<div class="col-md-4"><a href="Education_jsp/javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung">JAVA 데이터형과 연산자</a></div>
-	<div class="col-md-4"><a href="Education_jsp/javathree.jsp?dataClassify=javathree&memberID=ohwoosung">JAVA 제어문과 배열</a></div>
+	<div class="col-md-4"><a href="Education_jsp/javaone.jsp?dataClassify=javaone&memberID=<%=memberID %>" >JAVA 자바의 소개</a></div>
+	<div class="col-md-4"><a href="Education_jsp/javatwo.jsp?dataClassify=javatwo&memberID=<%=memberID %>">JAVA 데이터형과 연산자</a></div>
+	<div class="col-md-4"><a href="Education_jsp/javathree.jsp?dataClassify=javathree&memberID=<%=memberID %>">JAVA 제어문과 배열</a></div>
 </div>
 </div>
 </body>
