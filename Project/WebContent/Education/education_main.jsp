@@ -34,6 +34,9 @@
 <title>자바 ! 교육 자료</title>
 </head>
 <body>
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
+		
 	<div class="container">
 		<div class="main clearfix">
 			<div class="col-md-4">

@@ -72,6 +72,8 @@
 <title>Cosmos</title>
 </head>
 <body>
+<jsp:include page="../Log_module/header.jsp" />
+		<br><br><br>
 	<div class="col-md-12">
 		<div class="progress">
 			<c:if test="${successProgress!=0 }">

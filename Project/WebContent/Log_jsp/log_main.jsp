@@ -78,9 +78,9 @@
 							</div>
 						</label>
 						<div class="ma">
-							<a class="plate" href="studyData.jsp"> <i class="fa fa-book"
+							<a class="plate" href="../Education/education_main.jsp"> <i class="fa fa-book"
 								aria-hidden="true"></i>
-							</a> <a class="plate" href="solveExam.jsp"> <i
+							</a> <a class="plate" href="../Multiple/MultipleMain.jsp"> <i
 								class="fa fa-pencil" aria-hidden="true"></i>
 							</a> <a class="plate" href="codeTrace.jsp"> <i
 								class="fa fa-balance-scale" aria-hidden="true"></i>
