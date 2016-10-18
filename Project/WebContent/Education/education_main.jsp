@@ -32,10 +32,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>자바 ! 교육 자료</title>
-</head>
-<body>
 <jsp:include page="../Log_module/header.jsp" />
 		<br><br><br>
+</head>
+<body>
+
 		
 	<div class="container">
 		<div class="main clearfix">

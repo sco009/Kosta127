@@ -13,6 +13,9 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <%	
+	if(session.getAttribute("memberID")==null){
+		response.sendRedirect("../Log_jsp/log_main.jsp");
+	}
 	MultipleService service = MultipleService.getInstance();	
 	if(request.getParameter("reCheckCount")!=null){		//문제풀이중 카테고리, 난이도를 재설정했을 때를 위해
 		failList = new ArrayList<String>();				//static변수들을 초기화 해준다.
@@ -70,11 +73,11 @@
 <script src="../js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 <link href="../css/MultipleCss/MultipleRadioButton.css" rel="stylesheet" type="text/css">
-
-</head>
-<body>
 <jsp:include page="../Log_module/header.jsp" />
 		<br><br><br>
+</head>
+<body>
+
 
 	<div class="row-fluid">
 		<div class="col-md-12">

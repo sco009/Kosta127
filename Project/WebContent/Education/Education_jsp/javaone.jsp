@@ -153,12 +153,13 @@
     top:4px;
 }
 </style>
+<jsp:include page="../../Log_module/header.jsp" />
+		<br><br><br>
 </head>
 
 <body>
 <div>
-	<jsp:include page="../../Log_module/header.jsp" />
-		<br><br><br>
+	
 </div>
 
 

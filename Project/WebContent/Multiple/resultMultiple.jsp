@@ -13,6 +13,8 @@
 <%    
     MultipleService service = MultipleService.getInstance();
 	
+	
+	
     ArrayList<String> failList = (ArrayList<String>)session.getAttribute("failList");
     ArrayList<String> successList = (ArrayList<String>)session.getAttribute("successList");
 	
@@ -32,7 +34,13 @@
     	for(int i=0; i<successList.size(); i++){
     		pointMultiple.add(service.reMultiple(successList.get(i)));
     	}
-    	int successPoint = pointMultiple.get(0).getMulquestPoint();		//정답인 문제의 Point값 뽑아오기.
+    	int successPoint = (pointMultiple.get(0).getMulquestPoint()*successList.size());	//정답인 문제의 Point값*맞춘갯수 뽑아오기.
+    	
+    	if(session.getAttribute("memberID")!=null){
+    		String memberId = (String)session.getAttribute("memberID");		//회원포인트에 넘기기위해 el태그로 만들어 준다.
+    		request.setAttribute("successPoint", successPoint);
+        	request.setAttribute("memberId", memberId);
+    	} 	
     }
     
     
@@ -42,6 +50,7 @@
     successCount = successList.size();							//맞은갯수 변수에 담기
     int totalProgress = failCount+successCount;					//진행바를 위해 총갯수 변수에 담기
     int successProgress = (100*successCount)/totalProgress;		//진행바를 위해 총갯수에 대한 퍼센티지 변수에 담기
+    
 
     request.setAttribute("successProgress", successProgress);
     request.setAttribute("failList", failList);
@@ -69,10 +78,11 @@
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 
 <title>Cosmos</title>
-</head>
-<body>
 <jsp:include page="../Log_module/header.jsp" />
 <br><br><br>
+</head>
+<body>
+
 		
 	<div class="col-md-12">
 		<c:if test="${successProgress !=100 }">
@@ -112,7 +122,15 @@
 	</div>
 	<br>
 	<br>
-	<input type=button class = "multipleSelect_css returnButton" value="돌아가기" onclick=returnMultipleMain()></input>
-	
+	<c:if test="${successList.size()>0 }">		<!-- 회원이 1문제 이상 맞췄을 때 생기는 버튼 -->
+		<form action="MultiplePoint.jsp" method="POST">			
+			<input type="hidden" name = "memberId" value=${memberId }></input>
+			<input type="hidden" name = "successPoint" value=${successPoint }></input>
+			<input type="submit" class = "multipleSelect_css returnButton" value="돌아가기" ></input>
+		</form>
+	</c:if>
+	<c:if test="${successList.size() ==0 }">	<!-- 회원이 0문제 맞췃을 때 생기는 버튼 -->
+		<input type=button class = "multipleSelect_css returnButton" value="돌아가기" onclick=returnMultipleMain()></input>
+	</c:if>
 </body>
 </html>

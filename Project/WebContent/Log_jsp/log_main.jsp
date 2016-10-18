@@ -14,7 +14,9 @@
 	int re = -1;
 
 	try {
-		re = loservice.currentLoginMemberService(login);
+		if (memberName != null) {
+	         re = loservice.currentLoginMemberService(login);
+	      }
 	} catch (Exception e) {
 		e.printStackTrace();
 	}

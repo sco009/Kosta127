@@ -111,6 +111,8 @@
 		
 	}
 </script>
+<jsp:include page="../../Log_module/header.jsp" />
+		<br><br><br>
 </head>
 
 <body>

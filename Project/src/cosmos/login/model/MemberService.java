@@ -19,11 +19,6 @@ public class MemberService {
 		return dao.selectMember(memberID);
 	}
 	
-	/*public Member selectMemberService(String id,String password) {
-		return dao.selectMember(id, password);
-	}*/
-
-
 	public List<Member> listMemberService() {
 		return dao.listMember();
 	}

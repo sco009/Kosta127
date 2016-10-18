@@ -26,4 +26,8 @@ public class MultipleService {
 	public Multiple reMultiple(String mulquestId){
 		return dao.reMultiple(mulquestId);
 	}
+	
+	public int pointInsert(MultiplePoint multiplePoint){
+		return dao.pointInsert(multiplePoint);
+	}
 }
