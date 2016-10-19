@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("utf-8");
 	EducationService service = EducationService.getInstance();
 	String dataClassify = request.getParameter("dataClassify");
 
@@ -21,7 +22,6 @@
 	if (re > 0) {
 		try {
 			rt = service.insertedumanager(request);  //edumanager에 입력하기 위한 service 
-			System.out.println(rt);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

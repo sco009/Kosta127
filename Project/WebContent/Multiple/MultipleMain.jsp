@@ -74,7 +74,6 @@ W<%@page import="java.util.List"%>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 <link href="../css/MultipleCss/MultipleRadioButton.css" rel="stylesheet" type="text/css">
 <jsp:include page="../Log_module/header.jsp" />
-		<br><br><br>
 </head>
 <body>
 
