@@ -83,8 +83,8 @@
 	<div class="row-fluid">
 		<div class="col-md-12">
     		<div class="row-fluid">
-     			<label id="toplabel" class="large label green"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
-     			<label id="toplabel" class="large label green"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
+     			<label id="toplabel"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
+     			<label id="toplabel"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
          	</div>
          	
   		 <div class="col-md-3 col-md-offset-1*">
