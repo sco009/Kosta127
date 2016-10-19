@@ -14,7 +14,10 @@
 	int re = -1;
 
 	try {
-		re = loservice.currentLoginMemberService(login);
+		if (memberName != null) {
+			re = loservice.currentLoginMemberService(login);
+		}
+		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -63,6 +66,8 @@
 <body>
 	
 	<h4><%=memberName%>님 반갑습니다.</h4>
+	<h4><a href="Test.jsp">Test</a></h4>
+	<h4><a href="TestAr.jsp">Test</a></h4>
 
 	<button class="small logout" Onclick="logout()">LOGOUT</button>
 

@@ -9,6 +9,7 @@
      <typeAlias type="cosmos.multiple.model.MultipleChoice" alias="MultipleChoice"/>
      <typeAlias type="cosmos.login.model.Member" alias="Member"/>
 	 <typeAlias type="cosmos.login.model.Login" alias="Login"/>
+	 <typeAlias type="cosmos.login.model.AccessRecord" alias="AccessRecord"/>
    </typeAliases>
    
    <environments default="development">

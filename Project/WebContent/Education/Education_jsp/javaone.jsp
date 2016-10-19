@@ -40,13 +40,11 @@
 	content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" type="text/css"
-	href="css/jquery.jscrollpane.custom.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
 <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
 <link rel="stylesheet" type="text/css" href="css/custom.css" />
 <script src="js/modernizr.custom.79639.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
 <script type="text/javascript">
 
 	$(document).ready(function() {
