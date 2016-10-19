@@ -3,7 +3,7 @@
 <%@page import="cosmos.multiple.model.MultipleChoice"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
-<%! static int checkCount=0;	//문제수를 카운팅
+<%! static int checkCount=0;	//문제수를 카운팅.
     static ArrayList<String>failList = new ArrayList<String>(); 
 	static ArrayList<String>successList = new ArrayList<String>();%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
