@@ -9,6 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%
 	request.setCharacterEncoding("utf-8");
 %>
@@ -16,6 +17,7 @@
 	if(session.getAttribute("memberID")==null){
 		response.sendRedirect("../Log_jsp/log_main.jsp");
 	}
+
 	MultipleService service = MultipleService.getInstance();	
 	if(request.getParameter("reCheckCount")!=null){		//문제풀이중 카테고리, 난이도를 재설정했을 때를 위해
 		failList = new ArrayList<String>();				//static변수들을 초기화 해준다.
@@ -41,7 +43,7 @@
 				successList = new ArrayList<String>();			 
 				}
 				
-				
+			
 				request.setAttribute("checkCount", checkCount);
 				request.setAttribute("multipleSelectCount", multipleSelectCount);
 				
@@ -64,26 +66,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Cosmos</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/MultipleJs/MultipleJavaScript.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 <link href="../css/MultipleCss/MultipleRadioButton.css" rel="stylesheet" type="text/css">
-<jsp:include page="../Log_module/header.jsp" />
+
+<jsp:include page="../Log_module/header.jsp"></jsp:include>
 		<br><br><br>
 </head>
-<body>
-
+<body id="body">
 
 	<div class="row-fluid">
 		<div class="col-md-12">
     		<div class="row-fluid">
-     			<label class="large label green"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
-     			<label class="large label green"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
+     			<label id="toplabel" class="large label green"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
+     			<label id="toplabel" class="large label green"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
          	</div>
          	
   		 <div class="col-md-3 col-md-offset-1*">
@@ -92,12 +93,11 @@
    
    					<span class="dropdown-el " id="drop">
    						<input type="radio" name="mulquestCategori" checked="checked" value="sort-list" ><label for="sort-relevance">카테고리</label>
-    					<input type="radio" name="mulquestCategori" value="variable" id="sort-1"><label for="sort-1">variable</label>
-    					<input type="radio" name="mulquestCategori" value="for문" id="sort-2"><label for="sort-2">for문</label>
-   						<input type="radio" name="mulquestCategori" value="if문" id="sort-3"><label for="sort-3">if문</label>
-    					<input type="radio" name="mulquestCategori" value="while문" id="sort-4"><label for="sort-4">while문</label>
-    					<input type="radio" name="mulquestCategori" value="정렬" id="sort-5"><label for="sort-5">정렬</label>
-    					<input type="radio" name="mulquestCategori" value="객체지향" id="sort-6"><label for="sort-6">객체지향</label>
+    					<input type="radio" name="mulquestCategori" value="for문" id="sort-1"><label for="sort-1">for문</label>
+   						<input type="radio" name="mulquestCategori" value="if문" id="sort-2"><label for="sort-2">if문</label>
+    					<input type="radio" name="mulquestCategori" value="while문" id="sort-3"><label for="sort-3">while문</label>
+    					<input type="radio" name="mulquestCategori" value="정렬" id="sort-4"><label for="sort-4">정렬</label>
+    					<input type="radio" name="mulquestCategori" value="객체지향" id="sort-5"><label for="sort-5">객체지향</label>
   					</span>
   	 			</div><!-- 1번 col row end -->
    	 	
@@ -123,7 +123,9 @@
 			 	<br>
 				<c:if test="${multipleSelect!=null }">
 					<br>
-				 	<small><cite title="Examiner">출제자-</cite>킹왕짱+${multipleSelect.mulquestExaminer }</small>
+					<div id="Examiner">
+				 	<small><cite title="Examiner">출제자 :</cite>${multipleSelect.mulquestExaminer }</small>
+				 	</div>
 				</c:if>
 		</div>
 	
@@ -135,37 +137,37 @@
          <c:if test="${multipleSelect != null }">
          <!-- 보기 시작 -->
             <div>
-               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.multipleAnswer }>
-                <input type="radio" name="multipleChoiceSelect" id="radio-option-1" value=${multipleChoiceSelect.multipleChoiceOne} onclick = choiceButton() />
+               <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.multipleAnswer }></input>
+                <input type="radio" name="multipleChoiceSelect" id="radio-option-1" value=${multipleChoiceSelect.multipleChoiceOne} onclick = choiceButton()></input>
                  <label for="radio-option-1">  ${multipleChoiceSelect.multipleChoiceOne } </label>
             </div>
             <div>
-                <input type="radio" name="multipleChoiceSelect" id="radio-option-2" value=${multipleChoiceSelect.multipleChoiceTwo} onclick = choiceButton() />
+                <input type="radio" name="multipleChoiceSelect" id="radio-option-2" value=${multipleChoiceSelect.multipleChoiceTwo} onclick = choiceButton()></input>
                  <label for="radio-option-2">  ${multipleChoiceSelect.multipleChoiceTwo } </label>
             </div>
             <div>
-                <input type="radio" name="multipleChoiceSelect" id="radio-option-3" value=${multipleChoiceSelect.multipleChoiceThree} onclick = choiceButton() />
+                <input type="radio" name="multipleChoiceSelect" id="radio-option-3" value=${multipleChoiceSelect.multipleChoiceThree} onclick = choiceButton()></input>
                  <label for="radio-option-3">  ${multipleChoiceSelect.multipleChoiceThree} </label>
             </div>
             <div>
-                <input type="radio" name="multipleChoiceSelect" id="radio-option-4" value=${multipleChoiceSelect.multipleChoiceFour} onclick = choiceButton() />
+                <input type="radio" name="multipleChoiceSelect" id="radio-option-4" value=${multipleChoiceSelect.multipleChoiceFour} onclick = choiceButton()></input>
                  <label for="radio-option-4">  ${multipleChoiceSelect.multipleChoiceFour} </label>
             </div>
             
             <div id="myCheckButton" style= "display:none" >
                
-               <input type="button" class="multipleSelect_css" value="답 Check"  onclick=selectMutlpleCheck()>
+               <input type="button" class="multipleSelect_css" value="답 Check"  onclick=selectMutlpleCheck()></input>
             </div>
          <!-- 보기 끝 -->
           </c:if><!-- 유형이 선택되야만 보기가 보여짐 end -->
       </div>
-         <div id="checkAnswer"></div>
+         <div class="imgs" id="checkAnswer"></div>
          
          <br>
          <div id= "solveButton" style= "display:none" >
             <c:if test="${checkCount<multipleSelectCount}">
                <input type="hidden" name= "solveSelectId" value=${multipleSelect.mulquestId } ></input>
-               <input type="button" name="nextButton" value="다음" class="multipleSelect_css" onclick=Next()>
+               <input type="button" name="nextButton" value="다음" class="multipleSelect_css" onclick=Next()></input>
             </c:if>
             <c:if test="${checkCount==multipleSelectCount && checkCount!=null }">
                <input type="hidden" name= "LastsolveSelectId" value=${multipleSelect.mulquestId } ></input>
