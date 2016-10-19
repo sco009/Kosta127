@@ -34,7 +34,6 @@
   	<update id="pointInsert" parameterType="MultiplePoint"> 
   		update member set algo_point = algo_point + #{successPoint}
         WHERE memberId = #{memberId}  		
-        
   	</update>
   </mapper>
   

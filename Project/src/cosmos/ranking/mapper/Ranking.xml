@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 네임스페이스 필수 -->
+<!-- crud메소드 사용, mapper-interface방식(추천) 총 두가지 -->
+<mapper namespace="cosmos.ranking.mapper.RankingMapper">
+	<cache />
+	<select id="algoPointSelect" resultType="AlgoRanking">
+		select 	memberID,memberName,algo_point from member
+			where algo_point != 0
+			ORDER BY algo_point DESC
+	</select>
+	
+	<select id="codePointSelect" resultType="CodeRanking">
+		select 	memberID,memberName,code_point from member
+			where code_point != 0
+			ORDER BY code_point DESC
+	</select>
+</mapper>

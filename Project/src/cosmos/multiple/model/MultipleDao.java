@@ -84,6 +84,7 @@ public class MultipleDao {
 		SqlSession session = getSqlSessionFactory().openSession();
 		try {
 			re = session.getMapper(MultipleMapper.class).pointInsert(multiplePoint);
+			System.out.print(re);
 			if (re > 0) {
 				session.commit();
 			} else {
