@@ -17,11 +17,14 @@
 	
 			EducationService service = EducationService.getInstance();
 			List<EducationContents> list = service.selectmemberID(memberID); 
-			for(int i = 0 ; i < list.size() ; i ++){
-				if(i>0){
-		 			data+="/";
-		 		}
-				data+= list.get(i).gethl_contents();
+			if(list!=null){	
+				for(int i = 0 ; i < list.size() ; i ++){
+					if(i>0){
+					 			data+="/";   
+					 		}
+					data+= list.get(i).gethl_contents();
+
+				}
 			}
 
 	request.setAttribute("data", data);
@@ -43,12 +46,24 @@
 	href="../css/education/jquery.jscrollpane.custom.css" />
 <link rel="stylesheet" type="text/css" href="../css/education/bookblock.css" />
 <link rel="stylesheet" type="text/css" href="../css/education/custom.css" />
+<link rel="stylesheet" href="../css/Log_css/header.css">
 <script src="../js/educationJS/modernizr.custom.79639.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="../js/educationJS/eductionScript.js"></script>
+<style>
+.bottens{
+	text-align: center;
+}
 
+</style>
 </head>
 <body>
+	<div class="pages">
+		<input type="hidden" id="pages" value="<%=pages%>">
+	</div>
+	<div class="data">
+		<input type="hidden" id="data" value="<%=data%>">
+	</div>
 	<div id="container" class="container">
 
 		<div class="menu-panel">
@@ -60,15 +75,17 @@
 				<li><a href="#item4">4. 분기문(break문, continue문)</a></li>
 				<li><a href="#item5">5. 배열</a></li>
 			</ul>
-		<a href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h4>이전장으로</h4> </a>
+		<a class="bottens" href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h3>이전장으로</h3> </a>
+		<a class="bottens" href="../Log_jsp/log_main.jsp"><h3>메인으로</h3></a>
 		</div>
 
 		<div class="bb-custom-wrapper">
+		
 			<div id="bb-bookblock" class="bb-bookblock">
 				<div class="bb-item" id="item1">
 					<div class="content">
 						<div class="scroller">
-							<h2>1. 제어문</h2>
+							<h2><br><br>1. 제어문</h2>
 							<form id="submit_form" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="1">
@@ -114,7 +131,7 @@
 				<div class="bb-item" id="item2">
 					<div class="content">
 						<div class="scroller">
-							<h2>2. 조건문(if문, switch case문)</h2>
+							<h2><br><br>2. 조건문(if문, switch case문)</h2>
 							<form id="submit_form2" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="2">
@@ -183,7 +200,7 @@
 				<div class="bb-item" id="item3">
 					<div class="content">
 						<div class="scroller">
-							<h2>3. 반복문(for문, while문)</h2>
+							<h2><br><br>3. 반복문(for문, while문)</h2>
 							<form id="submit_form3" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="3">
@@ -252,7 +269,7 @@
 				<div class="bb-item" id="item4">
 					<div class="content">
 						<div class="scroller">
-							<h2>4. 분기문(break문, continue문)</h2>
+							<h2><br><br>4. 분기문(break문, continue문)</h2>
 							<form id="submit_form4" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="4">
@@ -289,7 +306,7 @@
 				<div class="bb-item" id="item5">
 					<div class="content">
 						<div class="scroller">
-							<h2>5. 배열</h2>
+							<h2><br><br>5. 배열</h2>
 							<form id="submit_form5" action="educationinsert.jsp" method="post">
 								<input type="hidden" name="hl_contents" class="texts">
 								<input type="hidden" name="pages" value="5">

@@ -66,6 +66,7 @@
 <body>
 	
 	<h4><%=memberName%>님 반갑습니다.</h4>
+	<a href="../Ranking_jsp/Ranking.jsp">랭킹</a>
 
 	<button class="small logout" Onclick="logout()">LOGOUT</button>
 

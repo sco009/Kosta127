@@ -17,12 +17,15 @@
 	
 			EducationService service = EducationService.getInstance();
 			List<EducationContents> list = service.selectmemberID(memberID); 
+		if(list!=null){	
 			for(int i = 0 ; i < list.size() ; i ++){
 				if(i>0){
-		 			data+="/";
-		 		}
+				 			data+="/";   
+				 		}
 				data+= list.get(i).gethl_contents();
+
 			}
+		}
 
 	request.setAttribute("data", data);
 	request.setAttribute("pages", pages);
@@ -31,7 +34,7 @@
 <html lang="en" class="no-js">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
 <title>JAVA 자바의 소개</title>
 <meta name="description"
 	content="Fullscreen Pageflip Layout with BookBlock" />
@@ -41,14 +44,29 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css"
 	href="../css/education/jquery.jscrollpane.custom.css" />
-<link rel="stylesheet" type="text/css" href="../css/education/bookblock.css" />
-<link rel="stylesheet" type="text/css" href="../css/education/custom.css" />
+<link rel="stylesheet" type="text/css"
+	href="../css/education/bookblock.css" />
+<link rel="stylesheet" type="text/css"
+	href="../css/education/custom.css" />
 <script src="../js/educationJS/modernizr.custom.79639.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="../js/educationJS/eductionScript.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+<style>
+.bottens{
+	text-align: center;
+}
+
+</style>
 </head>
 
 <body>
+	<div class="pages">
+		<input type="hidden" id="pages" value="<%=pages%>">
+	</div>
+	<div class="data">
+		<input type="hidden" id="data" value="<%=data%>">
+	</div>
 	<div id="container" class="container">
 
 		<div class="menu-panel">
@@ -63,11 +81,13 @@
 				<li><a href="#item7">7. 데이터 변환과 캐스팅</a></li>
 				<li><a href="#item8">8. 연산자</a></li>
 			</ul>
-<a href="javaone.jsp?dataClassify=javatone&memberID=ohwoosung"><h4>이전장으로</h4> </a>
-<a href="javathree.jsp?dataClassify=javathree&memberID=ohwoosung"><h4>다음장으로</h4> </a>
+<a class="bottens" href="javaone.jsp?dataClassify=javatone&memberID=ohwoosung"><h3>이전장으로</h3> </a>
+<a class="bottens" href="javathree.jsp?dataClassify=javathree&memberID=ohwoosung"><h3>다음장으로</h3> </a>
+<a class="bottens" href="../Log_jsp/log_main.jsp"><h3>메인으로</h3></a>
 		</div>
 
 		<div class="bb-custom-wrapper">
+		
 			<div id="bb-bookblock" class="bb-bookblock">
 				<div class="bb-item" id="item1">
 					<div class="content">

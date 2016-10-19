@@ -75,8 +75,7 @@
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 <link href="../css/MultipleCss/MultipleRadioButton.css" rel="stylesheet" type="text/css">
 
-<jsp:include page="../Log_module/header.jsp"></jsp:include>
-		<br><br><br>
+<jsp:include page="../Log_module/header.jsp" />
 </head>
 <body id="body">
 
