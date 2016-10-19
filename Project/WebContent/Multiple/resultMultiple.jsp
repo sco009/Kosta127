@@ -122,6 +122,7 @@
 	</div>
 	<br>
 	<br>
+	<div class="col-md-12">
 	<c:if test="${successList.size()>0 }">		<!-- 회원이 1문제 이상 맞췄을 때 생기는 버튼 -->
 		<form action="MultiplePoint.jsp" method="POST">			
 			<input type="hidden" name = "memberId" value=${memberId }></input>
@@ -132,5 +133,6 @@
 	<c:if test="${successList.size() ==0 }">	<!-- 회원이 0문제 맞췃을 때 생기는 버튼 -->
 		<input type=button class = "multipleSelect_css returnButton" value="돌아가기" onclick=returnMultipleMain() ></input>
 	</c:if>
+	</div>
 </body>
 </html>

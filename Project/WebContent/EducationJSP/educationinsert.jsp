@@ -18,7 +18,6 @@
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-	System.out.println(re);
 	if (re > 0) {
 		try {
 			rt = service.insertedumanager(request);  //edumanager에 입력하기 위한 service 
