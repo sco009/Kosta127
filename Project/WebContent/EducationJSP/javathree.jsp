@@ -75,8 +75,6 @@
 				<li><a href="#item4">4. 분기문(break문, continue문)</a></li>
 				<li><a href="#item5">5. 배열</a></li>
 			</ul>
-		<a class="bottens" href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h3>이전장으로</h3> </a>
-		<a class="bottens" href="../Log_jsp/log_main.jsp"><h3>메인으로</h3></a>
 		</div>
 
 		<div class="bb-custom-wrapper">

@@ -1,3 +1,4 @@
+
 <%@page import="cosmos.education.model.EducationContents"%>
 <%@page import="cosmos.education.model.EducationService"%>
 <%@page import="java.util.List"%>
@@ -15,17 +16,16 @@
 		pages = Integer.parseInt(request.getParameter("pages"));
 	}
 	
-	EducationService service = EducationService.getInstance();
-	List<EducationContents> list = service.selectmemberID(memberID);  //해당 아이디에 입력되어있는 hl_contents값 가져옴,
-	if(list!=null){	
-	for(int i = 0 ; i < list.size() ; i ++){
-		if(i>0){
+			EducationService service = EducationService.getInstance();
+			List<EducationContents> list = service.selectmemberID(memberID);  //해당 아이디에 입력되어있는 hl_contents값 가져옴,
+			for(int i = 0 ; i < list.size() ; i ++){
+				if(i>0){
 		 			data+="/";   // 각각의 hl_contents사이에  "/" 추가 
 		 		}
-		data+= list.get(i).gethl_contents();
+				String str = list.get(i).gethl_contents();
+				data+= list.get(i).gethl_contents();
+			}
 
-	}
-	}
 	request.setAttribute("data", data);
 	request.setAttribute("pages", pages);
 %>
@@ -33,7 +33,7 @@
 <html lang="en" class="no-js">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JAVA 자바의 소개</title>
 <meta name="description"
 	content="Fullscreen Pageflip Layout with BookBlock" />
@@ -41,74 +41,167 @@
 	content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" type="text/css"
-	href="../css/education/jquery.jscrollpane.custom.css" /><!-- 드레그 -->
-<link rel="stylesheet" type="text/css"
-	href="../css/education/bookblock.css" />
-<link rel="stylesheet" type="text/css"
-	href="../css/education/custom.css" /><!-- 바디관련 css -->
-<script src="../js/educationJS/modernizr.custom.79639.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
+<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+<link rel="stylesheet" type="text/css" href="css/custom.css" />
+<script src="js/modernizr.custom.79639.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="../js/educationJS/eductionScript.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		start();  //hl_contents사이에  "/"있는것을 기준으로 데이터 분리 하기 위한 function
+		var page ='<%=pages%>'; 
+		if(page >  1){
+			for(var i = 1 ; i < page ; i ++){
+				setTimeout(function(page){
+					click(page)    // 해당 페이지를 찾아가기 위해 클릭하는 function
+				}, i*1000);
+			}
+		}
+		$('p').mouseup(function() {    // 드레그한 값을 가져오기 위한 function
+			var txt = '';
+			if (window.getSelection) {
+				txt = window.getSelection();
+			} else if (document.getSelection) {
+				txt = document.getSelection();
+			} else if (document.selection) {
+				txt = document.selection.createRange().text;
+			} else {
+				return;
+			}
+			
+			
+			
+			if(txt == '' || txt == ' '){
+				$('.texts').val('null');
+			}else{
+				txt = String(txt); 
+				if(txt.length > 50){
+					$('.texts').val('null');
+				}else{
+					$('.texts').val(txt);
+				}
+			}
+			
+			
+		});
+	});
+	function click(page){
+		
+		$('#bb-nav-next').trigger('click');
+			Page.init();
+		
+	}
+	function start(){
+		var datas = '<%=data%>'
+			var list = datas.split("/");
+			for (var i = 0; i < list.length; i++) { 
+				wordSearch(list[i]);   // 잘라진 hl_contents를 앞뒤에 span을 추가 하기 위한 function
+			}
+		
+	} 
+	function wordSearch(word,form_id) {   //입력 받은 값을 앞뒤에 span 을 줘서 배경 색을 노란새으로 변경 
+<<<<<<< HEAD
+		
+		$ptags = $('div.scroller p');
+=======
+	
+		if(!(word == 'null')){
+			$ptags = $('div.scroller p');
+>>>>>>> branch 'master' of https://github.com/sco009/Kosta127.git
+
+			var reg = new RegExp(word, "gi");
+
+			$ptags.each(function(index) {
+				var p = $(this);
+				var text = p.html();
+				var newText = text.replace(reg, "<span style='background:yellow'>"
+						+ word + "</span>");
+				p.html(newText);
+			});
+			if(typeof form_id != 'undefined'){
+				$("#"+form_id).submit();
+			}
+		}
+
+	}
+</script>
 <style>
-.bottens{
-	text-align: center;
+.button-3d {
+  position:relative;
+  width: auto;
+  display:inline-block;
+  color:#ecf0f1;
+  text-decoration:none;
+  border-radius:5px;
+  border:solid 1px #f39c12;
+  background:#e67e22;
+  text-align:center;
+  padding:16px 18px 14px;
+  margin: 12px;
+  
+  -webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 6px 0px #d35400;
 }
-#body{
-	background-image: url("../edu_image/imagesbackground.jpg");
-	background-size:cover;
+
+.button-3d:active{
+    -webkit-box-shadow: 0px 2px 0px #d35400;
+    -moz-box-shadow: 0px 2px 0px #d35400;
+    box-shadow: 0px 2px 0px #d35400;
+    position:relative;
+    top:4px;
 }
 </style>
 </head>
 
-<body id="body">
+<body>
+<div>
+	<jsp:include page="../../Log_module/header.jsp" />
+		<br><br><br>
+</div>
 
-	<div class="pages">
-		<input type="hidden" id="pages" value="<%=pages%>">
-	</div>
-	<div class="data">
-		<input type="hidden" id="data" value="<%=data%>">
-	</div>
 
-	<div id="container" class="container" >
-		<div class="menu-panel"  align: center; >
+	<div id="container" class="container">
+
+		<div class="menu-panel">
 			<h3>JAVA 자바의 소개</h3>
 			<ul id="menu-toc" class="menu-toc">
 				<li class="menu-toc-current"><a href="#item1">1. Java의 소개</a></li>
 				<li><a href="#item2">2. 개발환경의 구축</a></li>
 				<li><a href="#item3">3. 자바 프로그래밍 과정</a></li>
 			</ul>
+			<a href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h4>다음장으로</h4> </a>
 		</div>
 
 		<div class="bb-custom-wrapper">
-		
 			<div id="bb-bookblock" class="bb-bookblock">
 				<div class="bb-item" id="item1">
 					<div class="content">
 						<div class="scroller">
 							<h2>1. Java의 소개</h2>
-							<form id="submit_form" action="educationinsert.jsp">
-								<input type="hidden" name="hl_contents" class="texts"
-									value="null"> <input type="hidden" name="pages"
-									value="1"> <input type="hidden" name="dataClassify"
-									value="<%=dataClassify%>"> <input type="hidden"
-									name="memberID" value="<%=memberID%>"> <input
-									type="button" class="button-3d" value="형광펜 추가하기"
-									style="display: scroll; position: fixed; top: 80px; left: 800px;"
-									onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
-							</form>
-
-							<form action="education_delete.jsp">
-								<input type="hidden" name="hl_contents" class="texts"> <input
-									type="hidden" name="pages" value="1"> <input
-									type="hidden" name="dataClassify" value="<%=dataClassify%>">
+							<form id="submit_form" action="educationinsert.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts" value="null">
+								<input type="hidden" name="pages" value="1">
+							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" class="button-3d" value="형광펜 삭제하기"
-									style="display: scroll; position: fixed; top: 80px; left: 950px;">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
-
-
+							
+							<form action="education_delete.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts">
+								<input type="hidden" name="pages" value="1">
+								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
+								<input type="hidden" name="memberID" value="<%=memberID%>">
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
+							</form>
+						
+						
 
 							<p>소개</p>
 							<br>
@@ -167,14 +260,14 @@
 							<p>구조</p>
 							<br>
 							<p>
-								프로그램 작성 바이트 코드 컴파일 자바가상머신 프로그램 실행 -> (c) -> (CPU ) 는 해당
+								프로그램 작성 바이트 코드 컴파일 자바가상머신 프로그램 실행 -> ( ) -> ( ) C CPU . 는 해당
 								컴퓨터의 에서 실행할수 있는 기계어로 바꾸어준다 다른 종류의 컴퓨터에서 실행하기 위 해서는 다시 재 컴파일 해당
 								컴퓨터 기계어로 을 해야한다 이에 반해 자바는 한번 컴파일을 수 ( CPU ..) . 행하면 바이트 코드라고 불리는
 								중간단계의 컴파일이 생성되어 한번 컴파일된 바이트 코드는 자바 실행 환경 자바가상머신 이 구축된 곳이라면
-								재컴파일없이 바로 실행이 가능하다  <Br>*여기서 컴파일은 우리가 프로그램을 만들기 위해 작성한
+								재컴파일없이 바로 실행이 가능하다 () . <Br>*여기서 컴파일은 우리가 프로그램을 만들기 위해 작성한
 								소스를 컴퓨터가 알아볼수 있게 하기위한 변 환 과정으로 보면 된다
 							</p>
-							<p>그럼 자바가상머신이란 무엇일까 자바 바이트 코드를 실행시키기 위해 소프트웨어로 만들어진 가상 
+							<p>그럼 자바가상머신이란 무엇일까 자바 바이트 코드를 실행시키기 위해 소프트웨어로 만들어진 가상 ? CPU
 								이다 즉 자바 가상 머신은 단독으로 존재 할수도 웹 브라우저 안에서 존재 할수도 또는 한 플랫 폼 안에서도 동시에
 								존재할수도 있다 그래서 바이트 코드가 종류에 상관없이 자바 가상머신만 존재하 . 면 어떤 플랫폼에서도 수행이
 								가능하다.</p>
@@ -199,24 +292,21 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>2. 개발환경의 구축</h2>
-							<form id="submit_form2" action="educationinsert.jsp">
-								<input type="hidden" name="hl_contents" class="texts"> <input
-									type="hidden" name="pages" value="2"> <input
-									type="hidden" name="dataClassify" value="<%=dataClassify%>">
+							 <form id="submit_form2" action="educationinsert.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts">
+								<input type="hidden" name="pages" value="2">
+							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button" class="button-3d" value="형광펜 추가하기"
-									style="display: scroll; position: fixed; top: 80px; left: 800px;"
-									onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form2')">
 							</form>
-
-							<form action="education_delete.jsp">
-								<input type="hidden" name="hl_contents" class="texts"> <input
-									type="hidden" name="pages" value="2"> <input
-									type="hidden" name="dataClassify" value="<%=dataClassify%>">
+							
+							<form action="education_delete.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts">
+								<input type="hidden" name="pages" value="2">
+								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" class="button-3d" value="형광펜 삭제하기"
-									style="display: scroll; position: fixed; top: 80px; left: 950px;">
-							</form>
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
+							</form> 
 							<p>JDK의 설치</p>
 							<br>
 							<p>
@@ -260,25 +350,22 @@
 					<div class="content">
 						<div class="scroller">
 							<h2>3. 자바 프로그래밍 과정</h2>
-							<form id="submit_form3" action="educationinsert.jsp">
-								<input type="hidden" name="hl_contents" class="texts"> <input
-									type="hidden" name="pages" value="3"> <input
-									type="hidden" name="dataClassify" value="<%=dataClassify%>">
+								<form id="submit_form3" action="educationinsert.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts">
+								<input type="hidden" name="pages" value="3">
+							 	<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="button" class="button-3d" value="형광펜 추가하기"
-									style="display: scroll; position: fixed; top: 80px; left: 800px;"
-									onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
+								<input type="button" class="button-3d" value="형광펜 추가하기" style="display: scroll; position: fixed; top: 80px; left: 800px;" onClick="wordSearch(this.form.hl_contents.value,'submit_form3')">
 							</form>
-
-							<form action="education_delete.jsp">
-								<input type="hidden" name="hl_contents" class="texts"> <input
-									type="hidden" name="pages" value="3"> <input
-									type="hidden" name="dataClassify" value="<%=dataClassify%>">
+							
+							<form action="education_delete.jsp" method="post">
+								<input type="hidden" name="hl_contents" class="texts">
+								<input type="hidden" name="pages" value="3">
+								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
 								<input type="hidden" name="memberID" value="<%=memberID%>">
-								<input type="submit" class="button-3d" value="형광펜 삭제하기"
-									style="display: scroll; position: fixed; top: 80px; left: 950px;">
+								<input type="submit" class="button-3d" value="형광펜 삭제하기" style="display: scroll; position: fixed; top: 80px; left: 950px;" >
 							</form>
-
+							
 							<p>
 								자바 프로그램에는 크게 자바 애플리케이션과 자바 애플릿으로 나뉘며 위에서 설명 (유형) 한것과 같이 애플리케이션은
 								자바를 c나 c++처럼 사용한다 컴퓨터에서 실행할 수 있는 프로그램을 개발할수있으며 애플리케이션은 다시 콘솔
@@ -349,16 +436,16 @@
 	<!-- /container -->
 	<script
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="../js/educationJS/jquery.mousewheel.js"></script>
-	<script src="../js/educationJS/jquery.jscrollpane.min.js"></script>
-	<script src="../js/educationJS/jquerypp.custom.js"></script>
-	<script src="../js/educationJS/jquery.bookblock.js"></script>
-	<script src="../js/educationJS/page.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/jquery.jscrollpane.min.js"></script>
+	<script src="js/jquerypp.custom.js"></script>
+	<script src="js/jquery.bookblock.js"></script>
+	<script src="js/page.js"></script>
 	<script>
 		$(function() {
 			Page.init();
 		});
 	</script>
-
+	
 </body>
 </html>

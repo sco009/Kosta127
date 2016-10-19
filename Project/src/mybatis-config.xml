@@ -10,8 +10,12 @@
      <typeAlias type="cosmos.multiple.model.MultiplePoint" alias="MultiplePoint"/>
      <typeAlias type="cosmos.login.model.Member" alias="Member"/>
 	 <typeAlias type="cosmos.login.model.Login" alias="Login"/>
+
+	 <typeAlias type="cosmos.login.model.AccessRecord" alias="AccessRecord"/>
+
 	 <typeAlias type="cosmos.ranking.model.AlgoRanking" alias="AlgoRanking"/>
 	 <typeAlias type="cosmos.ranking.model.CodeRanking" alias="CodeRanking"/>
+
    </typeAliases>
    
    <environments default="development">

@@ -2,6 +2,7 @@ package cosmos.login.mapper;
 
 import java.util.List;
 
+import cosmos.login.model.AccessRecord;
 import cosmos.login.model.Login;
 import cosmos.login.model.Member;
 
@@ -13,4 +14,6 @@ public interface MemberMapper {
 	public int currentLoginMember(Login login);
 	public int currentLogoutMember(Login login);
 	public int updateInfo(Member member);
+	public List<Login> currentLoginMemberPrint();
+	public List<AccessRecord> printAccessRecord(String memberid);
 }
