@@ -15,9 +15,9 @@
 
 	try {
 		if (memberName != null) {
+
 			re = loservice.currentLoginMemberService(login);
 		}
-		
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -66,8 +66,10 @@
 <body>
 	
 	<h4><%=memberName%>님 반갑습니다.</h4>
+
 	<h4><a href="Test.jsp">Test</a></h4>
 	<h4><a href="TestAr.jsp">Test</a></h4>
+	<a href="../Ranking_jsp/Ranking.jsp">랭킹</a>
 
 	<button class="small logout" Onclick="logout()">LOGOUT</button>
 
@@ -83,7 +85,7 @@
 							</div>
 						</label>
 						<div class="ma">
-							<a class="plate" href="../Education/education_main.jsp"> <i class="fa fa-book"
+							<a class="plate" href="../EducationJSP/education_main.jsp"> <i class="fa fa-book"
 								aria-hidden="true"></i>
 							</a> <a class="plate" href="../Multiple/MultipleMain.jsp"> <i
 								class="fa fa-pencil" aria-hidden="true"></i>

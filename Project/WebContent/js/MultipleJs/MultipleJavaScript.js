@@ -1,3 +1,4 @@
+
 function Next() {
 	var selectAnswer = $(":input:radio[name=multipleChoiceSelect]:checked").val(); // 다음페이지로 넘어갈때 틀린 문제 아이디를 받기 위해.
 	var Answer = $(":input:hidden[name=multipleChoiceSelectAnswer]").val();
@@ -11,6 +12,10 @@ function Next() {
 
 function choiceButton() {
 	document.getElementById("myCheckButton").style.display = "block";
+}
+
+function returnMultipleMain() {
+	   location.href = "MultipleMain.jsp";
 }
 
 function selectMutlpleCheck() {
@@ -43,10 +48,6 @@ function resultMultiple() {
 	} else {
 		location.href = "resultMultiple.jsp?solveSuccessId=" + solveSelectId;
 	}
-}
-
-function returnMultipleMain() {
-	location.href = "MultipleMain.jsp";
 }
 
 $(document).ready(function() {

@@ -7,9 +7,15 @@
    <typeAliases>
      <typeAlias type="cosmos.multiple.model.Multiple" alias="Multiple"/>
      <typeAlias type="cosmos.multiple.model.MultipleChoice" alias="MultipleChoice"/>
+     <typeAlias type="cosmos.multiple.model.MultiplePoint" alias="MultiplePoint"/>
      <typeAlias type="cosmos.login.model.Member" alias="Member"/>
 	 <typeAlias type="cosmos.login.model.Login" alias="Login"/>
+
 	 <typeAlias type="cosmos.login.model.AccessRecord" alias="AccessRecord"/>
+
+	 <typeAlias type="cosmos.ranking.model.AlgoRanking" alias="AlgoRanking"/>
+	 <typeAlias type="cosmos.ranking.model.CodeRanking" alias="CodeRanking"/>
+
    </typeAliases>
    
    <environments default="development">
@@ -24,6 +30,7 @@
    <mappers>
    		   <mapper resource="cosmos/multiple/mapper/Multiple.xml"/>
    		   <mapper resource="cosmos/login/mapper/Member.xml"/>
+   		   <mapper resource="cosmos/ranking/mapper/Ranking.xml"/>
    </mappers>
    
 </configuration>
