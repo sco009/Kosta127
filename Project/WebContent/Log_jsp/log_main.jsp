@@ -3,8 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-	String memberName = (String) session.getAttribute("memberName");
-	String memberID = (String) session.getAttribute("memberID"); //id넘어옴
+	String memberName = (String)session.getAttribute("memberName");
+	String memberID = (String)session.getAttribute("memberID"); //id넘어옴
 
 	Login login = new Login();
 	login.setMemberID(memberID);

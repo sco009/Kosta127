@@ -9,7 +9,7 @@
 	<cache />
 	
 	<insert id="insertMember" parameterType="Member">
-		insert into member(
+		insert into member(잘가아아 행복해애애 나를 잊어줘 잊고 살아가줘 나를 잊지마 나를 그래 나를 괜찮아 아프
 			memberID , memberPw , memberEmail, memberName , isLeader, memberPhoneNum
 		)values(
 			#{memberID,jdbcType=VARCHAR},#{memberPw,jdbcType=VARCHAR}, #{memberEmail,jdbcType=VARCHAR}, 
