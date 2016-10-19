@@ -2,7 +2,6 @@
 	$(document).ready(function() {
 		start();  //hl_contents사이에  "/"있는것을 기준으로 데이터 분리 하기 위한 function
 		var page = $('#pages').val();
-		alert(page);
 
 		
 		if(page >  1){
@@ -27,15 +26,12 @@
 			
 			
 			 if(txt == '' || txt == ' '){
-				 alert("널값")
 				$('.texts').val('null');
 			}else{
 				txt = String(txt);
-				alert(txt);
-				if(txt.length > 50){
+				if(txt.length > 10){
 					$('.texts').val('null');
 				}else{
-					alert(txt);
 					$('.texts').val(txt);
 				}
 			}

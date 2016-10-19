@@ -25,16 +25,34 @@
 <link rel="stylesheet" type="text/css"
 	href="../css/education/style2.css" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <script src="../js/educationJS/Education_jsp/js/modernizr.custom.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+function Frameset(page) { 
+	framecode = "<frameset rows='1*'>" 
+	+ "<frame name=main src='" + page + "'>" 
+	+ "</frameset>"; 
 
+	page = window.open(""); 
+	page.document.open(); 
+	page.document.write(framecode); 
+	page.document.close(); 
+	} 
+</script>
+<style type="text/css">
+#body{
+	background-image: url("../edu_image/imagesbackground.jpg");
+	background-size:cover;
+}
+</style>
 <title>자바 ! 교육 자료</title>
 </head>
-<body>
+<body id="body">
 <jsp:include page="../Log_module/header.jsp" />
 		<br><br><br>
 		
@@ -42,21 +60,21 @@
 		<div class="main clearfix">
 			<div class="col-md-4">
 				<a
-					href="javaone.jsp?dataClassify=javaone&memberID=<%=memberID%>"><div
+					href="javascript:Frameset('javaone.jsp?dataClassify=javaone&memberID=<%=memberID%>')"><div
 						class="circle">
 						<h1>자바의 소개</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="javatwo.jsp?dataClassify=javatwo&memberID=<%=memberID%>"><div
+					href="javascript:Frameset('javatwo.jsp?dataClassify=javatwo&memberID=<%=memberID%>')"><div
 						class="circle">
 						<h1>데이터형과 연산자</h1>
 					</div></a>
 			</div>
 			<div class="col-md-4">
 				<a
-					href="javathree.jsp?dataClassify=javathree&memberID=<%=memberID%>"><div
+					href="javascript:Frameset('javathree.jsp?dataClassify=javathree&memberID=<%=memberID%>')"><div
 						class="circle">
 						<h1>제어문과 배열</h1>
 					</div></a>
