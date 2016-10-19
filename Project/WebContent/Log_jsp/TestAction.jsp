@@ -8,10 +8,7 @@
 <%
 	//currentList 가져오기
 	List<Login> list = LoginService.getInstance().currentLoginMemberPrintService();
-	for(int i=0; i<list.size(); i++){
-		System.out.print(list.get(i).getMemberName());
-		System.out.println("");
-	}
+	
 	JSONArray jsonArray = JSONArray.fromObject(list);
 	
 	String json = jsonArray.toString();
