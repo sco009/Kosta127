@@ -36,7 +36,7 @@
 	</select> 
 	
 	<delete id="deleteedunamager" parameterType="String">
-	delete from edumanager  WHERE edu_c_ID = (select edu_c_ID from education_contents WHERE hl_contents=#{hl_contents})
+	delete from EDUMANAGER  WHERE edu_c_ID = (select edu_c_ID from education_contents WHERE hl_contents=#{hl_contents})
 	</delete>
 	<delete id="deletehl_contents" parameterType="String">
 	delete from education_contents WHERE hl_contents=#{hl_contents}

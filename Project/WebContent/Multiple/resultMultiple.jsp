@@ -1,3 +1,5 @@
+<%@page import="javax.websocket.SendResult"%>
+<%@page import="org.omg.PortableInterceptor.SUCCESSFUL"%>
 <%@page import="cosmos.multiple.model.MultipleService"%>
 <%@page import="cosmos.multiple.model.Multiple"%>
 <%@page import="java.util.ArrayList"%>
@@ -12,16 +14,14 @@
 
 <%    
     MultipleService service = MultipleService.getInstance();
-	
-	
-	
+		
     ArrayList<String> failList = (ArrayList<String>)session.getAttribute("failList");
     ArrayList<String> successList = (ArrayList<String>)session.getAttribute("successList");
-	
-    if(request.getParameter("solveFailId")!=null){
-        failList.add(request.getParameter("solveFailId"));			//마지막 문제 맞았는지 틀렸는지 체크해서 리스트에 추가
-    }else if(request.getParameter("solveSuccessId")!=null){
-        successList.add(request.getParameter("solveSuccessId"));	//마지막 문제 맞았는지 틀렸는지 체크해서 리스트에 추가
+    	
+    if(request.getParameter("solveFailId")==null){
+    	successList.add(request.getParameter("solveSuccessId"));			//마지막 문제 맞았는지 틀렸는지 체크해서 리스트에 추가
+    }else if(request.getParameter("solveSuccessId")==null){
+    	failList.add(request.getParameter("solveFailId"));					//마지막 문제 맞았는지 틀렸는지 체크해서 리스트에 추가
     }
     
     if(failList.size()>0){
@@ -56,7 +56,7 @@
     request.setAttribute("failList", failList);
     request.setAttribute("successList", successList);
     
-    session.removeAttribute("failList");
+	session.removeAttribute("failList");
     session.removeAttribute("successList");
     session.removeAttribute("multipleSelect");
     request.removeAttribute("solveSuccessId");
@@ -64,13 +64,13 @@
     
     pointMultiple = new ArrayList<Multiple>();
     reMultiple = new ArrayList<Multiple>();	//저장된 오답들을 초기화한다.
-    	
+	
      %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -81,7 +81,7 @@
 <jsp:include page="../Log_module/header.jsp" />
 <br><br><br>
 </head>
-<body>
+<body id="body">
 
 		
 	<div class="col-md-12">
@@ -103,7 +103,7 @@
 		</div>
 		</c:if>
 		<c:if test="${successProgress==100 }">
-				<img src='../MultipleImage/total100.jpg'>
+				<img src='../MultipleImage/total100.gif'>
 		</c:if>
 	</div>
 	
@@ -122,6 +122,7 @@
 	</div>
 	<br>
 	<br>
+	<div class="col-md-12">
 	<c:if test="${successList.size()>0 }">		<!-- 회원이 1문제 이상 맞췄을 때 생기는 버튼 -->
 		<form action="MultiplePoint.jsp" method="POST">			
 			<input type="hidden" name = "memberId" value=${memberId }></input>
@@ -130,7 +131,8 @@
 		</form>
 	</c:if>
 	<c:if test="${successList.size() ==0 }">	<!-- 회원이 0문제 맞췃을 때 생기는 버튼 -->
-		<input type=button class = "multipleSelect_css returnButton" value="돌아가기" onclick=returnMultipleMain()></input>
+		<input type=button class = "multipleSelect_css returnButton" value="돌아가기" onclick=returnMultipleMain() ></input>
 	</c:if>
+	</div>
 </body>
 </html>

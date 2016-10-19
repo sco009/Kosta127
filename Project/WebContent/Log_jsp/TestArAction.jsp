@@ -7,11 +7,7 @@
 <%
 	String memberid = (String) session.getAttribute("memberID");
 	List<AccessRecord> list = MemberService.getInstance().printAccessRecordService(memberid);
-	for (int i = 0; i < list.size(); i++) {
-		System.out.println(list.get(i).getMemberid());
-		System.out.println(list.get(i).getLogintime());
-		System.out.println(list.get(i).getLogouttime());
-	}
+	
 	JSONArray jsonArray = JSONArray.fromObject(list);
 	String json = jsonArray.toString();
 
