@@ -1,24 +1,38 @@
 body {
-   text-align: left;
-   background: #ebf4fb;
-   background-color: #eee; 
+   
    min-height: 95vh;
    margin: 0;
    padding: 0;
-   border-bottom: 5vh solid #3694d7;
    font-family: "malgun gothic";
    
-   font-size: 14px;
    letter-spacing: -1px
 }
 
+#body{
+   font-size: 14px;
+   background-image:url("../../MultipleImage/Multiple.jpg");
+   background-size: cover;
+}
+.col-md-12{
+   text-align: center;
+}
+#Examiner{
+   padding:3px;
+   border: 2px solid;
+   display: inline;
+   border-radius: 1em;
+}
+.well{
+   opacity: 0.65;
+}
+
 #drop {
-   margin-top: 2vh; 
+   margin-top: 2vh;
    position: relative;
    display: inline-block;
    margin-right: 20 em;
-   min-height: 2em;
-   max-height: 2em;
+   min-height: 3em;
+   max-height: 3em;
    overflow: hidden;
    cursor: pointer;
    text-align: left;
@@ -27,7 +41,7 @@ body {
    outline: none;
    border: .06em solid transparent;
    border-radius: 1em;
-   background-color: #cde4f5;
+   background-color: #F4A460 /* #cde4f5 */;
    transition: 0.3s all ease-in-out;
 }
 
@@ -37,10 +51,12 @@ body {
 
 #drop label {
    border-top: .06em solid #d9d9d9;
+   width: 15em;
+   height: 3em;
    display: block;
-   height: 2em;
-   line-height: 2em;
-   padding-left: 1em;
+   height: 3em;
+   line-height: 3em;
+   padding-left: 2em;
    padding-right: 3em;
    cursor: pointer;
    position: relative;
@@ -48,7 +64,7 @@ body {
 }
 
 #drop label:nth-child(2) {
-   margin-top: 2em;
+   margin-top: 3em;
    border-top: .06em solid #d9d9d9;
 }
 
@@ -69,13 +85,13 @@ body {
    position: absolute;
    right: 0.8em;
    top: 0.9em;
-   border: 0.3em solid #3694d7;
-   border-color: #3694d7 transparent transparent transparent;
+   border: 0.3em solid #BB4513 /* #3694d7 */;
+   border-color: /* #3694d7 */ #CC723D transparent transparent transparent;
    transition: .4s all ease-in-out;
 }
 
 #drop.expanded {
-   border: 0.06em solid #3694d7;
+   border: 0.06em solid #BB4513 /* #3694d7 */;
    background: #fff;
    border-radius: .25em;
    padding: 0;
@@ -88,11 +104,11 @@ body {
 }
 
 #drop.expanded label:hover {
-   color: #3694d7;
+   color: #BB4513 /* #3694d7 */;
 }
 
 #drop.expanded input:checked+label {
-   color: #3694d7;
+   color: #BB4513 /* #3694d7 */;
 }
 
 .
@@ -101,29 +117,20 @@ body {
    top: .55em;
 }
 
-.label, .label:visited {
-   background: #222 url(/data/201012/IJ12931325586279/overlay.png) repeat-x;
-   display: inline-block;
-   padding: 5px 10px 6px;
-   color: #fff;
-   text-decoration: none;
+#toplabel{
+   text-align:center;
+   background-color: #BB4513 ;
+   width: 10em;;
+   height: 2em;
+   margin: 0.5em;
    -moz-border-radius: 6px;
    -webkit-border-radius: 6px;
    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
-   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-   position: relative;
-   cursor: pointer
 }
 
-.green.label, .green.button:visited {
-   background-color: #3694d7;
-}
 
-.green.label:hover {
-   background-color: #3694d7;
-}
 
 .row-fluid {
    margin-bottom: 2vh;
@@ -134,16 +141,20 @@ body {
    border-radius: 5px;
    -moz-border-radius: 5px;
    -webkit-border-radius: 5px;
-   border: 2px solid #B0DAFF;
-   background: #D6EFFF;
+   border: 2px solid #BB4513 /* #B0DAFF */;
+   background: #F4A460 /* #D6EFFF */;   
+   height: 2em;
+   width: 10em;
+   display:inline;
+   
 }
 
-.returnButton{
-	margin-top: 5em;
-}
+.returnButton {
+   text-align: center;
+} 
 
 /* 이미지 사이즈 */
-img{
+.imgs img {
    width: 10%;
    height: 10%;
 }

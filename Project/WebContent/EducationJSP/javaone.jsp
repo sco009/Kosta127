@@ -79,10 +79,6 @@
 				<li><a href="#item2">2. 개발환경의 구축</a></li>
 				<li><a href="#item3">3. 자바 프로그래밍 과정</a></li>
 			</ul>
-			<a class="bottens" href="javatwo.jsp?dataClassify=javatwo&memberID=ohwoosung"><h3>다음장으로</h3>
-			</a>
-			<a class="bottens" href="../Log_jsp/log_main.jsp"><h3>메인으로</h3>
-			</a>
 		</div>
 
 		<div class="bb-custom-wrapper">

@@ -1,6 +1,8 @@
 package cosmos.login.model;
 
-public class Login {
+import java.io.Serializable;
+
+public class Login implements Serializable{
 	private String memberID;
 	private String memberName;
 	

@@ -81,9 +81,6 @@
 				<li><a href="#item7">7. 데이터 변환과 캐스팅</a></li>
 				<li><a href="#item8">8. 연산자</a></li>
 			</ul>
-<a class="bottens" href="javaone.jsp?dataClassify=javatone&memberID=ohwoosung"><h3>이전장으로</h3> </a>
-<a class="bottens" href="javathree.jsp?dataClassify=javathree&memberID=ohwoosung"><h3>다음장으로</h3> </a>
-<a class="bottens" href="../Log_jsp/log_main.jsp"><h3>메인으로</h3></a>
 		</div>
 
 		<div class="bb-custom-wrapper">

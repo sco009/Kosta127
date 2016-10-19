@@ -15,8 +15,9 @@
 
 	try {
 		if (memberName != null) {
-	         re = loservice.currentLoginMemberService(login);
-	      }
+
+			re = loservice.currentLoginMemberService(login);
+		}
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -42,6 +43,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <script
@@ -65,6 +67,9 @@
 <body>
 	
 	<h4><%=memberName%>님 반갑습니다.</h4>
+
+	<h4><a href="Test.jsp">Test</a></h4>
+	<h4><a href="TestAr.jsp">Test</a></h4>
 	<a href="../Ranking_jsp/Ranking.jsp">랭킹</a>
 
 	<button class="small logout" Onclick="logout()">LOGOUT</button>

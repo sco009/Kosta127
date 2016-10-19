@@ -19,6 +19,11 @@ public class MemberService {
 		return dao.selectMember(memberID);
 	}
 	
+	public List<AccessRecord> printAccessRecordService(String memberid){
+		return dao.printAccessRecord(memberid);
+	}
+
+
 	public List<Member> listMemberService() {
 		return dao.listMember();
 	}
