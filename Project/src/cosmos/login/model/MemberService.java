@@ -2,6 +2,8 @@ package cosmos.login.model;
 
 import java.util.List;
 
+import cosmos.login.model.Member;
+
 public class MemberService {
 	private static MemberDao dao;
 	private static MemberService service = new MemberService();
@@ -30,5 +32,9 @@ public class MemberService {
 	
 	public int updateInfoService(Member member){
 		return dao.updateInfo(member);
+	}
+	
+	public List<Member> logMemberListService() {
+		return dao.loglistMember();
 	}
 }

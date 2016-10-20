@@ -75,6 +75,20 @@ private static LoginDao lodao = new LoginDao();
 		return re;
 	}
 
+	
+	public Login checkCurrentLoginMember(String memberID) {
+	      SqlSession sqlSession = getSqlSessionFactory().openSession();
+	      try {
+	         return sqlSession.getMapper(MemberMapper.class).checkCurrentLoginMember(memberID);
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         return null;
+	      }finally{
+	         sqlSession.close();
+	      }
+	   }
+
+
 	public List<Login> currentLoginMemberPrint(){
 		List<Login> list = null;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -88,4 +102,5 @@ private static LoginDao lodao = new LoginDao();
 		}
 		return list;
 	}
+
 }

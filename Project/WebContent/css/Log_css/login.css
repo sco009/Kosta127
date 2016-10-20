@@ -1,10 +1,4 @@
-
 @import url(http://fonts.googleapis.com/css?family=Roboto); 
-
-/* zocial */
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
 
 *,
 *:before,
@@ -65,16 +59,16 @@ input:focus {
 
 .inputUserIcon {
   position:absolute;
-  top:58px;
-  right: 90px;
-  color:white;
+  top:63px;
+  right: 95px;
+  color:black;
 }
 
 .inputPassIcon {
   position:absolute;
-  top:126px;
-  right: 90px;
-  color:white;
+  top:128px;
+  right: 95px;
+  color:black;
 }
 
 input::-webkit-input-placeholder {
@@ -86,10 +80,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .pass {
-	margin-top: 10px;
+   margin-top: 10px;
 }
 
 .join {
-	margin-top: 20px;
-	margin-left: 150px;
+   margin-top: 20px;
+   margin-left: 150px;
 }

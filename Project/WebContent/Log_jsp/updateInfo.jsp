@@ -36,7 +36,7 @@
 <body>
 	
 		<div class="container">
-
+		<br><br><br><br>
 	<div class="row">
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" action="updateOk.jsp?memberID=${member.memberID}" class="form" method="post" name="userForm">
@@ -44,7 +44,7 @@
 				<hr class="colorgraph">
 				
 				<div class="form-group">
-					<input type="text" name="memberID" id="memberID" class="form-control input-lg" placeholder="${member.memberID}" tabindex="1" onkeyup="openUpdateId(this.form)" disabled="disabled">
+					<input type="text" name="memberID" id="memberID" class="form-control input-lg" placeholder="${member.memberID}" tabindex="1" onkeyup="openUpdateId(this.form)"disabled="disabled">
 				</div>
 				
 				<div class="form-group">
@@ -95,7 +95,7 @@
 			// 이 변수들의 활약상을 기대한다
 			// 변수 이름을 're_'로 정한것은 'Reguar Expression'의 머릿글자
 			var re_memberPw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 검사식
-			var re_memberName = /^([a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ])$/; // 이름 검사식
+			var re_memberName = /^([가-힣ㄱ-ㅎㅏ-ㅣ])/; // 이름 검사식
 			var re_memberEmail = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
 			var re_memberPhoneNum = /^[0-9]{8,11}$/; // 전화번호 검사식
 

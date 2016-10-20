@@ -1,0 +1,18 @@
+@CHARSET "EUC-KR";
+
+.wrapper-dropdown-5:focus {
+    border-radius: 5px 5px 0 0;
+    background: #4cbeff;
+    box-shadow: none;
+    border-bottom: none;
+    color: white;
+}
+
+.wrapper-dropdown-5:focus:after {
+    border-color: #82d1ff transparent;
+}
+
+.wrapper-dropdown-5:focus .dropdown {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    max-height: 400px;
+}

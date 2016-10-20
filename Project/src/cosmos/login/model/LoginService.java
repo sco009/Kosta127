@@ -18,7 +18,14 @@ public class LoginService {
 	public int currentLogoutMemberService(Login login) {
 		return lodao.currentLogoutMember(login);
 	}
+
+	
+	public Login checkCurrentLoginMember(String memberID) {
+	      return lodao.checkCurrentLoginMember(memberID);
+	}
+
 	public List<Login> currentLoginMemberPrintService(){
 		return lodao.currentLoginMemberPrint();
+
 	}
 }
