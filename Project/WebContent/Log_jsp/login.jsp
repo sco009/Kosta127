@@ -3,8 +3,8 @@
 <%@page import="cosmos.login.model.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="cosmos.login.model.MemberService"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%
     
     request.setCharacterEncoding("utf-8");
@@ -42,7 +42,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>COSMOS</title>
 
 <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 			<div class="header-content-inner">
 				<h1 id="homeHeading">With you, COSMOS</h1>
 				<hr>
-				<p>COSMOS¿Í ÇÔ²² ´ç½ÅÀÇ ½Ç·ÂÀ» Å°¿öº¸¼¼¿ä!</p>
+				<p>COSMOSì™€ í•¨ê»˜ ë‹¹ì‹ ì˜ ì‹¤ë ¥ì„ í‚¤ì›Œë³´ì„¸ìš”!</p>
 				<a href="#about" class="btn btn-primary btn-xl page-scroll">START
 					COSMOS</a>
 			</div>
@@ -101,7 +101,7 @@
 						class="entypo-key inputPassIcon"></span> <input type="password"
 						class="pass" placeholder="password" name="memberPw" />
 					
-						<div class="join"><a href="join.jsp">¾ÆÁ÷ È¸¿øÀÌ ¾Æ´Ï¼¼¿ä?</a></div>
+						<div class="join"><a href="join.jsp">ì•„ì§ íšŒì›ì´ ì•„ë‹ˆì„¸ìš”?</a></div>
 				</form>
 			</div>
 		</div>

@@ -13,7 +13,7 @@ body {
    background-image:url("../../MultipleImage/Multiple.jpg");
    background-size: cover;
 }
-.col-md-12{
+.side{
    text-align: center;
 }
 #Examiner{
@@ -147,6 +147,11 @@ body {
    width: 10em;
    display:inline;
    
+}
+
+.totalImg img{
+	width: 50%;
+	height: 50%;
 }
 
 .returnButton {

@@ -2,8 +2,8 @@
 <%@page import="cosmos.login.model.Member"%>
 <%@page import="cosmos.login.model.MemberService"%>
 <%@page import="cosmos.login.model.MemberDao"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <% 
 
 	request.setCharacterEncoding("utf-8");
@@ -40,11 +40,11 @@
 	<div class="row">
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" action="updateOk.jsp?memberID=${member.memberID}" class="form" method="post" name="userForm">
-				<h2>Please Update Info <small>È¸¿øÁ¤º¸¸¦ ¼öÁ¤ÇØÁÖ¼¼¿ä</small></h2>
+				<h2>Please Update Info <small>íšŒì›ì •ë³´ë¥¼ ìˆ˜ì •í•´ì£¼ì„¸ìš”</small></h2>
 				<hr class="colorgraph">
 				
 				<div class="form-group">
-					<input type="text" name="memberID" id="memberID" class="form-control input-lg" placeholder="${member.memberID}" tabindex="1" onkeyup="openUpdateId(this.form)">
+					<input type="text" name="memberID" id="memberID" class="form-control input-lg" placeholder="${member.memberID}" tabindex="1" onkeyup="openUpdateId(this.form)" disabled="disabled">
 				</div>
 				
 				<div class="form-group">
@@ -79,7 +79,7 @@
 	<script type="text/javascript">
 		function openUpdateId(inputid) {
 			if(inputid.memberID.value != "") {
-				alert("¾ÆÀÌµğ´Â º¯°æÇÏ½Ç ¼ö ¾ø½À´Ï´Ù!")
+				alert("ì•„ì´ë””ëŠ” ë³€ê²½í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!")
 				return;
 			}
 		}
@@ -87,76 +87,76 @@
 		
 	<script type="text/javascript">
 		// <![CDATA[
-		jQuery(function($) { // HTML ¹®¼­¸¦ ¸ğµÎ ÀĞÀ¸¸é Æ÷ÇÔÇÑ ÄÚµå¸¦ ½ÇÇà
+		jQuery(function($) { // HTML ë¬¸ì„œë¥¼ ëª¨ë‘ ì½ìœ¼ë©´ í¬í•¨í•œ ì½”ë“œë¥¼ ì‹¤í–‰
 
-			// Á¤±Ô½ÄÀ» º¯¼ö¿¡ ÇÒ´ç
-			// Á¤±Ô½ÄÀ» Á÷Á¢ ÀÛ¼ºÇÒ ÁÙ ¾Ë¸é Âü ÁÁ°ÚÁö¸¸
-			// º¯¼ö ¿ìÃø¿¡ ÇÒ´çµÈ Á¤±Ô½ÄÀº °Ë»öÇÏ¸é ½±°Ô Ã£À» ¼ö ÀÖ´Ù 
-			// ÀÌ º¯¼öµéÀÇ È°¾à»óÀ» ±â´ëÇÑ´Ù
-			// º¯¼ö ÀÌ¸§À» 're_'·Î Á¤ÇÑ°ÍÀº 'Reguar Expression'ÀÇ ¸Ó¸´±ÛÀÚ
-			var re_memberPw = /^[a-z0-9_-]{6,18}$/; // ºñ¹Ğ¹øÈ£ °Ë»ç½Ä
-			var re_memberName = /([a-z\.])$/; // ÀÌ¸§ °Ë»ç½Ä
-			var re_memberEmail = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // ÀÌ¸ŞÀÏ °Ë»ç½Ä
-			var re_memberPhoneNum = /^[0-9]{8,11}$/; // ÀüÈ­¹øÈ£ °Ë»ç½Ä
+			// ì •ê·œì‹ì„ ë³€ìˆ˜ì— í• ë‹¹
+			// ì •ê·œì‹ì„ ì§ì ‘ ì‘ì„±í•  ì¤„ ì•Œë©´ ì°¸ ì¢‹ê² ì§€ë§Œ
+			// ë³€ìˆ˜ ìš°ì¸¡ì— í• ë‹¹ëœ ì •ê·œì‹ì€ ê²€ìƒ‰í•˜ë©´ ì‰½ê²Œ ì°¾ì„ ìˆ˜ ìˆë‹¤ 
+			// ì´ ë³€ìˆ˜ë“¤ì˜ í™œì•½ìƒì„ ê¸°ëŒ€í•œë‹¤
+			// ë³€ìˆ˜ ì´ë¦„ì„ 're_'ë¡œ ì •í•œê²ƒì€ 'Reguar Expression'ì˜ ë¨¸ë¦¿ê¸€ì
+			var re_memberPw = /^[a-z0-9_-]{6,18}$/; // ë¹„ë°€ë²ˆí˜¸ ê²€ì‚¬ì‹
+			var re_memberName = /^([a-zA-Zê°€-í£ã„±-ã…ã…-ã…£])$/; // ì´ë¦„ ê²€ì‚¬ì‹
+			var re_memberEmail = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // ì´ë©”ì¼ ê²€ì‚¬ì‹
+			var re_memberPhoneNum = /^[0-9]{8,11}$/; // ì „í™”ë²ˆí˜¸ ê²€ì‚¬ì‹
 
-			// ¼±ÅÃÇÒ ¿ä¼Ò¸¦ º¯¼ö¿¡ ÇÒ´ç
-			// º¯¼ö¿¡ ÇÒ´çÇÏÁö ¾ÊÀ¸¸é ¸Å¹ø HTML ¿ä¼Ò¸¦ ¼±ÅÃÇØ¾ß ÇÏ±â ¶§¹®¿¡ ±ÍÂú°í ¼º´É¿¡µµ ÁÁÁö ¾Ê´Ù
-			// ½°Ç¥¸¦ ÀÌ¿ëÇØ¼­ ¿©·¯ º¯¼ö¸¦ ÇÑ ¹ø¿¡ ¼±¾ğÇÒ ¼ö ÀÖ´Ù
-			// º¸±â ÁÁÀ¸¶ó°í ½°Ç¥ ´ÜÀ§·Î ÁÙÀ» ¹Ù²å´Ù 
+			// ì„ íƒí•  ìš”ì†Œë¥¼ ë³€ìˆ˜ì— í• ë‹¹
+			// ë³€ìˆ˜ì— í• ë‹¹í•˜ì§€ ì•Šìœ¼ë©´ ë§¤ë²ˆ HTML ìš”ì†Œë¥¼ ì„ íƒí•´ì•¼ í•˜ê¸° ë•Œë¬¸ì— ê·€ì°®ê³  ì„±ëŠ¥ì—ë„ ì¢‹ì§€ ì•Šë‹¤
+			// ì‰¼í‘œë¥¼ ì´ìš©í•´ì„œ ì—¬ëŸ¬ ë³€ìˆ˜ë¥¼ í•œ ë²ˆì— ì„ ì–¸í•  ìˆ˜ ìˆë‹¤
+			// ë³´ê¸° ì¢‹ìœ¼ë¼ê³  ì‰¼í‘œ ë‹¨ìœ„ë¡œ ì¤„ì„ ë°”ê¿¨ë‹¤ 
 			var form = $('.form'), memberPw = $('#memberPw'), memberName = $('#memberName'), memberEmail = $('#memberEmail'), memberPhoneNum = $('#memberPhoneNum');
 
-			// ¼±ÅÃÇÑ form¿¡ ¼­¹Ô ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ½ÇÇàÇÑ´Ù
-			// if (»ç¿ëÀÚ ÀÔ·Â °ªÀÌ Á¤±Ô½Ä °Ë»ç¿¡ ÀÇÇØ ÂüÀÌ ¾Æ´Ï¸é) {Æ÷ÇÔÇÑ ÄÚµå¸¦ ½ÇÇà}
-			// if Á¶°ÇÀı ¾ÈÀÇ 'Á¤±Ô½Ä.test(°Ë»çÇÒ°ª)' Çü½ÄÀº true ¶Ç´Â false¸¦ ¹İÈ¯ÇÑ´Ù
-			// if Á¶°ÇÀı ¾ÈÀÇ °Ë»ç °á°ú°¡ '!= true' ÂüÀÌ ¾Æ´Ï¸é {...} ½ÇÇà
-			// »ç¿ëÀÚ ÀÔ·Â °ªÀÌ ÂüÀÌ ¾Æ´Ï¸é alertÀ» ¶ç¿î´Ù
-			// »ç¿ëÀÚ ÀÔ·Â °ªÀÌ ÂüÀÌ ¾Æ´Ï¸é ¿À·ù°¡ ¹ß»ıÇÑ inputÀ¸·Î Æ÷Ä¿½º¸¦ º¸³½´Ù
-			// »ç¿ëÀÚ ÀÔ·Â °ªÀÌ ÂüÀÌ ¾Æ´Ï¸é form ¼­¹ÔÀ» Áß´ÜÇÑ´Ù
+			// ì„ íƒí•œ formì— ì„œë°‹ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì‹¤í–‰í•œë‹¤
+			// if (ì‚¬ìš©ì ì…ë ¥ ê°’ì´ ì •ê·œì‹ ê²€ì‚¬ì— ì˜í•´ ì°¸ì´ ì•„ë‹ˆë©´) {í¬í•¨í•œ ì½”ë“œë¥¼ ì‹¤í–‰}
+			// if ì¡°ê±´ì ˆ ì•ˆì˜ 'ì •ê·œì‹.test(ê²€ì‚¬í• ê°’)' í˜•ì‹ì€ true ë˜ëŠ” falseë¥¼ ë°˜í™˜í•œë‹¤
+			// if ì¡°ê±´ì ˆ ì•ˆì˜ ê²€ì‚¬ ê²°ê³¼ê°€ '!= true' ì°¸ì´ ì•„ë‹ˆë©´ {...} ì‹¤í–‰
+			// ì‚¬ìš©ì ì…ë ¥ ê°’ì´ ì°¸ì´ ì•„ë‹ˆë©´ alertì„ ë„ìš´ë‹¤
+			// ì‚¬ìš©ì ì…ë ¥ ê°’ì´ ì°¸ì´ ì•„ë‹ˆë©´ ì˜¤ë¥˜ê°€ ë°œìƒí•œ inputìœ¼ë¡œ í¬ì»¤ìŠ¤ë¥¼ ë³´ë‚¸ë‹¤
+			// ì‚¬ìš©ì ì…ë ¥ ê°’ì´ ì°¸ì´ ì•„ë‹ˆë©´ form ì„œë°‹ì„ ì¤‘ë‹¨í•œë‹¤
 			form.submit(function() {
-				if (re_memberPw.test(memberPw.val()) != true) { // ºñ¹Ğ¹øÈ£ °Ë»ç
-					alert('[ºñ¹Ğ¹øÈ£ ÀÔ·Â ¿À·ù] À¯È¿ÇÑ PW¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä');
+				if (re_memberPw.test(memberPw.val()) != true) { // ë¹„ë°€ë²ˆí˜¸ ê²€ì‚¬
+					alert('[ë¹„ë°€ë²ˆí˜¸ ì…ë ¥ ì˜¤ë¥˜] ìœ íš¨í•œ PWë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”');
 					memberPw.focus();
 					return false;
 				} else if(re_memberName.test(memberName.val()) != true){
-					alert('[ÀÌ¸§ ÀÔ·Â ¿À·ù] À¯È¿ÇÑ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä');
+					alert('[ì´ë¦„ ì…ë ¥ ì˜¤ë¥˜] ìœ íš¨í•œ ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”');
 					memberName.focus();
 					return false;
-				} else if (re_memberPhoneNum.test(memberPhoneNum.val()) != true) { // ÀüÈ­¹øÈ£ °Ë»ç
-					alert('[ÀüÈ­¹øÈ£ ÀÔ·Â ¿À·ù] À¯È¿ÇÑ ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä');
+				} else if (re_memberPhoneNum.test(memberPhoneNum.val()) != true) { // ì „í™”ë²ˆí˜¸ ê²€ì‚¬
+					alert('[ì „í™”ë²ˆí˜¸ ì…ë ¥ ì˜¤ë¥˜] ìœ íš¨í•œ ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”');
 					memberPhoneNum.focus();
 					return false;
-				} else if (re_memberEmail.test(memberEmail.val()) != true) { // ÀÌ¸ŞÀÏ °Ë»ç
-					alert('[ÀÌ¸ŞÀÏ ÀÔ·Â ¿À·ù] À¯È¿ÇÑ ÀÌ¸ŞÀÏ ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä');
+				} else if (re_memberEmail.test(memberEmail.val()) != true) { // ì´ë©”ì¼ ê²€ì‚¬
+					alert('[ì´ë©”ì¼ ì…ë ¥ ì˜¤ë¥˜] ìœ íš¨í•œ ì´ë©”ì¼ ì£¼ì†Œë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”');
 					memberEmail.focus();
 					return false;
 				} 
 			});
 
-			// #id, #password ÀÎÇ²¿¡ ÀÔ·ÂµÈ °ªÀÇ ±æÀÌ°¡ Àû´çÇÑÁö ¾Ë·ÁÁÖ·Á°í ÇÑ´Ù
-			// #id, #password ´ÙÀ½ ¼ø¼­¿¡ °æ°í ÅØ½ºÆ® Ãâ·ÂÀ» À§ÇÑ ºó strong ¿ä¼Ò¸¦ Ãß°¡ÇÑ´Ù
-			// ¹«ÅÎ´ë°í ÀÚ¹Ù½ºÅ©¸³Æ®¸¦ ÀÌ¿ëÇØ¼­ HTML »ğÀÔÇÏ´Â °ÍÀº ÁÁÁö ¾ÊÀº ¹ö¸©
-			// ±×·¯³ª ÀÌ °æ¿ì´Â strong ¿ä¼Ò°¡ ¾ø¾îµµ ´©±¸³ª form ÇÙ½É ±â´ÉÀ» ÀÌ¿ëÇÒ ¼ö ÀÖÀ¸´Ï±î ¹®Á¦ ¾ø´Ù
+			// #id, #password ì¸í’‹ì— ì…ë ¥ëœ ê°’ì˜ ê¸¸ì´ê°€ ì ë‹¹í•œì§€ ì•Œë ¤ì£¼ë ¤ê³  í•œë‹¤
+			// #id, #password ë‹¤ìŒ ìˆœì„œì— ê²½ê³  í…ìŠ¤íŠ¸ ì¶œë ¥ì„ ìœ„í•œ ë¹ˆ strong ìš”ì†Œë¥¼ ì¶”ê°€í•œë‹¤
+			// ë¬´í„±ëŒ€ê³  ìë°”ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì´ìš©í•´ì„œ HTML ì‚½ì…í•˜ëŠ” ê²ƒì€ ì¢‹ì§€ ì•Šì€ ë²„ë¦‡
+			// ê·¸ëŸ¬ë‚˜ ì´ ê²½ìš°ëŠ” strong ìš”ì†Œê°€ ì—†ì–´ë„ ëˆ„êµ¬ë‚˜ form í•µì‹¬ ê¸°ëŠ¥ì„ ì´ìš©í•  ìˆ˜ ìˆìœ¼ë‹ˆê¹Œ ë¬¸ì œ ì—†ë‹¤
 			$('#memberPw').after('<strong></strong>');
 
 
-			// #password ÀÎÇ²¿¡¼­ onkeyup ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é
+			// #password ì¸í’‹ì—ì„œ onkeyup ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´
 			memberPw.keyup(function() {
-				var s = $(this).next('strong'); // strong ¿ä¼Ò¸¦ º¯¼ö¿¡ ÇÒ´ç
-				if (memberPw.val().length == 0) { // ÀÔ·Â °ªÀÌ ¾øÀ» ¶§
-					s.text(''); // strong ¿ä¼Ò¿¡ Æ÷ÇÔµÈ ¹®ÀÚ Áö¿ò
-				} else if (memberPw.val().length < 6) { // ÀÔ·Â °ªÀÌ 6º¸´Ù ÀÛÀ» ¶§
-					s.text('³Ê¹« Âª¾Æ¿ä'); // strong ¿ä¼Ò¿¡ ¹®ÀÚ Ãâ·Â
-				} else if (memberPw.val().length > 18) { // ÀÔ·Â °ªÀÌ 18º¸´Ù Å¬ ¶§
-					s.text('³Ê¹« ±æ¾î¿ä'); // strong ¿ä¼Ò¿¡ ¹®ÀÚ Ãâ·Â
-				} else { // ÀÔ·Â °ªÀÌ 6 ÀÌ»ó 18 ÀÌÇÏÀÏ ¶§
-					s.text('Àû´çÇØ¿ä'); // strong ¿ä¼Ò¿¡ ¹®ÀÚ Ãâ·Â
+				var s = $(this).next('strong'); // strong ìš”ì†Œë¥¼ ë³€ìˆ˜ì— í• ë‹¹
+				if (memberPw.val().length == 0) { // ì…ë ¥ ê°’ì´ ì—†ì„ ë•Œ
+					s.text(''); // strong ìš”ì†Œì— í¬í•¨ëœ ë¬¸ì ì§€ì›€
+				} else if (memberPw.val().length < 6) { // ì…ë ¥ ê°’ì´ 6ë³´ë‹¤ ì‘ì„ ë•Œ
+					s.text('ë„ˆë¬´ ì§§ì•„ìš”'); // strong ìš”ì†Œì— ë¬¸ì ì¶œë ¥
+				} else if (memberPw.val().length > 18) { // ì…ë ¥ ê°’ì´ 18ë³´ë‹¤ í´ ë•Œ
+					s.text('ë„ˆë¬´ ê¸¸ì–´ìš”'); // strong ìš”ì†Œì— ë¬¸ì ì¶œë ¥
+				} else { // ì…ë ¥ ê°’ì´ 6 ì´ìƒ 18 ì´í•˜ì¼ ë•Œ
+					s.text('ì ë‹¹í•´ìš”'); // strong ìš”ì†Œì— ë¬¸ì ì¶œë ¥
 				}
 			});
 
 			
-			// #phone_n ÀÎÇ²¿¡ onkeydown ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é
-			// ÇÏÀÌÇÂ(-) Å°°¡ ´­·È´ÂÁö È®ÀÎ
-			// ÇÏÀÌÇÂ(-) Å°°¡ ´­·È´Ù¸é ÀÔ·Â Áß´Ü
+			// #phone_n ì¸í’‹ì— onkeydown ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´
+			// í•˜ì´í”ˆ(-) í‚¤ê°€ ëˆŒë ¸ëŠ”ì§€ í™•ì¸
+			// í•˜ì´í”ˆ(-) í‚¤ê°€ ëˆŒë ¸ë‹¤ë©´ ì…ë ¥ ì¤‘ë‹¨
 			memberPhoneNum.keydown(function() {
 				if (event.keyCode == 109 || event.keyCode == 189) {
 					return false;

@@ -102,9 +102,11 @@
 			</c:if>
 		</div>
 		</c:if>
+		<div class="totalImg">
 		<c:if test="${successProgress==100 }">
 				<img src='../MultipleImage/total100.gif'>
 		</c:if>
+		</div>
 	</div>
 	
 	<div class="col-md-12">

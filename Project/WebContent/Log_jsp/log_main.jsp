@@ -15,7 +15,6 @@
 
 	try {
 		if (memberName != null) {
-
 			re = loservice.currentLoginMemberService(login);
 		}
 	} catch (Exception e) {

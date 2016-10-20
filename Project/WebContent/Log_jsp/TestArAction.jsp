@@ -11,6 +11,5 @@
 	JSONArray jsonArray = JSONArray.fromObject(list);
 	String json = jsonArray.toString();
 
-	//System.out.println(json);
 	out.print(json);
 %>
