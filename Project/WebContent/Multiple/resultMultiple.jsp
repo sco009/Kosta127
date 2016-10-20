@@ -75,12 +75,13 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="../js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
+<link href="../css/MultipleCss/resultMultiple.css" rel="stylesheet" type="text/css">
 
 <title>Cosmos</title>
 <jsp:include page="../Log_module/header.jsp" />
 <br><br><br>
 </head>
-<body id="body">
+<body id="resultBody">
 
       
    <div class="col-md-12">
@@ -102,7 +103,9 @@
       </div>
       </c:if>
       <c:if test="${successProgress==100 }">
+      		<div class="totalImg">
             <img src='../MultipleImage/total100.gif'>
+            </div>
       </c:if>
    </div>
    
