@@ -5,36 +5,15 @@
 <%
 	String memberName = (String) session.getAttribute("memberName");
 	String memberID = (String) session.getAttribute("memberID"); //id넘어옴
-
-	Login login = new Login();
-	login.setMemberID(memberID);
-	login.setMemberName(memberName);
-
-	LoginService loservice = LoginService.getInstance();
-	int re = -1;
-
-	try {
-		if (memberName != null) {
-
-			re = loservice.currentLoginMemberService(login);
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-
-	if (memberName == null) {
-		response.sendRedirect("login.jsp");
-	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
-	 <jsp:include page="../Log_module/mainHeader.jsp" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/Log_css/mainHeader.css">
+<title>COSMOS MAIN</title>
+
 <link rel="stylesheet" type="text/css" href="../css/Log_css/mainMenu1.css">
 <link rel="stylesheet" type="text/css" href="../css/Log_css/mainMenu2.css">
 <link rel="stylesheet" type="text/css" href="../css/Log_css/mainMenu3.css">
@@ -43,7 +22,6 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <script
@@ -52,11 +30,21 @@
 
 <!-- 부트스트랩 끝 -->
 
-
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	
+   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description"
+   content="Custom Drop-Down List Styling with CSS3" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="../css/Log_css/drop_style.css" />
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700'
+   rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="../js/Log_js/modernizr.custom.79639.js"></script>
+<noscript>
+   <link rel="stylesheet" type="text/css" href="../css/Log_css/noJS.css" />
+</noscript>
 </head>
 <script type="text/javascript">
 	function logout() {
@@ -65,14 +53,59 @@
 </script>
 
 <body>
+	<div class="drop_container">
+
+      <section class="drop_main">
+      <div class="wrapper-demo">
+         <div id="dd" class="wrapper-dropdown-5" tabindex="1">
+            <%=memberName%>
+            <ul class="dropdown">
+               <li><a href="TestAr.jsp"><i class="icon-user"></i>접속기록 확인</a></li>
+               <li><a href="updateInfo.jsp"><i class="icon-cog"></i>회원정보수정</a></li>
+               <li><a href="logout.jsp"><i class="icon-remove"></i>로그아웃</a></li>
+            </ul>
+         </div>
+         ​
+      </div>
+      </section>
+
+   </div>
+
+   <!-- jQuery if needed -->
+   <script type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+   <script type="text/javascript">
+      function DropDown(el) {
+         this.dd = el;
+         this.initEvents();
+      }
+      DropDown.prototype = {
+         initEvents : function() {
+            var obj = this;
+
+            obj.dd.on('click', function(event) {
+               $(this).toggleClass('active');
+               event.stopPropagation();
+            });
+         }
+      }
+
+      $(function() {
+
+         var dd = new DropDown($('#dd'));
+
+         $(document).click(function() {
+            // all dropdowns
+            $('.wrapper-dropdown-5').removeClass('active');
+         });
+
+      });
+   </script>
 	
-	<h4><%=memberName%>님 반갑습니다.</h4>
-
-	<h4><a href="Test.jsp">Test</a></h4>
+	<!-- <h4><a href="Test.jsp">Test</a></h4>
 	<h4><a href="TestAr.jsp">Test</a></h4>
-	<a href="../Ranking_jsp/Ranking.jsp">랭킹</a>
+	<a href="../Ranking_jsp/Ranking.jsp">랭킹</a> -->
 
-	<button class="small logout" Onclick="logout()">LOGOUT</button>
 
 	<div class="container">
 		<div class="row-fluid">
@@ -94,7 +127,9 @@
 								class="fa fa-balance-scale" aria-hidden="true"></i>
 							</a> <a class="plate" href="codeFight.jsp"> <i
 								class="fa fa-keyboard-o" aria-hidden="true"></i>
-							</a>
+							</a> <a class="plate" href="../Ranking_jsp/Ranking.jsp"> <i class="fa fa-trophy"
+                        aria-hidden="true"></i>
+                     </a>
 						</div>
 					</div>
 
@@ -106,7 +141,7 @@
 							</div>
 						</label>
 						<div class="ma2">
-							<a class="plate2" href="createGroup.jsp"> <i
+							<a class="plate2" href="Test.jsp"> <i
 								class="fa fa-user-plus" aria-hidden="true"></i>
 							</a> <a class="plate2" href="enterGroup.jsp"> <i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
