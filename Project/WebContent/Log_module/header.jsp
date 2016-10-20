@@ -12,7 +12,7 @@
 <body> 
 <div id="container">
 <ul id="navbar">
- <li id="selected"><a href="../Log_jsp/main.jsp">Home<span></span></a></li>
+ <li id="selected"><a href="../Log_jsp/log_main.jsp">Home<span></span></a></li>
  <li><a href="#">STUDY<span></span></a>
     <ul>
       <li><a href="../Log_jsp/studyData.jsp">Educational Resource</a></li>
@@ -32,6 +32,7 @@
  <li><a href="#">MYPAGE<span></span></a>
     <ul>
       <li><a href="../Log_jsp/updateInfo.jsp">Update Info</a></li>
+      <li><a href="../Log_jsp/logMemberlist.jsp">LogMemberList</a></li>
     </ul>
  </li>
 </ul>

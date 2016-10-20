@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import cosmos.login.mapper.MemberMapper;
+import cosmos.login.model.Member;
 
 public class MemberDao {
 	private static MemberDao dao = new MemberDao();
@@ -113,5 +114,21 @@ public class MemberDao {
 		}finally{
 			sqlSession.close();
 		}
+	}
+	
+	public List<Member> loglistMember() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Member> loglist = null;
+		
+		try {
+			loglist = sqlSession.getMapper(MemberMapper.class).listMember();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally{
+			sqlSession.close();
+		}
+		
+		return loglist;
 	}
 }

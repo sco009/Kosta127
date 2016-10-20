@@ -35,7 +35,7 @@
 	<jsp:include page="../Log_module/header.jsp" />
 		<br><br>
 		<div class="container">
-
+		<br><br><br><br>
 	<div class="row">
 	    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" action="updateOk.jsp?memberID=${member.memberID}" class="form" method="post" name="userForm">
