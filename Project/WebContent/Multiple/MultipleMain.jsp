@@ -15,7 +15,7 @@
 %>
 <%	
 	if(session.getAttribute("memberID")==null){
-		response.sendRedirect("../Log_jsp/log_main.jsp");
+		response.sendRedirect("../Log_jsp/log_main.jsp");		//로그인 되어있지 않으면 메인페이지로 이동한다.
 	}
 
 	MultipleService service = MultipleService.getInstance();	
@@ -82,12 +82,12 @@
 
 	<div class="row-fluid">
 		<div class="col-md-12">
-    		<div class="row-fluid">
+    		<div class="row-fluid side">
      			<label id="toplabel"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
      			<label id="toplabel"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
          	</div>
          	
-  		 <div class="col-md-3 col-md-offset-1*">
+  		 <div class="col-md-3 col-md-offset-1* side">
   		 	<form action="MultipleMainSend.jsp" method="POST">
    	 			<div class="row-fluid">
    
@@ -119,7 +119,9 @@
 
 	<div class="col-md-4">
 		<div class="well well-large problem">
+			<pre>
 			 ${multipleSelect.mulquestContent }
+			</pre>
 			 	<br>
 				<c:if test="${multipleSelect!=null }">
 					<br>
@@ -131,7 +133,7 @@
 	
 	</div><!--2단 end  -->
 	
-	<div class="col-md-4 checkd">
+	<div class="col-md-4 checkd side">
       <div class="well well-large">
          <!-- 유형이 선택되야만 보기가 보여짐 -->
          <c:if test="${multipleSelect != null }">
@@ -175,7 +177,7 @@
             </c:if>
          </div><!-- solveButton end  -->
       </div><!-- 3단 col end  -->
-	</div><!-- clo 12 end  -->
+	</div><!-- col 12 end  -->
 </div><!-- main row -->
 </body>
 </html>

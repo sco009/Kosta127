@@ -1,0 +1,11 @@
+#resultBody{
+   background-image:url("../../MultipleImage/Multiple.jpg");
+   background-size: cover;
+   text-align: center;
+   font-size: 14px;
+   
+}
+.totalImg img{
+    width: 30%;
+   height: 30%;
+}

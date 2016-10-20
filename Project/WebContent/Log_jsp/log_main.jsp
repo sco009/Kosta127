@@ -3,6 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	LoginService service = LoginService.getInstance();
+	request.setAttribute("service", service);
+	
 	String memberName = (String) session.getAttribute("memberName");
 	String memberID = (String) session.getAttribute("memberID"); //id넘어옴
 %>
@@ -23,7 +26,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../css/bootstrap.min.css" rel="stylesheet">
-
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

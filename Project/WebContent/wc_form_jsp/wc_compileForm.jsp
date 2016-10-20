@@ -89,6 +89,7 @@
       	padding-bottom:30px;
       }
       
+
       #loading{
         
         position : absolute;
@@ -97,13 +98,29 @@
       	width: 100%;
       	z-index: 1;
       }
-      
+      #body{
+		font-size: 14px;
+   		background-image:url("../wc_image/compile_bg.jpg");
+   		background-size: cover;
+   		background-position : center;
+		background-repeat: no-repeat;
+		background-size : 130%;
+	  }
+	  
+	  #bg{
+	  	width: 390px;
+    	height: 280px;	  
+	  	background-color: white;
+	  }
+	  
 </style>
-<body>
+
+<body id="body">
 
 <div id="main">
 
 	<div class="row" id="demo1">
+
       <div class="col-md-4">
       	<form action="wc_compileForm.jsp" method="post" id="complieFrom">
 			<%-- <textarea rows="30" cols="50" name="wc_code"
@@ -123,8 +140,9 @@
       <div>
       	<img id="wc_algorithmImg" src="../wc_image/wc_algorithmEx.png">
       </div>
+      <div id="bg">
       <div class="editor-wrapper">
-<div class="editor editor1">st=>start: Start:>
+<div class="editor editor1" >st=>start: Start:>
 e=>end:>
 op1=>operation: My Operation
 sub1=>subroutine: My Subroutine
@@ -135,7 +153,7 @@ io=>inputoutput: catch something...
 st->op1->cond
 cond(yes)->io->e
 cond(no)->sub1(right)->op1</div>
-           </div>
+           </div></div>
       </div>
       <div class="col-md-4">
       	<div class="diagram diagram1" align="center"></div>
