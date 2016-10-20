@@ -3,13 +3,11 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<!-- 네임스페이스 필수 -->
-<!-- crud메소드 사용, mapper-interface방식(추천) 총 두가지 -->
 <mapper namespace="cosmos.login.mapper.MemberMapper">
 	<cache />
 	
 	<insert id="insertMember" parameterType="Member">
-		insert into member(잘가아아 행복해애애 나를 잊어줘 잊고 살아가줘 나를 잊지마 나를 그래 나를 괜찮아 아프
+		insert into member(
 			memberID , memberPw , memberEmail, memberName , isLeader, memberPhoneNum
 		)values(
 			#{memberID,jdbcType=VARCHAR},#{memberPw,jdbcType=VARCHAR}, #{memberEmail,jdbcType=VARCHAR}, 
