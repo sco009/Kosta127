@@ -3,6 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	LoginService service = LoginService.getInstance();
+	request.setAttribute("service", service);
+	
 	String memberName = (String) session.getAttribute("memberName");
 	String memberID = (String) session.getAttribute("memberID"); //id넘어옴
 %>

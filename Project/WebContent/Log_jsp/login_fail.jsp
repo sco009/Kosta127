@@ -9,7 +9,7 @@
 <body>
    <script type="text/javascript">
       alert("이미 로그인 된 계정입니다.");
-      location.href="login.jsp";
+      location.href="log_main.jsp";
    </script>
 </body>
 </html>
