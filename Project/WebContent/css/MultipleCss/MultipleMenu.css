@@ -86,7 +86,7 @@ body {
    right: 0.8em;
    top: 0.9em;
    border: 0.3em solid #BB4513 /* #3694d7 */;
-   border-color: /* #3694d7 */ #CC723D transparent transparent transparent;
+   border-color: /* #3694d7 */ #BB4513 transparent transparent transparent;
    transition: .4s all ease-in-out;
 }
 

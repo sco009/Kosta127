@@ -35,6 +35,9 @@ public class WC_CompileService {
 		String wc_errResult = "";
 		
 		
+		
+		
+		
 		// class파일 삭제
 		String wc_className = wc_javaName + ".class";
 		wc_fileDelete(wc_className);
