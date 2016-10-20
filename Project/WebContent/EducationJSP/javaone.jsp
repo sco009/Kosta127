@@ -16,15 +16,16 @@
 	}
 	
 	EducationService service = EducationService.getInstance();
-	List<EducationContents> list = service.selectmemberID(memberID);  //해당 아이디에 입력되어있는 hl_contents값 가져옴,
+	List<EducationContents> list = service.selectmemberID(memberID);  //해당 아이디에 입력되어있는 hl_contents값 가져옴
+	
 	if(list!=null){	
-	for(int i = 0 ; i < list.size() ; i ++){
-		if(i>0){
-		 			data+="/";   // 각각의 hl_contents사이에  "/" 추가 
-		 		}
-		data+= list.get(i).gethl_contents();
+		for (int i = 0; i < list.size(); i++) {
+			if (i > 0) {
+				data += "/"; // 각각의 hl_contents사이에  "/" 추가 
+			}
+			data += list.get(i).gethl_contents();
 
-	}
+		}
 	}
 	request.setAttribute("data", data);
 	request.setAttribute("pages", pages);
@@ -35,29 +36,29 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
 <title>JAVA 자바의 소개</title>
-<meta name="description"
-	content="Fullscreen Pageflip Layout with BookBlock" />
-<meta name="keywords"
-	content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
+<meta name="description" content="Fullscreen Pageflip Layout with BookBlock" />
+<meta name="keywords" content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
 <meta name="author" content="Codrops" />
+
 <link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" type="text/css"
-	href="../css/education/jquery.jscrollpane.custom.css" /><!-- 드레그 -->
-<link rel="stylesheet" type="text/css"
-	href="../css/education/bookblock.css" />
-<link rel="stylesheet" type="text/css"
-	href="../css/education/custom.css" /><!-- 바디관련 css -->
+<link rel="stylesheet" type="text/css" href="../css/education/jquery.jscrollpane.custom.css" /><!-- 드레그 -->
+<link rel="stylesheet" type="text/css" href="../css/education/bookblock.css" />
+<link rel="stylesheet" type="text/css" href="../css/education/custom.css" /><!-- 바디관련 css -->
+
+
 <script src="../js/educationJS/modernizr.custom.79639.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="../js/educationJS/eductionScript.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script> 
+
 <style>
-.bottens{
+.bottens {
 	text-align: center;
 }
-#body{
+
+#body {
 	background-image: url("../edu_image/imagesbackground.jpg");
-	background-size:cover;
+	background-size: cover;
 }
 </style>
 </head>
@@ -89,14 +90,13 @@
 						<div class="scroller">
 							<h2>1. Java의 소개</h2>
 							<form id="submit_form" action="educationinsert.jsp">
-								<input type="hidden" name="hl_contents" class="texts"
-									value="null"> <input type="hidden" name="pages"
-									value="1"> <input type="hidden" name="dataClassify"
-									value="<%=dataClassify%>"> <input type="hidden"
-									name="memberID" value="<%=memberID%>"> <input
-									type="button" class="button-3d" value="형광펜 추가하기"
-									style="display: scroll; position: fixed; top: 80px; left: 800px;"
-									onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
+								<input type="hidden" name="hl_contents" class="texts" value="null">
+								<input type="hidden" name="pages" value="1">
+								<input type="hidden" name="dataClassify" value="<%=dataClassify%>">
+								<input type="hidden" name="memberID" value="<%=memberID%>">
+								<input type="button" class="button-3d" value="형광펜 추가하기"
+								       style="display: scroll; position: fixed; top: 80px; left: 800px;"
+									   onClick="wordSearch(this.form.hl_contents.value,'submit_form')">
 							</form>
 
 							<form action="education_delete.jsp">

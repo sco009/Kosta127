@@ -2,6 +2,8 @@ package cosmos.education.model;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.RowBounds;
@@ -130,12 +132,15 @@ public class EducationDao {
 		return selectmemberID;
 	}
 
-	public void deleteedunamager(String hl_contents) {
+	public void deleteEdumanager(String memberID, String hl_contents ) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("0", memberID);
+		map.put("1", hl_contents);
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = 0 ;
 		
 		try {
-			re=sqlSession.getMapper(EducationMapper.class).deleteedunamager(hl_contents);
+			re=sqlSession.getMapper(EducationMapper.class).deleteEdumanager(map);
 			if(re > 0 ){
 				sqlSession.commit();
 				}else{
@@ -149,22 +154,5 @@ public class EducationDao {
 	
 
 	}
-	public void deletehl_contents(String hl_contents) {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		int re = 0 ; 
-		try {
-			re = sqlSession.getMapper(EducationMapper.class).deletehl_contents(hl_contents);
-			if(re > 0){
-				sqlSession.commit();
-			}else{
-				sqlSession.rollback();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			sqlSession.close();
-		}
-		
-
-	}
+	
 }

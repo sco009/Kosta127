@@ -9,7 +9,7 @@
     String pages = request.getParameter("pages");
     EducationService service = EducationService.getInstance();
    try{
-	   service.deletehl_contents(hl_contents);
+	   service.deleteEdumanager(memberID, hl_contents);
    }catch(Exception e){
 	   e.printStackTrace();
    }
