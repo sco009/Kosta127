@@ -14,6 +14,7 @@ public interface MemberMapper {
 	public int currentLoginMember(Login login);
 	public int currentLogoutMember(Login login);
 	public int updateInfo(Member member);
+	public Login checkCurrentLoginMember(String memeberID);
 	public List<Login> currentLoginMemberPrint();
 	public List<AccessRecord> printAccessRecord(String memberid);
 }
