@@ -5,8 +5,8 @@
 
 <configuration>
 	<typeAliases>
-	<typeAlias type="Education.model.EducationContents" alias="Econtents"/>
-	<typeAlias type="Education.model.EducationManager" alias="Emanager"/>
+	<typeAlias type="cosmos.education.model.EducationContents" alias="Econtents"/>
+	<typeAlias type="cosmos.education.model.EducationManager" alias="Emanager"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -25,7 +25,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="Education/mapper/Education.xml"/>		
+		<mapper resource="cosmos/education/mapper/Education.xml"/>		
 	</mappers>
 	
 </configuration>

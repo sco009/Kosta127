@@ -3,42 +3,55 @@
 <%@page import="cosmos.login.model.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="cosmos.login.model.MemberService"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%
-    request.setCharacterEncoding("utf-8");
+   request.setCharacterEncoding("utf-8");
    String memberID = request.getParameter("memberID");
    String memberPw = request.getParameter("memberPw");
    String memberName = null;
 
-   MemberService service = MemberService.getInstance();
-   List<Member> mlist = service.listMemberService();
+   if (memberID != null && memberPw != null) {
+      MemberService service = MemberService.getInstance();
+      List<Member> mlist = service.listMemberService();
+      //멤버에 있는 애들 갖고오기 mlist
 
-   LoginService loservice = LoginService.getInstance();
-   Login login = loservice.checkCurrentLoginMember(memberID);
-   
-   
-   for (int i = 0; i < mlist.size(); i++) {
+      LoginService loservice = LoginService.getInstance();
+      Login login = loservice.checkCurrentLoginMember(memberID);
 
-      Member m = mlist.get(i);
+      //중복로그인을 위해 현재접속중인 애를 갖고온다.
+      int re = -1;
 
-      if (m.getMemberID().equals(memberID) && m.getMemberPw().equals(memberPw)) {
+      for (int i = 0; i < mlist.size(); i++) {
 
-         memberName = m.getMemberName();
+         Member m = mlist.get(i);
+         //가입한 회원인지 찾는다
+         if (m.getMemberID().equals(memberID)
+               && m.getMemberPw().equals(memberPw)) {
 
-         session.setAttribute("memberName", memberName);
-         session.setAttribute("memberID", memberID);
-         
-         if(login != null){
-            response.sendRedirect("login_fail.jsp");
-         } else {
-            response.sendRedirect("log_main.jsp");
-            return;
+            if (login != null) {
+               response.sendRedirect("login_fail.jsp");
+            } else {
+               memberName = m.getMemberName();
+               Login clogin = new Login();
+               clogin.setMemberID(memberID);
+               clogin.setMemberName(memberName);
+               session.setAttribute("memberName", memberName);
+               session.setAttribute("memberID", memberID);
+
+               try {
+                  re = loservice
+                        .currentLoginMemberService(clogin);
+               } catch (Exception e) {
+                  e.printStackTrace();
+               }
+               response.sendRedirect("log_main.jsp");
+               return;
+            }
          }
       }
-   } 
-    
-    %>
+   }
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,7 +63,8 @@
 <meta name="author" content="">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>COSMOS</title>
-
+<link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/Log_css/font-awesome.min.css"
    rel="stylesheet" type="text/css">
@@ -79,7 +93,7 @@
          <div class="header-content-inner">
             <h1 id="homeHeading">With you, COSMOS</h1>
             <hr>
-            <p>COSMOS�� �Բ� ����� �Ƿ��� Ű��������!</p>
+            <p>COSMOS와 함께 당신의 실력을 키워보세요!</p>
             <a href="#about" class="btn btn-primary btn-xl page-scroll">START
                COSMOS</a>
          </div>
@@ -96,19 +110,21 @@
                src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
             
             <form action="login.jsp" method="post">
-               <h2>
-                  <span class="entypo-login"></span> Login
-               </h2>
-               <button type="submit" class="submit">
-                  <span class="entypo-lock"></span>
-               </button>
-               <span class="entypo-user inputUserIcon"></span> <input type="text"
-                  class="user" placeholder="id" name="memberID" /> <span
-                  class="entypo-key inputPassIcon"></span> <input type="password"
-                  class="pass" placeholder="password" name="memberPw" />
-               
-                  <div class="join"><a href="join.jsp">���� ȸ���� �ƴϼ���?</a></div>
-            </form>
+            <h2>
+               <span class="entypo-login"></span> Login
+            </h2>
+            <button type="submit" class="submit">
+               <span class="entypo-lock"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            </button>
+            <span class="entypo-user inputUserIcon"><i class="fa fa-user" aria-hidden="true"></i></span> <input type="text"
+               class="user" placeholder="id" name="memberID" /> <span
+               class="entypo-key inputPassIcon"><i class="fa fa-lock" aria-hidden="true"></i></span> <input type="password"
+               class="pass" placeholder="password" name="memberPw" />
+
+            <div class="join">
+               <a href="join.jsp">아직 회원이 아니세요?</a>
+            </div>
+         </form>
          </div>
       </div>
       <br><br><br><br><br><br><br><br>

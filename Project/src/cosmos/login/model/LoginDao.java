@@ -1,6 +1,7 @@
 package cosmos.login.model;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -73,6 +74,7 @@ private static LoginDao lodao = new LoginDao();
 		
 		return re;
 	}
+
 	
 	public Login checkCurrentLoginMember(String memberID) {
 	      SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -85,4 +87,20 @@ private static LoginDao lodao = new LoginDao();
 	         sqlSession.close();
 	      }
 	   }
+
+
+	public List<Login> currentLoginMemberPrint(){
+		List<Login> list = null;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			list = sqlSession.getMapper(MemberMapper.class).currentLoginMemberPrint();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return list;
+	}
+
 }

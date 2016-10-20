@@ -115,6 +115,7 @@ public class MemberDao {
 			sqlSession.close();
 		}
 	}
+
 	
 	public List<Member> loglistMember() {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -130,5 +131,21 @@ public class MemberDao {
 		}
 		
 		return loglist;
+	}
+
+	public List<AccessRecord> printAccessRecord(String memberid) {
+		List<AccessRecord> list = null;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			list = sqlSession.getMapper(MemberMapper.class).printAccessRecord(memberid);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+		return list;
+
 	}
 }

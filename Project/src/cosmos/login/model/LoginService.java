@@ -1,5 +1,7 @@
 package cosmos.login.model;
 
+import java.util.List;
+
 public class LoginService {
 	private static LoginDao lodao;
 	private static LoginService loservice = new LoginService();
@@ -16,8 +18,14 @@ public class LoginService {
 	public int currentLogoutMemberService(Login login) {
 		return lodao.currentLogoutMember(login);
 	}
+
 	
 	public Login checkCurrentLoginMember(String memberID) {
 	      return lodao.checkCurrentLoginMember(memberID);
+	}
+
+	public List<Login> currentLoginMemberPrintService(){
+		return lodao.currentLoginMemberPrint();
+
 	}
 }

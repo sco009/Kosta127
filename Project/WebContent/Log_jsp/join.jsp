@@ -143,7 +143,7 @@
 			// 변수 이름을 're_'로 정한것은 'Reguar Expression'의 머릿글자
 			var re_memberID = /^[a-z0-9_-]{3,16}$/; // 아이디 검사식
 			var re_memberPw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 검사식
-			var re_memberName = /([a-z\.])$/; // 이름 검사식
+			var re_memberName = /^([가-힣ㄱ-ㅎㅏ-ㅣ])/; // 이름 검사식
 			var re_memberEmail = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
 			var re_memberPhoneNum = /^[0-9]{8,11}$/; // 전화번호 검사식
 

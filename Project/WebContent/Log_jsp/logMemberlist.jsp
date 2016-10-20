@@ -2,8 +2,8 @@
 <%@page import="java.util.List"%>
 <%@page import="cosmos.login.model.MemberService"%>
 <%@page import="cosmos.login.model.MemberDao"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,9 +22,9 @@
  </tr>
  
 <%
- // DAO °´Ã¼ »ý¼º
+ // DAO ê°ì²´ ìƒì„±
  MemberDao dao = new MemberDao();
- // dao °´Ã¼ÀÇ ¸Þ¼Òµå¸¦ ÀÌ¿ëÇØ¼­ Å×ÀÌºíÀÇ Á¤º¸ °¡Á®¿À±â
+ // dao ê°ì²´ì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•´ì„œ í…Œì´ë¸”ì˜ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
  MemberService service = MemberService.getInstance();
  List<Member> list = service.logMemberListService();
  

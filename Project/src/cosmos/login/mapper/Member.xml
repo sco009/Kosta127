@@ -51,9 +51,18 @@
 		update member set memberPw = #{memberPw, jdbcType=VARCHAR}, memberEmail=#{memberEmail,jdbcType=VARCHAR}, memberName = #{memberName,jdbcType=VARCHAR}, memberPhoneNum=#{memberPhoneNum,jdbcType=VARCHAR}
 			where memberID = #{memberID,jdbcType=VARCHAR}
 	</update>
+
 	
 	<select id="checkCurrentLoginMember" parameterType="String" resultType="Login">
       select * from CurrentLoginMemberList
          where memberID = #{memberID,jdbcType=VARCHAR} 
     </select>
+
+	<select id="currentLoginMemberPrint" resultType="Login">
+		select * from CURRENTLOGINMEMBERLIST
+	</select>
+	<select id="printAccessRecord" parameterType="String" resultType="AccessRecord">
+		select * from ACCESS_RECORD where memberID = #{memberID}
+	</select>
+	
 </mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="cosmos.education.mapper.EducationMapper">
+	<cache />
+	<insert id="inserteducation" parameterType="Econtents">
+	insert into education_contents(
+		edu_c_ID,hl_contents,dataClassify
+	)values(
+		#{edu_c_ID},#{hl_contents},#{dataClassify}
+	)
+	</insert>
+	
+	
+	<insert id="inserteductionManager" parameterType="Emanager">
+	insert into edumanager(
+		EduManagerId,edu_c_ID,memberID
+	)values(
+		#{EduManagerId},#{edu_c_ID},#{memberID}
+	)
+	
+	</insert>
+	<select id="selectEc_managerid" resultType="Integer">
+		select max(to_number(EduManagerId)) from EduManager
+	</select>
+	
+	<select id="selectEc_edu_c_ID" resultType="Integer">
+			select max(edu_c_ID) from education_contents
+	</select>
+	<select id="selectmemberID" resultType="Econtents" parameterType="String">
+		select hl_contents from education_contents e JOIN edumanager m ON e.edu_c_ID= m.edu_c_ID
+		WHERE m.memberID= #{memberID}
+	</select> 
+	
+	<delete id="deleteedunamager" parameterType="String">
+	delete from EDUMANAGER  WHERE edu_c_ID = (select edu_c_ID from education_contents WHERE hl_contents=#{hl_contents})
+	</delete>
+	<delete id="deletehl_contents" parameterType="String">
+	delete from education_contents WHERE hl_contents=#{hl_contents}
+	</delete>
+	
+
+	</mapper>
+	
