@@ -61,7 +61,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>COSMOS</title>
 <link rel="stylesheet"
    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -106,9 +106,6 @@
          <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center"></div>
 
-            <script
-               src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-            
             <form action="login.jsp" method="post">
             <h2>
                <span class="entypo-login"></span> Login
@@ -140,7 +137,6 @@
    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
    <script src="../js/Log_js/scrollreveal.min.js"></script>
-   <script src="../js/Log_js/jquery.magnific-popup.min.js"></script>
 
    <!-- Theme JavaScript -->
    <script src="../js/Log_js/creative.min.js"></script>

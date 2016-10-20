@@ -6,12 +6,12 @@
 	request.setCharacterEncoding("utf-8");
 	EducationService service = EducationService.getInstance();
 	String dataClassify = request.getParameter("dataClassify");
-
 	String hl_contents = request.getParameter("hl_contents");
 	String memberID = (String)session.getAttribute("memberID");
 	String pages = request.getParameter("pages");
 	int re = 0;
 	int rt = 0;
+	
 	try {
 		re = service.inserteducation(request);  // education_contents에 입력하기 위한 service 
 

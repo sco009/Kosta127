@@ -23,7 +23,7 @@
  </li>
  <li><a href="#">GROUP<span></span></a>
     <ul>
-      <li><a href="#">Creat Group</a></li>
+      <li><a href="#">Create Group</a></li>
       <li><a href="#">enter Group</a></li>
       <li><a href="../wc_form_jsp/wc_compileForm.jsp">Web Compile</a></li>
     </ul>

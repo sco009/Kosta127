@@ -44,7 +44,6 @@ public class WC_CompileService {
 		// java파일 생성
 		File wc_java = new File(wc_javaName + ".java");
 		wc_java.createNewFile();
-		System.out.println(wc_java.getAbsolutePath());
 
 		FileWriter wc_writer = new FileWriter(wc_java);
 		wc_writer.write(wc_code);

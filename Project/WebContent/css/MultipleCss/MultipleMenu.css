@@ -13,9 +13,10 @@ body {
    background-image:url("../../MultipleImage/Multiple.jpg");
    background-size: cover;
 }
-.col-md-12{
+.side{
    text-align: center;
 }
+
 #Examiner{
    padding:3px;
    border: 2px solid;

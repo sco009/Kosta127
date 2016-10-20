@@ -3,8 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<!-- 네임스페이스 필수 -->
-<!-- crud메소드 사용, mapper-interface방식(추천) 총 두가지 -->
 <mapper namespace="cosmos.login.mapper.MemberMapper">
 	<cache />
 	

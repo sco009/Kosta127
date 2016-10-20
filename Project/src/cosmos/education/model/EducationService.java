@@ -45,9 +45,8 @@ public class EducationService {
 		return dao.selectmemberID(memberID);
 	}
 	
-	public void deletehl_contents (String hl_contents){
-		dao.deleteedunamager(hl_contents);
-		dao.deletehl_contents(hl_contents);
+	public void deleteEdumanager(String memberID, String hl_contents){
+		dao.deleteEdumanager(memberID,hl_contents);
 	}
 	
 	

@@ -35,12 +35,13 @@
 		WHERE m.memberID= #{memberID}
 	</select> 
 	
-	<delete id="deleteedunamager" parameterType="String">
-	delete from EDUMANAGER  WHERE edu_c_ID = (select edu_c_ID from education_contents WHERE hl_contents=#{hl_contents})
+	<delete id="deleteEdumanager" parameterType="hashmap">
+		delete from EDUMANAGER  WHERE memberID =#{0} AND
+									  EDU_C_ID IN (Select edu_c_id 
+									  			  from education_contents
+									  			  WHERE HL_CONTENTS=#{1})
 	</delete>
-	<delete id="deletehl_contents" parameterType="String">
-	delete from education_contents WHERE hl_contents=#{hl_contents}
-	</delete>
+	
 	
 
 	</mapper>

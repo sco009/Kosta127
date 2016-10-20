@@ -1,6 +1,7 @@
 
 
 .circle {
+	
 	background: rgb(255,255,255);
 	border-radius: 100%;
 	cursor: pointer;
@@ -35,6 +36,7 @@
 
 .circle:before,
 .circle:after {
+	
 	border-radius: 100%;
 	content:"";
 	position: absolute;

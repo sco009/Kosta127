@@ -2,16 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
-	request.setCharacterEncoding("utf-8");
-	String wc_result = "";
-	String wc_code = "";
-	
-	if(request.getParameter("wc_code")!=null && !(request.getParameter("wc_code").equals(""))){
-		wc_code = (String)request.getParameter("wc_code");
-		
-		WC_CompileService wc_service = WC_CompileService.wc_getInstance();
-		wc_result = wc_service.wc_getResultCompile(wc_code);
-	}
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,6 +39,40 @@
 	<script
 		src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <jsp:include page="../Log_module/header.jsp" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		$("#complieFrom").submit(function(event){
+			event.preventDefault();
+			
+			$.ajax({
+				url : "ajax.jsp",
+				type : "post",
+				dataType:"text",
+				data : $(this).serialize(),
+				success : successHandler,
+				error : function(){
+					alert("실패");
+				}
+			});
+		});
+		
+		function successHandler(data){
+			var str = data.replace(/^\s+/, "");
+			$("#wc_result").empty();
+			$("#wc_result").text(str);
+		}
+		
+		$(document).ajaxStart(function(){
+		      $("#loading").fadeIn();
+		   }).ajaxStop(function(){
+			   $("#loading").fadeOut();
+		   });
+		
+	});
+
+</script>
 		<br><br><br>
 </head>
 <style type='text/css'>
@@ -64,6 +89,15 @@
       	padding-bottom:30px;
       }
       
+
+      #loading{
+        
+        position : absolute;
+        display: none;
+      	height: 100%;
+      	width: 100%;
+      	z-index: 1;
+      }
       #body{
 		font-size: 14px;
    		background-image:url("../wc_image/compile_bg.jpg");
@@ -79,19 +113,27 @@
 	  	background-color: white;
 	  }
 	  
-	 
 </style>
 
 <body id="body">
 
 <div id="main">
+
 	<div class="row" id="demo1">
-	  <div class="col-md-4">
-      	<form action="wc_compileForm.jsp" method="post">
-			<textarea rows="25" cols="50" name="wc_code"
-				onkeydown="useTab(this)" id="demo"><%=wc_code%></textarea><br>
+
+      <div class="col-md-4">
+      	<form action="wc_compileForm.jsp" method="post" id="complieFrom">
+			<%-- <textarea rows="30" cols="50" name="wc_code"
+				onkeydown="useTab(this)" id="demo"><%=wc_code%></textarea><br> --%>
+				<textarea rows="30" cols="50" name="wc_code"
+				onkeydown="useTab(this)" id="demo"></textarea>
+				<div id="loading" style="width: 100%; text-align: center" >
+						<img alt="" src="Loading.gif"style="width: 100%; max-width: 150px; vertical-align: middle">
+					</div><br>
 			<input type="submit" value="Compile"><br>
-			<textarea rows="10" cols="50" type="disabled"><%=wc_result%></textarea>
+					
+					<%-- <textarea rows="10" cols="50" type="disabled"><%=wc_result%></textarea> --%>
+			<textarea rows="10" cols="50" type="disabled" id="wc_result"></textarea>
 		</form>
       </div>
       <div class="col-md-4" >
