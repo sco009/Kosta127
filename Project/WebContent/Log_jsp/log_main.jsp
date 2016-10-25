@@ -143,7 +143,7 @@
 							</div>
 						</label>
 						<div class="ma2">
-							<a class="plate2" href="Test.jsp"> <i
+							<a class="plate2" href="../group/creategroup.jsp"> <i
 								class="fa fa-user-plus" aria-hidden="true"></i>
 							</a> <a class="plate2" href="enterGroup.jsp"> <i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
