@@ -144,15 +144,16 @@
       <div class="editor-wrapper">
 <div class="editor editor1" >st=>start: Start:>
 e=>end:>
-op1=>operation: My Operation
+op1=>operation: My Operation 
 sub1=>subroutine: My Subroutine
 cond=>condition: Yes
 or No?:>
 io=>inputoutput: catch something...
 
+
 st->op1->cond
 cond(yes)->io->e
-cond(no)->sub1(right)->op1</div>
+cond(no,left)->sub1(left)->op1</div>
            </div></div>
       </div>
       <div class="col-md-4">

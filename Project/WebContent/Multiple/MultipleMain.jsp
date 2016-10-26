@@ -13,7 +13,11 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
+
 <%	
+	if(request.getParameter("mainCheck")!=null){
+		request.setAttribute("logCheck", request.getParameter("mainCheck"));		
+	}
 	if(session.getAttribute("memberID")==null){
 		response.sendRedirect("../Log_jsp/log_main.jsp");		//로그인 되어있지 않으면 메인페이지로 이동한다.
 	}
@@ -74,17 +78,33 @@
 <script type="text/javascript" src="../js/MultipleJs/MultipleJavaScript.js"></script>
 <link href="../css/MultipleCss/MultipleMenu.css" rel="stylesheet" type="text/css">
 <link href="../css/MultipleCss/MultipleRadioButton.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+/* 
+ * 
+ onunload="window.location.replace(self.location)"
+ *window.onunload=function(){
+	   window.location.replace(self.location);
+	  } */
 
+</script>
 <jsp:include page="../Log_module/header.jsp" />
 <br><br><br>
 </head>
 <body id="body">
 
+
+
 	<div class="row-fluid">
 		<div class="col-md-12">
     		<div class="row-fluid side">
+    			<c:if test="${logCheck==0 }">
+    				<label id="toplabel"><b>카테고리:</b></label>
+     			<label id="toplabel"><b>난이도 :</b></label>
+    			</c:if>
+    			<c:if test="${logCheck!=0 }">
      			<label id="toplabel"><b>카테고리:</b> ${multipleSelect.mulquestCategori }</label>
      			<label id="toplabel"><b>난이도 :</b>${multipleSelect.mulquestLevel }</label>
+     			</c:if>
          	</div>
          	
   		 <div class="col-md-3 col-md-offset-1* side">
@@ -118,25 +138,27 @@
   </div><!--1번 col row end -->
 
 	<div class="col-md-4">
+		<c:if test="${logCheck==null }">
 		<div class="well well-large problem">
-			<pre>
+			<pre id="pre">
 			 ${multipleSelect.mulquestContent }
 			</pre>
 			 	<br>
-				<c:if test="${multipleSelect!=null }">
+				<c:if test="${multipleSelect!=null && logCheck==null }">
 					<br>
 					<div id="Examiner">
 				 	<small><cite title="Examiner">출제자 :</cite>${multipleSelect.mulquestExaminer }</small>
 				 	</div>
 				</c:if>
 		</div>
+		</c:if>
 	
 	</div><!--2단 end  -->
 	
 	<div class="col-md-4 checkd side">
       <div class="well well-large">
          <!-- 유형이 선택되야만 보기가 보여짐 -->
-         <c:if test="${multipleSelect != null }">
+         <c:if test="${multipleSelect != null && logCheck==null }">
          <!-- 보기 시작 -->
             <div>
                <input type="hidden" name = "multipleChoiceSelectAnswer" value=${multipleSelect.multipleAnswer }></input>

@@ -25,8 +25,7 @@ $(document).ready(function(){
     	dataType: "json"
     });
 
-	
-	
+
 });
 
 function successHandler(data){

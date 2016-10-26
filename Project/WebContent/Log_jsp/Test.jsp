@@ -90,7 +90,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-2">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 				<div class="panel price panel-green">
 					<div class="panel-heading arrow_box text-center">
 						<h3>친구 목록</h3>

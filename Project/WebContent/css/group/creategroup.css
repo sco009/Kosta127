@@ -1,0 +1,235 @@
+body {
+	background-image : url("group_img/group_back.png");
+	color: #666;
+	font: 90%/180% Arial, Helvetica, sans-serif;
+	width: 800px;
+	max-width: 96%;
+	margin: 0 auto;
+}
+a {
+	color: #69C;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+}
+h1 {
+	font: 1.7em;
+	line-height: 110%;
+	color: #000;
+}
+p {
+	margin: 0 0 20px;
+}
+
+
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* Demo 2 */
+#demo-2 input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#demo-2 input[type=search]:hover {
+	background-color: #fff;
+}
+#demo-2 input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+	color: transparent;
+}
+#demo-2 input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+body {
+    padding: 30px 0px 60px;
+}
+.panel > .list-group .list-group-item:first-child {
+    /*border-top: 1px solid rgb(204, 204, 204);*/
+}
+@media (max-width: 767px) {
+    .visible-xs {
+        display: inline-block !important;
+    }
+    .block {
+        display: block !important;
+        width: 100%;
+        height: 1px !important;
+    }
+}
+#back-to-bootsnipp {
+    position: fixed;
+    top: 10px; right: 10px;
+}
+
+
+.c-search > .form-control {
+   border-radius: 0px;
+   border-width: 0px;
+   border-bottom-width: 1px;
+   font-size: 1.3em;
+   padding: 12px 12px;
+   height: 44px;
+   outline: none !important;
+}
+.c-search > .form-control:focus {
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none;
+}
+.c-search > .input-group-btn .btn {
+   border-radius: 0px;
+   border-width: 0px;
+   border-left-width: 1px;
+   border-bottom-width: 1px;
+   height: 44px;
+}
+
+
+.c-list {
+    padding: 0px;
+    min-height: 44px;
+}
+.title {
+    display: inline-block;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+ul.c-controls {
+    list-style: none;
+    margin: 0px;
+    min-height: 44px;
+}
+
+ul.c-controls li {
+    margin-top: 8px;
+    float: left;
+}
+
+ul.c-controls li a {
+    font-size: 1.7em;
+    padding: 11px 10px 6px;   
+}
+ul.c-controls li a i {
+    min-width: 24px;
+    text-align: center;
+}
+
+ul.c-controls li a:hover {
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+.c-toggle {
+    font-size: 1.7em;
+}
+
+.name {
+    font-size: 1.7em;
+    font-weight: 700;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.c-info {
+    padding: 5px 10px;
+    font-size: 1.25em;
+}
+
+
+/*
+
+
+여기서 부터는 초대목록임
+
+*/
+
+@import url("http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,700italic,700,500&subset=latin,latin-ext");
+
+
+      .price.panel-green>.panel-heading {
+			color: #fff;
+			background-color: #FF5E00;
+			border-color: #71DF71;
+			border-bottom: 1px solid #71DF71;
+		}
+		
+			
+		.price.panel-green>.panel-body {
+			color: #fff;
+			background-color: #65C965;
+		}
+				
+		
+		.price.panel-green>.panel-body .lead{
+				text-shadow: 0px 3px 0px rgba(50,50,50, .3);
+		}
+		
+		.price.panel-green .list-group-item {
+			color: #333;
+			background-color: rgba(50,50,50, .01);
+			font-weight:600;
+			text-shadow: 0px 1px 0px rgba(250,250,250, .75);
+		}
+		
+		#TA1{
+			max-width: 70%;
+		}
+
+

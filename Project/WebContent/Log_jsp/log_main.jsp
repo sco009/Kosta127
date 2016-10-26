@@ -123,7 +123,7 @@
 						<div class="ma">
 							<a class="plate" href="../EducationJSP/education_main.jsp"> <i class="fa fa-book"
 								aria-hidden="true"></i>
-							</a> <a class="plate" href="../Multiple/MultipleMain.jsp"> <i
+							</a> <a class="plate" href="../Multiple/MultipleMain.jsp?mainCheck=0"> <i
 								class="fa fa-pencil" aria-hidden="true"></i>
 							</a> <a class="plate" href="codeTrace.jsp"> <i
 								class="fa fa-balance-scale" aria-hidden="true"></i>
@@ -143,7 +143,7 @@
 							</div>
 						</label>
 						<div class="ma2">
-							<a class="plate2" href="Test.jsp"> <i
+							<a class="plate2" href="../group/creategroup.jsp"> <i
 								class="fa fa-user-plus" aria-hidden="true"></i>
 							</a> <a class="plate2" href="enterGroup.jsp"> <i
 								class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>

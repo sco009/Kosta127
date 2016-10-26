@@ -55,7 +55,7 @@
     request.setAttribute("failList", failList);
     request.setAttribute("successList", successList);
     
-   session.removeAttribute("failList");
+    session.removeAttribute("failList");
     session.removeAttribute("successList");
     session.removeAttribute("multipleSelect");
     request.removeAttribute("solveSuccessId");
@@ -63,7 +63,7 @@
     
     pointMultiple = new ArrayList<Multiple>();
     reMultiple = new ArrayList<Multiple>();   //저장된 오답들을 초기화한다.
-   
+ 
      %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -114,9 +114,9 @@
                end="${reMultiple.size() }">
          <c:if test="${failList !=null }">
                <label class="row-md">틀린문제 : ${reMultiple.mulquestId }</label>
-                        <button type="button" class="btn btn-default" title= "문제내용 : ${reMultiple.mulquestContent }"
+                        <button type="button" class="btn btn-default" title= "답 : ${reMultiple.multipleAnswer }"
                               data-container="body" data-toggle="popover" data-placement="right"
-                              data-content= "답 : ${reMultiple.multipleAnswer }">
+                              data-content= "문제내용 : ${reMultiple.mulquestContent }">
                               틀린문제 상세보기</button>                        <!-- 틀린문제 정보 보여주기 -->
                   <br>
           </c:if>

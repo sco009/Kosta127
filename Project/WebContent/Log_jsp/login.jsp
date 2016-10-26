@@ -1,3 +1,4 @@
+<%@page import="javax.websocket.SendResult"%>
 <%@page import="cosmos.login.model.Login"%>
 <%@page import="cosmos.login.model.LoginService"%>
 <%@page import="cosmos.login.model.Member"%>
@@ -6,6 +7,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
+   if(session.getAttribute("memberID")!=null){
+	   response.sendRedirect("log_main.jsp");
+   }
    request.setCharacterEncoding("utf-8");
    String memberID = request.getParameter("memberID");
    String memberPw = request.getParameter("memberPw");
