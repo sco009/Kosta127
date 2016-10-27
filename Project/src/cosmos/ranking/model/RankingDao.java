@@ -40,6 +40,8 @@ public class RankingDao {
 			list = sqlSession.getMapper(RankingMapper.class).algoPointSelect();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			sqlSession.close();
 		}
 		
 		return list;
@@ -53,10 +55,49 @@ public class RankingDao {
 			list = sqlSession.getMapper(RankingMapper.class).codePointSelect();
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			sqlSession.close();
 		}
 		
 		return list;
 	}
 	
+	public void updateAlgoRanking(AlgoRanking algoRanking){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+
+		try {
+			re = sqlSession.getMapper(RankingMapper.class).updateAlgoRanking(algoRanking);
+			
+			if(re > 0){
+				sqlSession.commit();
+			}else{
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+	}
+	
+	public void updateCodeRanking(CodeRanking codeRanking){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+
+		try {
+			re = sqlSession.getMapper(RankingMapper.class).updateCodeRanking(codeRanking);
+			
+			if(re > 0){
+				sqlSession.commit();
+			}else{
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			sqlSession.close();
+		}
+	}
 
 }

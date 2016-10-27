@@ -63,7 +63,7 @@
 
 					<c:forEach var="list" items="${algoList}" varStatus="status">
 						<div class="row">
-							<div class="cell">${status.index+1 }</div>
+							<div class="cell">${list.algo_ranking }</div>
 							<div class="cell">${list.memberName }</div>
 							<div class="cell">${list.algo_point }</div>
 						</div>
@@ -89,7 +89,7 @@
 
 					<c:forEach var="list" items="${codeList}" varStatus="status">
 						<div class="row">
-							<div class="cell">${status.index+1 }</div>
+							<div class="cell">${list.code_ranking }</div>
 							<div class="cell">${list.memberName }</div>
 							<div class="cell">${list.code_point }</div>
 						</div>

@@ -5,6 +5,7 @@ import java.util.List;
 import cosmos.multiple.model.Multiple;
 import cosmos.multiple.model.MultipleChoice;
 import cosmos.multiple.model.MultiplePoint;
+import cosmos.ranking.model.AlgoRanking;
 
 public interface MultipleMapper {
 	public List<Multiple> selectMultiple(Multiple multiple);

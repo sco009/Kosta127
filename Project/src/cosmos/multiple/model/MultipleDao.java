@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import cosmos.multiple.mapper.MultipleMapper;
+import cosmos.ranking.model.AlgoRanking;
 
 public class MultipleDao {
 	private static MultipleDao dao = new MultipleDao();
@@ -96,6 +97,5 @@ public class MultipleDao {
 		}
 		return re;
 	}
-
 	
 }

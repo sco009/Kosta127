@@ -8,14 +8,24 @@
 <mapper namespace="cosmos.ranking.mapper.RankingMapper">
 	<cache />
 	<select id="algoPointSelect" resultType="AlgoRanking">
-		select 	memberID,memberName,algo_point from member
+		select 	memberID,memberName,algo_point,algo_ranking from member
 			where algo_point != 0
 			ORDER BY algo_point DESC
 	</select>
 	
 	<select id="codePointSelect" resultType="CodeRanking">
-		select 	memberID,memberName,code_point from member
+		select 	memberID,memberName,code_point,code_ranking from member
 			where code_point != 0
 			ORDER BY code_point DESC
 	</select>
+	
+	<update id="updateAlgoRanking" parameterType="AlgoRanking">
+		update member set algo_ranking = #{algo_ranking}
+			where memberID = #{memberID}
+	</update>
+	
+	<update id="updateCodeRanking" parameterType="CodeRanking">
+		update member set code_ranking = #{code_ranking}
+			where memberID = #{memberID}
+	</update>
 </mapper>
